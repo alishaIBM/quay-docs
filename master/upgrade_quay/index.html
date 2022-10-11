@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" class="chrometwo"><head><title>Upgrade Red Hat Quay</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css"/><meta name="generator" content="publican v4.3.4"/><meta name="description" content="Upgrade Red Hat Quay"/><link rel="next" href="#upgrade_overview" title="Chapter 1. Upgrade overview"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><script type="text/javascript" src="Common_Content/scripts/jquery-1.7.1.min.js"> </script><script type="text/javascript" src="Common_Content/scripts/utils.js"> </script><script type="text/javascript" src="Common_Content/scripts/highlight.js/highlight.pack.js"> </script></head><body><div id="chrometwo"><div id="main"><div xml:lang="en-US" class="book" id="idm45977879378880"><div class="titlepage"><div><div class="producttitle"><span class="productname">Red Hat Quay</span> <span class="productnumber">3.7</span></div><div><h1 class="title">Upgrade Red Hat Quay</h1></div><div><h2 class="subtitle">Upgrade Red Hat Quay</h2></div><div><div xml:lang="en-US" class="authorgroup"><span class="orgname">Red Hat OpenShift Documentation Team</span></div></div><div><a href="#idm45977858049120">Legal Notice</a></div><div><div class="abstract"><p class="title"><strong>Abstract</strong></p><div class="para">
+<html xmlns="http://www.w3.org/1999/xhtml" class="chrometwo"><head><title>Upgrade Red Hat Quay</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css"/><meta name="generator" content="publican v4.3.4"/><meta name="description" content="Upgrade Red Hat Quay"/><link rel="next" href="#upgrade_overview" title="Chapter 1. Upgrade overview"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><script type="text/javascript" src="Common_Content/scripts/jquery-1.7.1.min.js"> </script><script type="text/javascript" src="Common_Content/scripts/utils.js"> </script><script type="text/javascript" src="Common_Content/scripts/highlight.js/highlight.pack.js"> </script></head><body><div id="chrometwo"><div id="main"><div xml:lang="en-US" class="book" id="idm45640607791168"><div class="titlepage"><div><div class="producttitle"><span class="productname">Red Hat Quay</span> <span class="productnumber">3.8</span></div><div><h1 class="title">Upgrade Red Hat Quay</h1></div><div><h2 class="subtitle">Upgrade Red Hat Quay</h2></div><div><div xml:lang="en-US" class="authorgroup"><span class="orgname">Red Hat OpenShift Documentation Team</span></div></div><div><a href="#idm45640588807312">Legal Notice</a></div><div><div class="abstract"><p class="title"><strong>Abstract</strong></p><div class="para">
 				Upgrade Red Hat Quay
 			</div></div></div></div><hr/></div><div class="toc"><ul class="toc"><li><span class="chapter"><a href="#upgrade_overview">1. Upgrade overview</a></span></li><li><span class="chapter"><a href="#operator-upgrade">2. Upgrading the Quay Operator Overview</a></span><ul><li><span class="section"><a href="#operator_lifecycle_manager">2.1. Operator Lifecycle Manager</a></span></li><li><span class="section"><a href="#upgrading_the_quay_operator">2.2. Upgrading the Quay Operator</a></span><ul><li><span class="section"><a href="#upgrading_quay">2.2.1. Upgrading Quay</a></span></li><li><span class="section"><a href="#upgrade-33-36">2.2.2. Notes on upgrading directly from 3.3.z or 3.4.z to 3.6</a></span></li><li><span class="section"><a href="#swift_configuration_when_upgrading_from_3_3_z_to_3_6">2.2.3. Swift configuration when upgrading from 3.3.z to 3.6</a></span></li><li><span class="section"><a href="#changing_the_update_channel_for_an_operator">2.2.4. Changing the update channel for an Operator</a></span></li><li><span class="section"><a href="#manually_approving_a_pending_operator_upgrade">2.2.5. Manually approving a pending Operator upgrade</a></span></li></ul></li><li><span class="section"><a href="#upgrading_a_quayregistry">2.3. Upgrading a QuayRegistry</a></span></li><li><span class="section"><a href="#enabling_features_in_quay_3_7">2.4. Enabling features in Quay 3.7</a></span><ul><li><span class="section"><a href="#quota_management_configuration">2.4.1. Quota management configuration</a></span></li><li><span class="section"><a href="#using_red_hat_quay_to_proxy_a_remote_organization_configuration">2.4.2. Using Red Hat Quay to proxy a remote organization configuration</a></span></li><li><span class="section"><a href="#red_hat_quay_build_enhancements">2.4.3. Red Hat Quay build enhancements</a></span></li><li><span class="section"><a href="#geo_replication_using_the_red_hat_quay_operator">2.4.4. Geo-replication using the Red Hat Quay Operator</a></span></li></ul></li><li><span class="section"><a href="#enabling_features_in_quay_3_6">2.5. Enabling features in Quay 3.6</a></span><ul><li><span class="section"><a href="#console_monitoring_and_alerting">2.5.1. Console monitoring and alerting</a></span></li><li><span class="section"><a href="#oci_and_helm_support">2.5.2. OCI and Helm support</a></span></li></ul></li><li><span class="section"><a href="#upgrading_a_quayecosystem">2.6. Upgrading a QuayEcosystem</a></span><ul><li><span class="section"><a href="#reverting_quayecosystem_upgrade">2.6.1. Reverting QuayEcosystem Upgrade</a></span></li><li><span class="section"><a href="#supported_quayecosystem_configurations_for_upgrades">2.6.2. Supported QuayEcosystem Configurations for Upgrades</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#standalone_upgrade">3. Standalone upgrade</a></span><ul><li><span class="section"><a href="#accessing_images">3.1. Accessing images</a></span></li><li><span class="section"><a href="#upgrade_to_3_7_z_from_3_6_z">3.2. Upgrade to 3.7.z from 3.6.z</a></span><ul><li><span class="section"><a href="#target_images">3.2.1. Target images</a></span></li></ul></li><li><span class="section"><a href="#upgrade_to_3_7_z_from_3_5_z">3.3. Upgrade to 3.7.z from 3.5.z</a></span><ul><li><span class="section"><a href="#target_images_2">3.3.1. Target images</a></span></li></ul></li><li><span class="section"><a href="#upgrade_to_3_7_z_from_3_4_z">3.4. Upgrade to 3.7.z from 3.4.z</a></span><ul><li><span class="section"><a href="#target_images_3">3.4.1. Target images</a></span></li></ul></li><li><span class="section"><a href="#upgrade_to_3_7_z_from_3_3_z">3.5. Upgrade to 3.7.z from 3.3.z</a></span></li><li><span class="section"><a href="#upgrade_to_3_6_z_from_3_5_z">3.6. Upgrade to 3.6.z from 3.5.z</a></span><ul><li><span class="section"><a href="#target_images_4">3.6.1. Target images</a></span></li></ul></li><li><span class="section"><a href="#upgrade_to_3_6_z_from_3_4_z">3.7. Upgrade to 3.6.z from 3.4.z</a></span><ul><li><span class="section"><a href="#target_images_5">3.7.1. Target images</a></span></li></ul></li><li><span class="section"><a href="#upgrade_to_3_6_z_from_3_3_z">3.8. Upgrade to 3.6.z from 3.3.z</a></span><ul><li><span class="section"><a href="#target_images_6">3.8.1. Target images</a></span></li><li><span class="section"><a href="#swift_configuration_when_upgrading_from_3_3_z_to_3_6_2">3.8.2. Swift configuration when upgrading from 3.3.z to 3.6</a></span></li></ul></li><li><span class="section"><a href="#upgrade_to_3_5_7_from_3_4_z">3.9. Upgrade to 3.5.7 from 3.4.z</a></span><ul><li><span class="section"><a href="#target_images_7">3.9.1. Target images</a></span></li></ul></li><li><span class="section"><a href="#upgrade_to_3_4_6_from_3_3_z">3.10. Upgrade to 3.4.6 from 3.3.z</a></span><ul><li><span class="section"><a href="#target_images_8">3.10.1. Target images</a></span></li></ul></li><li><span class="section"><a href="#upgrade_to_3_3_4_from_3_2_z">3.11. Upgrade to 3.3.4 from 3.2.z</a></span><ul><li><span class="section"><a href="#target_images_9">3.11.1. Target images</a></span></li></ul></li><li><span class="section"><a href="#upgrade_to_3_2_2_from_3_1_z">3.12. Upgrade to 3.2.2 from 3.1.z</a></span><ul><li><span class="section"><a href="#target_images_10">3.12.1. Target images</a></span></li></ul></li><li><span class="section"><a href="#upgrade_to_3_1_3_from_3_0_z">3.13. Upgrade to 3.1.3 from 3.0.z</a></span><ul><li><span class="section"><a href="#target_images_11">3.13.1. Target images</a></span></li></ul></li><li><span class="section"><a href="#upgrade_to_3_0_5_from_2_9_5">3.14. Upgrade to 3.0.5 from 2.9.5</a></span><ul><li><span class="section"><a href="#upgrade-v3-concept">3.14.1. Overview of upgrade</a></span></li><li><span class="section"><a href="#quay-upgrade-prereq">3.14.2. Prerequisites</a></span></li><li><span class="section"><a href="#upgrade-v3-proc">3.14.3. Choosing upgrade type</a></span></li><li><span class="section"><a href="#sync-upgrade-v3">3.14.4. Running a synchronous upgrade</a></span></li><li><span class="section"><a href="#background-upgrade-v3">3.14.5. Running a background upgrade</a></span></li><li><span class="section"><a href="#target_images_12">3.14.6. Target images</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#qbo-operator-upgrade">4. Upgrade Quay Bridge Operator</a></span></li></ul></div><section class="chapter" id="upgrade_overview"><div class="titlepage"><div><div><h1 class="title">Chapter 1. Upgrade overview</h1></div></div></div><p>
 			The upgrade procedure for Red Hat Quay depends on the type of installation you are using.
@@ -13,7 +13,7 @@
 		</p></section><section class="chapter" id="operator-upgrade"><div class="titlepage"><div><div><h1 class="title">Chapter 2. Upgrading the Quay Operator Overview</h1></div></div></div><p>
 			The Quay Operator follows a <span class="emphasis"><em>synchronized versioning</em></span> scheme, which means that each version of the Operator is tied to the version of Quay and the components that it manages. There is no field on the <code class="literal">QuayRegistry</code> custom resource which sets the version of Quay to deploy; the Operator only knows how to deploy a single version of all components. This scheme was chosen to ensure that all components work well together and to reduce the complexity of the Operator needing to know how to manage the lifecycles of many different versions of Quay on Kubernetes.
 		</p><section class="section" id="operator_lifecycle_manager"><div class="titlepage"><div><div><h2 class="title">2.1. Operator Lifecycle Manager</h2></div></div></div><p>
-				The Quay Operator should be installed and upgraded using the <a class="link" href="https://docs.openshift.com/container-platform/3.7/operators/understanding/olm/olm-understanding-olm.html">Operator Lifecycle Manager (OLM)</a>. When creating a <code class="literal">Subscription</code> with the default <code class="literal">approvalStrategy: Automatic</code>, OLM will automatically upgrade the Quay Operator whenever a new version becomes available.
+				The Quay Operator should be installed and upgraded using the <a class="link" href="https://docs.openshift.com/container-platform/3.8/operators/understanding/olm/olm-understanding-olm.html">Operator Lifecycle Manager (OLM)</a>. When creating a <code class="literal">Subscription</code> with the default <code class="literal">approvalStrategy: Automatic</code>, OLM will automatically upgrade the Quay Operator whenever a new version becomes available.
 			</p><div class="admonition warning"><div class="admonition_header">Warning</div><div><p>
 					When the Quay Operator is installed via Operator Lifecycle Manager, it may be configured to support automatic or manual upgrades. This option is shown on the <span class="strong strong"><strong>Operator Hub</strong></span> page for the Quay Operator during installation. It can also be found in the Quay Operator <code class="literal">Subscription</code> object via the <code class="literal">approvalStrategy</code> field. Choosing <code class="literal">Automatic</code> means that your Quay Operator will automatically be upgraded whenever a new Operator version is released. If this is not desirable, then the <code class="literal">Manual</code> approval strategy should be selected.
 				</p></div></div></section><section class="section" id="upgrading_the_quay_operator"><div class="titlepage"><div><div><h2 class="title">2.2. Upgrading the Quay Operator</h2></div></div></div><p>
@@ -43,7 +43,7 @@
 					</li><li class="listitem">
 						3.5.z → 3.7.z
 					</li></ol></div><p>
-				For users on standalone deployments of Quay wanting to upgrade to 3.7, see the <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.7/html-single/upgrade_red_hat_quay/index#standalone_upgrade">Standalone upgrade</a> guide.
+				For users on standalone deployments of Quay wanting to upgrade to 3.7, see the <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html-single/upgrade_red_hat_quay/index#standalone_upgrade">Standalone upgrade</a> guide.
 			</p><section class="section" id="upgrading_quay"><div class="titlepage"><div><div><h3 class="title">2.2.1. Upgrading Quay</h3></div></div></div><p>
 					To update Quay from one minor version to the next, for example, 3.4 → 3.5, you need to change the update channel for the Quay Operator.
 				</p><p>
@@ -76,7 +76,7 @@ spec:
 					</p></section><section class="section" id="configuring_clair_v4_when_upgrading_from_3_3_z_or_3_4_z_to_3_6_using_the_quay_operator"><div class="titlepage"><div><div><h4 class="title">2.2.2.3. Configuring Clair v4 when upgrading from 3.3.z or 3.4.z to 3.6 using the Quay Operator</h4></div></div></div><p>
 						To set up Clair v4 on a new Red Hat Quay deployment on OpenShift, it is highly recommended to use the Quay Operator. By default, the Quay Operator will install or upgrade a Clair deployment along with your Red Hat Quay deployment and configure Clair security scanning automatically.
 					</p><p>
-						For instructions on setting up Clair v4 on OpenShift, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.7/html-single/manage_red_hat_quay/index#clair-openshift">Setting Up Clair on a Red Hat Quay OpenShift deployment</a>.
+						For instructions on setting up Clair v4 on OpenShift, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html-single/manage_red_hat_quay/index#clair-openshift">Setting Up Clair on a Red Hat Quay OpenShift deployment</a>.
 					</p></section></section><section class="section" id="swift_configuration_when_upgrading_from_3_3_z_to_3_6"><div class="titlepage"><div><div><h3 class="title">2.2.3. Swift configuration when upgrading from 3.3.z to 3.6</h3></div></div></div><p>
 					When upgrading from Red Hat Quay 3.3.z to 3.6.z, some users might receive the following error: <code class="literal">Switch auth v3 requires tenant_id (string) in os_options</code>. As a workaround, you can manually update your <code class="literal">DISTRIBUTED_STORAGE_CONFIG</code> to add the <code class="literal">os_options</code> and <code class="literal">tenant_id</code> parameters:
 				</p><pre class="programlisting language-yaml">  DISTRIBUTED_STORAGE_CONFIG:
@@ -198,35 +198,35 @@ spec:
 				</li><li class="listitem">
 					3.5.z → 3.7.z
 				</li></ol></div><p>
-			For users wanting to upgrade via the Quay Operator, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.7/html-single/upgrade_red_hat_quay/index#upgrading_quay_by_upgrading_the_quay_operator">Upgrading Quay by upgrading the Quay Operator</a>.
+			For users wanting to upgrade via the Quay Operator, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html-single/upgrade_red_hat_quay/index#upgrading_quay_by_upgrading_the_quay_operator">Upgrading Quay by upgrading the Quay Operator</a>.
 		</p><p>
 			This document describes the steps needed to perform each individual upgrade. Determine your current version and then follow the steps in sequential order, starting with your current version and working up to your desired target version.
 		</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
-					<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.7/html-single/upgrade_red_hat_quay/index#upgrade_to_3_7_z_from_3_6_z">Upgrade to 3.7.z from 3.6.z</a>
+					<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html-single/upgrade_red_hat_quay/index#upgrade_to_3_7_z_from_3_6_z">Upgrade to 3.7.z from 3.6.z</a>
 				</li><li class="listitem">
-					<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.7/html-single/upgrade_red_hat_quay/index#upgrade_to_3_7_z_from_3_5_z">Upgrade to 3.7.z from 3.5.z</a>
+					<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html-single/upgrade_red_hat_quay/index#upgrade_to_3_7_z_from_3_5_z">Upgrade to 3.7.z from 3.5.z</a>
 				</li><li class="listitem">
-					<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.7/html-single/upgrade_red_hat_quay/index#upgrade_to_3_7_z_from_3_4_z">Upgrade to 3.7.z from 3.4.z</a>
+					<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html-single/upgrade_red_hat_quay/index#upgrade_to_3_7_z_from_3_4_z">Upgrade to 3.7.z from 3.4.z</a>
 				</li><li class="listitem">
-					<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.7/html-single/upgrade_red_hat_quay/index#upgrade_to_3_7_z_from_3_3_z">Upgrade to 3.7.z from 3.3.z</a>
+					<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html-single/upgrade_red_hat_quay/index#upgrade_to_3_7_z_from_3_3_z">Upgrade to 3.7.z from 3.3.z</a>
 				</li><li class="listitem">
-					<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.7/html-single/upgrade_red_hat_quay/index#upgrade_to_3_6_z_from_3_5_z">Upgrade to 3.6.z from 3.5.z</a>
+					<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html-single/upgrade_red_hat_quay/index#upgrade_to_3_6_z_from_3_5_z">Upgrade to 3.6.z from 3.5.z</a>
 				</li><li class="listitem">
-					<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.7/html-single/upgrade_red_hat_quay/index#upgrade_to_3_6_z_from_3_4_z">Upgrade to 3.6.z from 3.4.z</a>
+					<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html-single/upgrade_red_hat_quay/index#upgrade_to_3_6_z_from_3_4_z">Upgrade to 3.6.z from 3.4.z</a>
 				</li><li class="listitem">
-					<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.7/html-single/upgrade_red_hat_quay/index#upgrade_to_3_6_z_from_3_3_z">Upgrade to 3.6.z from 3.3.z</a>
+					<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html-single/upgrade_red_hat_quay/index#upgrade_to_3_6_z_from_3_3_z">Upgrade to 3.6.z from 3.3.z</a>
 				</li><li class="listitem">
-					<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.7/html-single/upgrade_red_hat_quay/index#upgrade_to_3_5_7_from_3_4_z">Upgrade to 3.5.z from 3.4.z</a>
+					<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html-single/upgrade_red_hat_quay/index#upgrade_to_3_5_7_from_3_4_z">Upgrade to 3.5.z from 3.4.z</a>
 				</li><li class="listitem">
-					<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.7/html-single/upgrade_red_hat_quay/index#upgrade_to_3_4_6_from_3_3_z">Upgrade to 3.4.z from 3.3.4</a>
+					<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html-single/upgrade_red_hat_quay/index#upgrade_to_3_4_6_from_3_3_z">Upgrade to 3.4.z from 3.3.4</a>
 				</li><li class="listitem">
-					<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.7/html-single/upgrade_red_hat_quay/index#upgrade_to_3_3_4_from_3_2_z">Upgrade to 3.3.4 from 3.2.2</a>
+					<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html-single/upgrade_red_hat_quay/index#upgrade_to_3_3_4_from_3_2_z">Upgrade to 3.3.4 from 3.2.2</a>
 				</li><li class="listitem">
-					<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.7/html-single/upgrade_red_hat_quay/index#upgrade_to_3_2_2_from_3_1_z">Upgrade to 3.2.2 from 3.1.3</a>
+					<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html-single/upgrade_red_hat_quay/index#upgrade_to_3_2_2_from_3_1_z">Upgrade to 3.2.2 from 3.1.3</a>
 				</li><li class="listitem">
-					<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.7/html-single/upgrade_red_hat_quay/index#upgrade_to_3_1_3_from_3_0_z">Upgrade to 3.1.3 from 3.0.5</a>
+					<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html-single/upgrade_red_hat_quay/index#upgrade_to_3_1_3_from_3_0_z">Upgrade to 3.1.3 from 3.0.5</a>
 				</li><li class="listitem">
-					<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.7/html-single/upgrade_red_hat_quay/index#upgrade_to_3_0_5_from_2_9_5">Upgrade to 3.0.5 from 2.9.5</a>
+					<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html-single/upgrade_red_hat_quay/index#upgrade_to_3_0_5_from_2_9_5">Upgrade to 3.0.5 from 2.9.5</a>
 				</li></ul></div><p>
 			See the <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3/html-single/red_hat_quay_release_notes/index">Red Hat Quay Release Notes</a> for information on features for individual releases.
 		</p><p>
@@ -244,35 +244,35 @@ spec:
 			</p><p>
 				Images for Quay 3.3.4 and earlier are available from <a class="link" href="https://quay.io">quay.io</a>, with authentication set up as described in <a class="link" href="https://access.redhat.com/solutions/3533201">Accessing Red Hat Quay without a CoreOS login</a>.
 			</p></section><section class="section" id="upgrade_to_3_7_z_from_3_6_z"><div class="titlepage"><div><div><h2 class="title">3.2. Upgrade to 3.7.z from 3.6.z</h2></div></div></div><section class="section" id="target_images"><div class="titlepage"><div><div><h3 class="title">3.2.1. Target images</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
-							<span class="strong strong"><strong>Quay:</strong></span> registry.redhat.io/quay/quay-rhel8:v3.7.8
+							<span class="strong strong"><strong>Quay:</strong></span> registry.redhat.io/quay/quay-rhel8:v3.8
 						</li><li class="listitem">
-							<span class="strong strong"><strong>Clair:</strong></span> registry.redhat.io/quay/clair-rhel8:v3.7.8
+							<span class="strong strong"><strong>Clair:</strong></span> registry.redhat.io/quay/clair-rhel8:v3.8
 						</li><li class="listitem">
 							<span class="strong strong"><strong>PostgreSQL:</strong></span> registry.redhat.io/rhel8/postgresql-10:1
 						</li><li class="listitem">
 							<span class="strong strong"><strong>Redis:</strong></span> registry.redhat.io/rhel8/redis-5:1
 						</li></ul></div></section></section><section class="section" id="upgrade_to_3_7_z_from_3_5_z"><div class="titlepage"><div><div><h2 class="title">3.3. Upgrade to 3.7.z from 3.5.z</h2></div></div></div><section class="section" id="target_images_2"><div class="titlepage"><div><div><h3 class="title">3.3.1. Target images</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
-							<span class="strong strong"><strong>Quay:</strong></span> registry.redhat.io/quay/quay-rhel8:v3.7.8
+							<span class="strong strong"><strong>Quay:</strong></span> registry.redhat.io/quay/quay-rhel8:v3.8
 						</li><li class="listitem">
-							<span class="strong strong"><strong>Clair:</strong></span> registry.redhat.io/quay/clair-rhel8:v3.7.8
+							<span class="strong strong"><strong>Clair:</strong></span> registry.redhat.io/quay/clair-rhel8:v3.8
 						</li><li class="listitem">
 							<span class="strong strong"><strong>PostgreSQL:</strong></span> registry.redhat.io/rhel8/postgresql-10:1
 						</li><li class="listitem">
 							<span class="strong strong"><strong>Redis:</strong></span> registry.redhat.io/rhel8/redis-5:1
 						</li></ul></div></section></section><section class="section" id="upgrade_to_3_7_z_from_3_4_z"><div class="titlepage"><div><div><h2 class="title">3.4. Upgrade to 3.7.z from 3.4.z</h2></div></div></div><section class="section" id="target_images_3"><div class="titlepage"><div><div><h3 class="title">3.4.1. Target images</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
-							<span class="strong strong"><strong>Quay:</strong></span> registry.redhat.io/quay/quay-rhel8:v3.7.8
+							<span class="strong strong"><strong>Quay:</strong></span> registry.redhat.io/quay/quay-rhel8:v3.8
 						</li><li class="listitem">
-							<span class="strong strong"><strong>Clair:</strong></span> registry.redhat.io/quay/clair-rhel8:v3.7.8
+							<span class="strong strong"><strong>Clair:</strong></span> registry.redhat.io/quay/clair-rhel8:v3.8
 						</li><li class="listitem">
 							<span class="strong strong"><strong>PostgreSQL:</strong></span> registry.redhat.io/rhel8/postgresql-10:1
 						</li><li class="listitem">
 							<span class="strong strong"><strong>Redis:</strong></span> registry.redhat.io/rhel8/redis-5:1
 						</li></ul></div></section></section><section class="section" id="upgrade_to_3_7_z_from_3_3_z"><div class="titlepage"><div><div><h2 class="title">3.5. Upgrade to 3.7.z from 3.3.z</h2></div></div></div><p>
-				Upgrading to Red Hat Quay 3.7 from 3.3. is unsupported. Users must first upgrade to 3.6 from 3.3, and then upgrade to 3.7. For more information, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.7/html-single/upgrade_red_hat_quay/index#upgrade_to_3_6_z_from_3_3_z">Upgrade to 3.6.z from 3.3.z</a>.
+				Upgrading to Red Hat Quay 3.7 from 3.3. is unsupported. Users must first upgrade to 3.6 from 3.3, and then upgrade to 3.7. For more information, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html-single/upgrade_red_hat_quay/index#upgrade_to_3_6_z_from_3_3_z">Upgrade to 3.6.z from 3.3.z</a>.
 			</p></section><section class="section" id="upgrade_to_3_6_z_from_3_5_z"><div class="titlepage"><div><div><h2 class="title">3.6. Upgrade to 3.6.z from 3.5.z</h2></div></div></div><section class="section" id="target_images_4"><div class="titlepage"><div><div><h3 class="title">3.6.1. Target images</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
-							<span class="strong strong"><strong>Quay:</strong></span> registry.redhat.io/quay/quay-rhel8:v3.7.8
+							<span class="strong strong"><strong>Quay:</strong></span> registry.redhat.io/quay/quay-rhel8:v3.8
 						</li><li class="listitem">
-							<span class="strong strong"><strong>Clair:</strong></span> registry.redhat.io/quay/clair-rhel8:v3.7.8
+							<span class="strong strong"><strong>Clair:</strong></span> registry.redhat.io/quay/clair-rhel8:v3.8
 						</li><li class="listitem">
 							<span class="strong strong"><strong>PostgreSQL:</strong></span> registry.redhat.io/rhel8/postgresql-10:1
 						</li><li class="listitem">
@@ -284,11 +284,11 @@ spec:
 				</p></div></div><p>
 				Upgrading to Red Hat Quay 3.6 from 3.4.z requires a database migration which does not support downgrading back to a prior version of Red Hat Quay. Please back up your database before performing this migration.
 			</p><p>
-				Users will also need to configure a completely new Clair v4 instance to replace the old Clair v2 when upgrading from 3.4.z. For instructions on configuring Clair v4, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.7/html-single/manage_red_hat_quay/index#clair-standalone">Setting up Clair on a non-OpenShift Red Hat Quay deployment</a>.
+				Users will also need to configure a completely new Clair v4 instance to replace the old Clair v2 when upgrading from 3.4.z. For instructions on configuring Clair v4, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html-single/manage_red_hat_quay/index#clair-standalone">Setting up Clair on a non-OpenShift Red Hat Quay deployment</a>.
 			</p><section class="section" id="target_images_5"><div class="titlepage"><div><div><h3 class="title">3.7.1. Target images</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
-							<span class="strong strong"><strong>Quay:</strong></span> registry.redhat.io/quay/quay-rhel8:v3.7.8
+							<span class="strong strong"><strong>Quay:</strong></span> registry.redhat.io/quay/quay-rhel8:v3.8
 						</li><li class="listitem">
-							<span class="strong strong"><strong>Clair:</strong></span> registry.redhat.io/quay/clair-rhel8:v3.7.8
+							<span class="strong strong"><strong>Clair:</strong></span> registry.redhat.io/quay/clair-rhel8:v3.8
 						</li><li class="listitem">
 							<span class="strong strong"><strong>PostgreSQL:</strong></span> registry.redhat.io/rhel8/postgresql-10:1
 						</li><li class="listitem">
@@ -300,11 +300,11 @@ spec:
 				</p></div></div><p>
 				Upgrading to Red Hat Quay 3.6.z from 3.3.z requires a database migration which does not support downgrading back to a prior version of Red Hat Quay. Please back up your database before performing this migration.
 			</p><p>
-				Users will also need to configure a completely new Clair v4 instance to replace the old Clair v2 when upgrading from 3.3.z. For instructions on configuring Clair v4, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.7/html-single/manage_red_hat_quay/index#clair-standalone">Setting up Clair on a non-OpenShift Red Hat Quay deployment</a>.
+				Users will also need to configure a completely new Clair v4 instance to replace the old Clair v2 when upgrading from 3.3.z. For instructions on configuring Clair v4, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html-single/manage_red_hat_quay/index#clair-standalone">Setting up Clair on a non-OpenShift Red Hat Quay deployment</a>.
 			</p><section class="section" id="target_images_6"><div class="titlepage"><div><div><h3 class="title">3.8.1. Target images</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
-							<span class="strong strong"><strong>Quay:</strong></span> registry.redhat.io/quay/quay-rhel8:v3.7.8
+							<span class="strong strong"><strong>Quay:</strong></span> registry.redhat.io/quay/quay-rhel8:v3.8
 						</li><li class="listitem">
-							<span class="strong strong"><strong>Clair:</strong></span> registry.redhat.io/quay/clair-rhel8:v3.7.8
+							<span class="strong strong"><strong>Clair:</strong></span> registry.redhat.io/quay/clair-rhel8:v3.8
 						</li><li class="listitem">
 							<span class="strong strong"><strong>PostgreSQL:</strong></span> registry.redhat.io/rhel8/postgresql-10:1
 						</li><li class="listitem">
@@ -326,7 +326,7 @@ spec:
       swift_user: *****</pre></section></section><section class="section" id="upgrade_to_3_5_7_from_3_4_z"><div class="titlepage"><div><div><h2 class="title">3.9. Upgrade to 3.5.7 from 3.4.z</h2></div></div></div><section class="section" id="target_images_7"><div class="titlepage"><div><div><h3 class="title">3.9.1. Target images</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
 							<span class="strong strong"><strong>Quay:</strong></span> registry.redhat.io/quay/quay-rhel8:v3.5.7
 						</li><li class="listitem">
-							<span class="strong strong"><strong>Clair:</strong></span> registry.redhat.io/quay/clair-rhel8:v3.7.8
+							<span class="strong strong"><strong>Clair:</strong></span> registry.redhat.io/quay/clair-rhel8:v3.8
 						</li><li class="listitem">
 							<span class="strong strong"><strong>PostgreSQL:</strong></span> registry.redhat.io/rhel8/postgresql-10:1
 						</li><li class="listitem">
@@ -336,7 +336,7 @@ spec:
 			</p><section class="section" id="target_images_8"><div class="titlepage"><div><div><h3 class="title">3.10.1. Target images</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
 							<span class="strong strong"><strong>Quay:</strong></span> registry.redhat.io/quay/quay-rhel8:v3.4.6
 						</li><li class="listitem">
-							<span class="strong strong"><strong>Clair:</strong></span> registry.redhat.io/quay/clair-rhel8:v3.7.8
+							<span class="strong strong"><strong>Clair:</strong></span> registry.redhat.io/quay/clair-rhel8:v3.8
 						</li><li class="listitem">
 							<span class="strong strong"><strong>PostgreSQL:</strong></span> registry.redhat.io/rhel8/postgresql-10:1
 						</li><li class="listitem">
@@ -344,7 +344,7 @@ spec:
 						</li></ul></div></section></section><section class="section" id="upgrade_to_3_3_4_from_3_2_z"><div class="titlepage"><div><div><h2 class="title">3.11. Upgrade to 3.3.4 from 3.2.z</h2></div></div></div><section class="section" id="target_images_9"><div class="titlepage"><div><div><h3 class="title">3.11.1. Target images</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
 							<span class="strong strong"><strong>Quay:</strong></span> quay.io/redhat/quay:v3.3.4
 						</li><li class="listitem">
-							<span class="strong strong"><strong>Clair:</strong></span> registry.redhat.io/quay/clair-rhel8:v3.7.8
+							<span class="strong strong"><strong>Clair:</strong></span> registry.redhat.io/quay/clair-rhel8:v3.8
 						</li><li class="listitem">
 							<span class="strong strong"><strong>PostgreSQL:</strong></span> rhscl/postgresql-96-rhel7
 						</li><li class="listitem">
@@ -371,7 +371,7 @@ spec:
 					</li></ol></div><section class="section" id="target_images_10"><div class="titlepage"><div><div><h3 class="title">3.12.1. Target images</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
 							<span class="strong strong"><strong>Quay:</strong></span> quay.io/redhat/quay:v3.2.2
 						</li><li class="listitem">
-							<span class="strong strong"><strong>Clair:</strong></span> registry.redhat.io/quay/clair-rhel8:v3.7.8
+							<span class="strong strong"><strong>Clair:</strong></span> registry.redhat.io/quay/clair-rhel8:v3.8
 						</li><li class="listitem">
 							<span class="strong strong"><strong>PostgreSQL:</strong></span> rhscl/postgresql-96-rhel7
 						</li><li class="listitem">
@@ -379,7 +379,7 @@ spec:
 						</li></ul></div></section></section><section class="section" id="upgrade_to_3_1_3_from_3_0_z"><div class="titlepage"><div><div><h2 class="title">3.13. Upgrade to 3.1.3 from 3.0.z</h2></div></div></div><section class="section" id="target_images_11"><div class="titlepage"><div><div><h3 class="title">3.13.1. Target images</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
 							<span class="strong strong"><strong>Quay:</strong></span> quay.io/redhat/quay:v3.1.3
 						</li><li class="listitem">
-							<span class="strong strong"><strong>Clair:</strong></span> registry.redhat.io/quay/clair-rhel8:v3.7.8
+							<span class="strong strong"><strong>Clair:</strong></span> registry.redhat.io/quay/clair-rhel8:v3.8
 						</li><li class="listitem">
 							<span class="strong strong"><strong>PostgreSQL:</strong></span> rhscl/postgresql-96-rhel7
 						</li><li class="listitem">
@@ -389,7 +389,7 @@ spec:
 			</p><p>
 				A background upgrade could take longer to run the upgrade depending on how many tags need to be processed. However, there is less total downtime. The downside of a background upgrade is that you will not have access to the latest features until the upgrade completes. The cluster runs from the Quay v3 container in v2 compatibility mode until the upgrade is complete.
 			</p><section class="section" id="upgrade-v3-concept"><div class="titlepage"><div><div><h3 class="title">3.14.1. Overview of upgrade</h3></div></div></div><p>
-					Follow the procedure below if you are starting with a Red Hat Quay 2.y.z cluster. Before upgrading to the latest Red Hat Quay 3.x version, you must first migrate that cluster to 3.0.5, as described <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.7/html-single/upgrade_red_hat_quay/index#upgrade_to_3_0_5_from_2_9_5">here</a>. Once your cluster is running 3.0.5, you can then upgrade to the latest 3.x version by sequentially upgrading to each minor version in turn. For example:
+					Follow the procedure below if you are starting with a Red Hat Quay 2.y.z cluster. Before upgrading to the latest Red Hat Quay 3.x version, you must first migrate that cluster to 3.0.5, as described <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html-single/upgrade_red_hat_quay/index#upgrade_to_3_0_5_from_2_9_5">here</a>. Once your cluster is running 3.0.5, you can then upgrade to the latest 3.x version by sequentially upgrading to each minor version in turn. For example:
 				</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
 							3.0.5 → 3.1.3
 						</li><li class="listitem">
@@ -535,7 +535,7 @@ spec:
 					Delete the old <code class="literal">QuayIntegration</code> custom resource.
 				</li><li class="listitem"><p class="simpara">
 					Delete the old <code class="literal">mutatingwebhookconfigurations</code>:
-				</p><pre class="programlisting language-bash">$ oc delete mutatingwebhookconfigurations.admissionregistration.k8s.io quay-bridge-operator</pre></li></ol></div></section><div><div xml:lang="en-US" class="legalnotice" id="idm45977858049120"><h1 class="legalnotice">Legal Notice</h1><div class="para">
+				</p><pre class="programlisting language-bash">$ oc delete mutatingwebhookconfigurations.admissionregistration.k8s.io quay-bridge-operator</pre></li></ol></div></section><div><div xml:lang="en-US" class="legalnotice" id="idm45640588807312"><h1 class="legalnotice">Legal Notice</h1><div class="para">
 		Copyright <span class="trademark"/>© 2022 Red Hat, Inc.
 	</div><div class="para">
 		The text of and illustrations in this document are licensed by Red Hat under a Creative Commons Attribution–Share Alike 3.0 Unported license ("CC-BY-SA"). An explanation of CC-BY-SA is available at <a class="uri" href="http://creativecommons.org/licenses/by-sa/3.0/">http://creativecommons.org/licenses/by-sa/3.0/</a>. In accordance with CC-BY-SA, if you distribute this document or an adaptation of it, you must provide the URL for the original version.
