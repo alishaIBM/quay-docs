@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" class="chrometwo"><head><title>Deploy Red Hat Quay on OpenShift with the Quay Operator</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css"/><meta name="generator" content="publican v4.3.4"/><meta name="description" content="Deploy Red Hat Quay on an OpenShift Cluster with the Red Hat Quay Operator"/><link rel="next" href="#idm46719081335984" title="Preface"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><script type="text/javascript" src="Common_Content/scripts/jquery-1.7.1.min.js"> </script><script type="text/javascript" src="Common_Content/scripts/utils.js"> </script><script type="text/javascript" src="Common_Content/scripts/highlight.js/highlight.pack.js"> </script></head><body><div id="chrometwo"><div id="main"><div xml:lang="en-US" class="book" id="idm46719076161664"><div class="titlepage"><div><div class="producttitle"><span class="productname">Red Hat Quay</span> <span class="productnumber">3.8</span></div><div><h1 class="title">Deploy Red Hat Quay on OpenShift with the Quay Operator</h1></div><div><h2 class="subtitle">Deploy Red Hat Quay on OpenShift with Quay Operator</h2></div><div><div xml:lang="en-US" class="authorgroup"><span class="orgname">Red Hat OpenShift Documentation Team</span></div></div><div><a href="#idm46719079132832">Legal Notice</a></div><div><div class="abstract"><p class="title"><strong>Abstract</strong></p><div class="para">
+<html xmlns="http://www.w3.org/1999/xhtml" class="chrometwo"><head><title>Deploy Red Hat Quay on OpenShift with the Quay Operator</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css"/><meta name="generator" content="publican v4.3.4"/><meta name="description" content="Deploy Red Hat Quay on an OpenShift Cluster with the Red Hat Quay Operator"/><link rel="next" href="#idm45659791936448" title="Preface"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><script type="text/javascript" src="Common_Content/scripts/jquery-1.7.1.min.js"> </script><script type="text/javascript" src="Common_Content/scripts/utils.js"> </script><script type="text/javascript" src="Common_Content/scripts/highlight.js/highlight.pack.js"> </script></head><body><div id="chrometwo"><div id="main"><div xml:lang="en-US" class="book" id="idm45659874896704"><div class="titlepage"><div><div class="producttitle"><span class="productname">Red Hat Quay</span> <span class="productnumber">3.8</span></div><div><h1 class="title">Deploy Red Hat Quay on OpenShift with the Quay Operator</h1></div><div><h2 class="subtitle">Deploy Red Hat Quay on OpenShift with Quay Operator</h2></div><div><div xml:lang="en-US" class="authorgroup"><span class="orgname">Red Hat OpenShift Documentation Team</span></div></div><div><a href="#idm45659787929424">Legal Notice</a></div><div><div class="abstract"><p class="title"><strong>Abstract</strong></p><div class="para">
 				Deploy Red Hat Quay on an OpenShift Cluster with the Red Hat Quay Operator
-			</div></div></div></div><hr/></div><div class="toc"><ul class="toc"><li><span class="preface"><a href="#idm46719081335984">Preface</a></span></li><li><span class="chapter"><a href="#operator-concepts">1. Introduction to the Red Hat Quay Operator</a></span><ul><li><span class="section"><a href="#operator-quayregistry-api">1.1. QuayRegistry API</a></span></li><li><span class="section"><a href="#operator-components-intro">1.2. Quay Operator components</a></span></li><li><span class="section"><a href="#operator-components-managed">1.3. Using managed components</a></span></li><li><span class="section"><a href="#operator-components-unmanaged">1.4. Using unmanaged components for dependencies</a></span></li><li><span class="section"><a href="#operator-config-bundle-secret">1.5. Config bundle secret</a></span></li><li><span class="section"><a href="#operator-prereq">1.6. Prerequisites for Red Hat Quay on OpenShift</a></span><ul><li><span class="section"><a href="#openshift_cluster">1.6.1. OpenShift cluster</a></span></li><li><span class="section"><a href="#resource_requirements">1.6.2. Resource Requirements</a></span></li><li><span class="section"><a href="#object_storage">1.6.3. Object Storage</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#installing_the_quay_operator_from_operatorhub">2. Installing the Quay Operator from OperatorHub</a></span></li><li><span class="chapter"><a href="#operator-preconfigure">3. Configuring Quay before deployment</a></span><ul><li><span class="section"><a href="#config-preconfigure-automation">3.1. Pre-configuring Red Hat Quay for automation</a></span><ul><li><span class="section"><a href="#allowing-the-api-to-create-first-user">3.1.1. Allowing the API to create the first user</a></span></li><li><span class="section"><a href="#enabling-general-api-access">3.1.2. Enabling general API access</a></span></li><li><span class="section"><a href="#adding-super-user">3.1.3. Adding a super user</a></span></li><li><span class="section"><a href="#restricting-user-creation">3.1.4. Restricting user creation</a></span></li><li><span class="section"><a href="#enabling-new-functionality-38">3.1.5. Enabling new functionality</a></span></li><li><span class="section"><a href="#enabling-new-functionality-37">3.1.6. Enabling new functionality</a></span></li><li><span class="section"><a href="#suggested-configuration-for-automation">3.1.7. Suggested configuration for automation</a></span></li></ul></li><li><span class="section"><a href="#operator-storage-preconfig">3.2. Configuring object storage</a></span><ul><li><span class="section"><a href="#operator-unmanaged-storage">3.2.1. Unmanaged storage</a></span></li><li><span class="section"><a href="#operator-managed-storage">3.2.2. Managed storage</a></span></li></ul></li><li><span class="section"><a href="#configuring_the_database">3.3. Configuring the database</a></span><ul><li><span class="section"><a href="#operator-unmanaged-postgres">3.3.1. Using an existing Postgres database</a></span></li><li><span class="section"><a href="#config-fields-db">3.3.2. Database configuration</a></span></li><li><span class="section"><a href="#operator-managed-postgres">3.3.3. Using the managed PostgreSQL</a></span></li></ul></li><li><span class="section"><a href="#operator-preconfig-tls-routes">3.4. Configuring TLS and routes</a></span><ul><li><span class="section"><a href="#creating_the_config_bundle_secret_with_tls_cert_key_pair">3.4.1. Creating the config bundle secret with TLS cert, key pair:</a></span></li></ul></li><li><span class="section"><a href="#operator-components-unmanaged-other">3.5. Configuring other components</a></span><ul><li><span class="section"><a href="#operator-unmanaged-redis">3.5.1. Using external Redis</a></span></li><li><span class="section"><a href="#operator-unmanaged-hpa">3.5.2. Disabling the Horizontal Pod Autoscaler</a></span></li><li><span class="section"><a href="#operator-unmanaged-route">3.5.3. Disabling Route Component</a></span></li><li><span class="section"><a href="#operator-unmanaged-monitoring">3.5.4. Unmanaged monitoring</a></span></li><li><span class="section"><a href="#operator-unmanaged-mirroring">3.5.5. Unmanaged mirroring</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#operator-deploy">4. Deploying Quay using the Quay Operator</a></span><ul><li><span class="section"><a href="#operator-deploy-cli">4.1. Deploying Red Hat Quay from the command line</a></span><ul><li><span class="section"><a href="#operator-deploy-view-pods-cli">4.1.1. Viewing created components using the command line</a></span></li><li><span class="section"><a href="#operator-deploy-hpa">4.1.2. Horizontal Pod Autoscaling (HPA)</a></span></li><li><span class="section"><a href="#deploy-quay-api">4.1.3. Using the API to deploy Red Hat Quay</a></span></li><li><span class="section"><a href="#operator-monitor-deploy-cli">4.1.4. Monitoring and debugging the deployment process</a></span></li></ul></li><li><span class="section"><a href="#operator-deploy-ui">4.2. Deploying Red Hat Quay from the OpenShift console</a></span><ul><li><span class="section"><a href="#operator-first-user">4.2.1. Using the Quay UI to create the first user</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#operator-config-cli">5. Configuring Quay on OpenShift</a></span><ul><li><span class="section"><a href="#editing_the_config_bundle_secret_in_the_openshift_console">5.1. Editing the config bundle secret in the OpenShift console</a></span></li><li><span class="section"><a href="#operator-config-cli-access">5.2. Determining QuayRegistry endpoints and secrets</a></span></li><li><span class="section"><a href="#operator-config-cli-download">5.3. Downloading the existing configuration</a></span></li><li><span class="section"><a href="#operator-custom-ssl-certs-config-bundle">5.4. Using the config bundle to configure custom SSL certs</a></span><ul><li><span class="section"><a href="#set_tls_to_unmanaged">5.4.1. Set TLS to unmanaged</a></span></li><li><span class="section"><a href="#add_certs_to_config_bundle">5.4.2. Add certs to config bundle</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#operator-config-ui">6. Using the config tool to reconfigure Quay on OpenShift</a></span><ul><li><span class="section"><a href="#operator-config-ui-access">6.1. Accessing the config editor</a></span><ul><li><span class="section"><a href="#retrieving_the_config_editor_credentials">6.1.1. Retrieving the config editor credentials</a></span></li><li><span class="section"><a href="#logging_in_to_the_config_editor">6.1.2. Logging in to the config editor</a></span></li><li><span class="section"><a href="#operator-config-ui-change">6.1.3. Changing configuration</a></span></li></ul></li><li><span class="section"><a href="#operator-config-ui-monitoring">6.2. Monitoring reconfiguration in the UI</a></span><ul><li><span class="section"><a href="#quayregistry_resource">6.2.1. QuayRegistry resource</a></span></li><li><span class="section"><a href="#events">6.2.2. Events</a></span></li></ul></li><li><span class="section"><a href="#operator-config-ui-updated">6.3. Accessing updated information after reconfiguration</a></span><ul><li><span class="section"><a href="#accessing_the_updated_config_tool_credentials_in_the_ui">6.3.1. Accessing the updated config tool credentials in the UI</a></span></li><li><span class="section"><a href="#accessing_the_updated_config_yaml_in_the_ui">6.3.2. Accessing the updated config.yaml in the UI</a></span></li></ul></li><li><span class="section"><a href="#config-ui-custom-ssl-certs">6.4. Custom SSL certificates UI</a></span></li><li><span class="section"><a href="#operator-external-access">6.5. External Access to the Registry</a></span></li></ul></li><li><span class="chapter"><a href="#quay_operator_features">7. Quay Operator features</a></span><ul><li><span class="section"><a href="#operator-console-monitoring-alerting">7.1. Console monitoring and alerting</a></span><ul><li><span class="section"><a href="#dashboard">7.1.1. Dashboard</a></span></li><li><span class="section"><a href="#metrics">7.1.2. Metrics</a></span></li><li><span class="section"><a href="#alerting">7.1.3. Alerting</a></span></li></ul></li><li><span class="section"><a href="#clair-openshift-airgap-update">7.2. Manually updating the vulnerability databases for Clair in an air-gapped OpenShift cluster</a></span><ul><li><span class="section"><a href="#clair-clairctl">7.2.1. Obtaining clairctl</a></span></li><li><span class="section"><a href="#retrieving_the_clair_config">7.2.2. Retrieving the Clair config</a></span></li><li><span class="section"><a href="#clair-export-bundle">7.2.3. Exporting the updaters bundle</a></span></li><li><span class="section"><a href="#clair-openshift-airgap-database">7.2.4. Configuring access to the Clair database in the air-gapped OpenShift cluster</a></span></li><li><span class="section"><a href="#clair-openshift-airgap-import-bundle">7.2.5. Importing the updaters bundle into the air-gapped environment</a></span></li></ul></li><li><span class="section"><a href="#fips-overview">7.3. FIPS readiness and compliance</a></span></li></ul></li><li><span class="chapter"><a href="#advanced_concepts">8. Advanced Concepts</a></span><ul><li><span class="section"><a href="#operator-deploy-infrastructure">8.1. Deploying Quay on infrastructure nodes</a></span><ul><li><span class="section"><a href="#label_and_taint_nodes_for_infrastructure_use">8.1.1. Label and taint nodes for infrastructure use</a></span></li><li><span class="section"><a href="#create_a_project_with_node_selector_and_toleration">8.1.2. Create a Project with node selector and toleration</a></span></li><li><span class="section"><a href="#install_the_quay_operator_in_the_namespace">8.1.3. Install the Quay Operator in the namespace</a></span></li><li><span class="section"><a href="#create_the_registry">8.1.4. Create the registry</a></span></li></ul></li><li><span class="section"><a href="#monitoring-single-namespace">8.2. Enabling monitoring when Operator is installed in a single namespace</a></span><ul><li><span class="section"><a href="#creating_a_cluster_monitoring_config_map">8.2.1. Creating a cluster monitoring config map</a></span></li><li><span class="section"><a href="#creating_a_user_defined_workload_monitoring_config_map">8.2.2. Creating a user-defined workload monitoring config map</a></span></li><li><span class="section"><a href="#enable_monitoring_for_user_defined_projects">8.2.3. Enable monitoring for user-defined projects</a></span></li><li><span class="section"><a href="#create_a_service_object_to_expose_quay_metrics">8.2.4. Create a Service object to expose Quay metrics</a></span></li><li><span class="section"><a href="#create_a_servicemonitor_object">8.2.5. Create a ServiceMonitor object</a></span></li><li><span class="section"><a href="#view_the_metrics_in_openshift">8.2.6. View the metrics in OpenShift</a></span></li></ul></li><li><span class="section"><a href="#operator-resize-storage">8.3. Resizing Managed Storage</a></span><ul><li><span class="section"><a href="#resize_noobaa_pvc">8.3.1. Resize Noobaa PVC</a></span></li><li><span class="section"><a href="#add_another_storage_pool">8.3.2. Add Another Storage Pool</a></span></li></ul></li><li><span class="section"><a href="#operator-customize-images">8.4. Customizing Default Operator Images</a></span><ul><li><span class="section"><a href="#environment_variables">8.4.1. Environment Variables</a></span></li><li><span class="section"><a href="#applying_overrides_to_a_running_operator">8.4.2. Applying Overrides to a Running Operator</a></span></li></ul></li><li><span class="section"><a href="#operator-cloudfront">8.5. AWS S3 CloudFront</a></span><ul><li><span class="section"><a href="#clair-unmanaged">8.5.1. Advanced Clair configuration</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#red-hat-quay-builders-enhancement">9. Red Hat Quay build enhancements</a></span><ul><li><span class="section"><a href="#red-hat-quay-builds-architecture">9.1. Red Hat Quay enhanced build architecture</a></span></li><li><span class="section"><a href="#red-hat-quay-build-limitations">9.2. Red Hat Quay build limitations</a></span></li><li><span class="section"><a href="#builders-virtual-environment">9.3. Creating a Red Hat Quay builders environment with OpenShift</a></span><ul><li><span class="section"><a href="#openshift_tls_component">9.3.1. OpenShift TLS component</a></span></li><li><span class="section"><a href="#red-hat-quay-quota-builders-establishment">9.3.2. Using OpenShift Container Platform for Red Hat Quay builders</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#georepl-intro">10. Geo-replication</a></span><ul><li><span class="section"><a href="#geo_replication_features">10.1. Geo-replication features</a></span></li><li><span class="section"><a href="#georepl-prereqs">10.2. Geo-replication requirements and constraints</a></span></li><li><span class="section"><a href="#georepl-arch-operator">10.3. Geo-replication using the Red Hat Quay Operator</a></span><ul><li><span class="section"><a href="#georepl-deploy-operator">10.3.1. Setting up geo-replication on Openshift</a></span></li><li><span class="section"><a href="#georepl-mixed-storage">10.3.2. Mixed storage for geo-replication</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#backing-up-and-restoring-intro">11. Backing up and restoring Red Hat Quay managed by the Red Hat Quay Operator</a></span><ul><li><span class="section"><a href="#backing-up-red-hat-quay-operator">11.1. Backing up Red Hat Quay</a></span><ul><li><span class="section"><a href="#red_hat_quay_configuration_backup">11.1.1. Red Hat Quay configuration backup</a></span></li><li><span class="section"><a href="#scale_down_your_red_hat_quay_deployment">11.1.2. Scale down your Red Hat Quay deployment</a></span></li><li><span class="section"><a href="#red_hat_quay_managed_database_backup">11.1.3. Red Hat Quay managed database backup</a></span></li><li><span class="section"><a href="#scale_the_red_hat_quay_deployment_back_up">11.1.4. Scale the Red Hat Quay deployment back up</a></span></li></ul></li><li><span class="section"><a href="#restoring-up-red-hat-quay">11.2. Restoring Red Hat Quay</a></span><ul><li><span class="section"><a href="#restoring_red_hat_quay_and_its_configuration_from_a_backup">11.2.1. Restoring Red Hat Quay and its configuration from a backup</a></span></li><li><span class="section"><a href="#scale_down_your_red_hat_quay_deployment_2">11.2.2. Scale down your Red Hat Quay deployment</a></span></li><li><span class="section"><a href="#restore_your_red_hat_quay_database">11.2.3. Restore your Red Hat Quay database</a></span></li><li><span class="section"><a href="#restore_your_red_hat_quay_object_storage_data">11.2.4. Restore your Red Hat Quay object storage data</a></span></li><li><span class="section"><a href="#scale_up_your_red_hat_quay_deployment">11.2.5. Scale up your Red Hat Quay deployment</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#operator-ipv6-dual-stack">12. Deploying IPv6 on the Red Hat Quay Operator</a></span><ul><li><span class="section"><a href="#proc-manage-enabling-ipv6">12.1. Enabling the IPv6 protocol family</a></span></li><li><span class="section"><a href="#operator-ipv6-limitations-38">12.2. IPv6 limitations</a></span></li></ul></li><li><span class="chapter"><a href="#operator-upgrade">13. Upgrading the Quay Operator Overview</a></span><ul><li><span class="section"><a href="#operator_lifecycle_manager">13.1. Operator Lifecycle Manager</a></span></li><li><span class="section"><a href="#upgrading_the_quay_operator">13.2. Upgrading the Quay Operator</a></span><ul><li><span class="section"><a href="#upgrading_quay">13.2.1. Upgrading Quay</a></span></li><li><span class="section"><a href="#upgrade-33-36">13.2.2. Notes on upgrading directly from 3.3.z or 3.4.z to 3.6</a></span></li><li><span class="section"><a href="#swift_configuration_when_upgrading_from_3_3_z_to_3_6">13.2.3. Swift configuration when upgrading from 3.3.z to 3.6</a></span></li><li><span class="section"><a href="#changing_the_update_channel_for_an_operator">13.2.4. Changing the update channel for an Operator</a></span></li><li><span class="section"><a href="#manually_approving_a_pending_operator_upgrade">13.2.5. Manually approving a pending Operator upgrade</a></span></li></ul></li><li><span class="section"><a href="#upgrading_a_quayregistry">13.3. Upgrading a QuayRegistry</a></span></li><li><span class="section"><a href="#upgrading_a_quayecosystem">13.4. Upgrading a QuayEcosystem</a></span><ul><li><span class="section"><a href="#reverting_quayecosystem_upgrade">13.4.1. Reverting QuayEcosystem Upgrade</a></span></li><li><span class="section"><a href="#supported_quayecosystem_configurations_for_upgrades">13.4.2. Supported QuayEcosystem Configurations for Upgrades</a></span></li></ul></li></ul></li></ul></div><section class="preface" id="idm46719081335984"><div class="titlepage"><div><div><h1 class="title">Preface</h1></div></div></div><p>
+			</div></div></div></div><hr/></div><div class="toc"><ul class="toc"><li><span class="preface"><a href="#idm45659791936448">Preface</a></span></li><li><span class="chapter"><a href="#operator-concepts">1. Introduction to the Red Hat Quay Operator</a></span><ul><li><span class="section"><a href="#operator-quayregistry-api">1.1. QuayRegistry API</a></span></li><li><span class="section"><a href="#operator-components-intro">1.2. Quay Operator components</a></span></li><li><span class="section"><a href="#operator-components-managed">1.3. Using managed components</a></span></li><li><span class="section"><a href="#operator-components-unmanaged">1.4. Using unmanaged components for dependencies</a></span></li><li><span class="section"><a href="#operator-config-bundle-secret">1.5. Config bundle secret</a></span></li><li><span class="section"><a href="#operator-prereq">1.6. Prerequisites for Red Hat Quay on OpenShift</a></span><ul><li><span class="section"><a href="#openshift_cluster">1.6.1. OpenShift cluster</a></span></li><li><span class="section"><a href="#resource_requirements">1.6.2. Resource Requirements</a></span></li><li><span class="section"><a href="#object_storage">1.6.3. Object Storage</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#installing_the_quay_operator_from_operatorhub">2. Installing the Quay Operator from OperatorHub</a></span></li><li><span class="chapter"><a href="#operator-preconfigure">3. Configuring Quay before deployment</a></span><ul><li><span class="section"><a href="#config-preconfigure-automation">3.1. Pre-configuring Red Hat Quay for automation</a></span><ul><li><span class="section"><a href="#allowing-the-api-to-create-first-user">3.1.1. Allowing the API to create the first user</a></span></li><li><span class="section"><a href="#enabling-general-api-access">3.1.2. Enabling general API access</a></span></li><li><span class="section"><a href="#adding-super-user">3.1.3. Adding a super user</a></span></li><li><span class="section"><a href="#restricting-user-creation">3.1.4. Restricting user creation</a></span></li><li><span class="section"><a href="#enabling-new-functionality-38">3.1.5. Enabling new functionality</a></span></li><li><span class="section"><a href="#enabling-new-functionality-37">3.1.6. Enabling new functionality</a></span></li><li><span class="section"><a href="#suggested-configuration-for-automation">3.1.7. Suggested configuration for automation</a></span></li></ul></li><li><span class="section"><a href="#operator-storage-preconfig">3.2. Configuring object storage</a></span><ul><li><span class="section"><a href="#operator-unmanaged-storage">3.2.1. Unmanaged storage</a></span></li><li><span class="section"><a href="#operator-managed-storage">3.2.2. Managed storage</a></span></li></ul></li><li><span class="section"><a href="#configuring_the_database">3.3. Configuring the database</a></span><ul><li><span class="section"><a href="#operator-unmanaged-postgres">3.3.1. Using an existing Postgres database</a></span></li><li><span class="section"><a href="#config-fields-db">3.3.2. Database configuration</a></span></li><li><span class="section"><a href="#operator-managed-postgres">3.3.3. Using the managed PostgreSQL</a></span></li></ul></li><li><span class="section"><a href="#operator-preconfig-tls-routes">3.4. Configuring TLS and routes</a></span><ul><li><span class="section"><a href="#creating_the_config_bundle_secret_with_tls_cert_key_pair">3.4.1. Creating the config bundle secret with TLS cert, key pair:</a></span></li></ul></li><li><span class="section"><a href="#operator-components-unmanaged-other">3.5. Configuring other components</a></span><ul><li><span class="section"><a href="#operator-unmanaged-redis">3.5.1. Using external Redis</a></span></li><li><span class="section"><a href="#operator-unmanaged-hpa">3.5.2. Disabling the Horizontal Pod Autoscaler</a></span></li><li><span class="section"><a href="#operator-unmanaged-route">3.5.3. Disabling Route Component</a></span></li><li><span class="section"><a href="#operator-unmanaged-monitoring">3.5.4. Unmanaged monitoring</a></span></li><li><span class="section"><a href="#operator-unmanaged-mirroring">3.5.5. Unmanaged mirroring</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#operator-deploy">4. Deploying Quay using the Quay Operator</a></span><ul><li><span class="section"><a href="#operator-deploy-cli">4.1. Deploying Red Hat Quay from the command line</a></span><ul><li><span class="section"><a href="#operator-deploy-view-pods-cli">4.1.1. Viewing created components using the command line</a></span></li><li><span class="section"><a href="#operator-deploy-hpa">4.1.2. Horizontal Pod Autoscaling (HPA)</a></span></li><li><span class="section"><a href="#deploy-quay-api">4.1.3. Using the API to deploy Red Hat Quay</a></span></li><li><span class="section"><a href="#operator-monitor-deploy-cli">4.1.4. Monitoring and debugging the deployment process</a></span></li></ul></li><li><span class="section"><a href="#operator-deploy-ui">4.2. Deploying Red Hat Quay from the OpenShift console</a></span><ul><li><span class="section"><a href="#operator-first-user">4.2.1. Using the Quay UI to create the first user</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#operator-config-cli">5. Configuring Quay on OpenShift</a></span><ul><li><span class="section"><a href="#editing_the_config_bundle_secret_in_the_openshift_console">5.1. Editing the config bundle secret in the OpenShift console</a></span></li><li><span class="section"><a href="#operator-config-cli-access">5.2. Determining QuayRegistry endpoints and secrets</a></span></li><li><span class="section"><a href="#operator-config-cli-download">5.3. Downloading the existing configuration</a></span></li><li><span class="section"><a href="#operator-custom-ssl-certs-config-bundle">5.4. Using the config bundle to configure custom SSL certs</a></span><ul><li><span class="section"><a href="#set_tls_to_unmanaged">5.4.1. Set TLS to unmanaged</a></span></li><li><span class="section"><a href="#add_certs_to_config_bundle">5.4.2. Add certs to config bundle</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#operator-config-ui">6. Using the config tool to reconfigure Quay on OpenShift</a></span><ul><li><span class="section"><a href="#operator-config-ui-access">6.1. Accessing the config editor</a></span><ul><li><span class="section"><a href="#retrieving_the_config_editor_credentials">6.1.1. Retrieving the config editor credentials</a></span></li><li><span class="section"><a href="#logging_in_to_the_config_editor">6.1.2. Logging in to the config editor</a></span></li><li><span class="section"><a href="#operator-config-ui-change">6.1.3. Changing configuration</a></span></li></ul></li><li><span class="section"><a href="#operator-config-ui-monitoring">6.2. Monitoring reconfiguration in the UI</a></span><ul><li><span class="section"><a href="#quayregistry_resource">6.2.1. QuayRegistry resource</a></span></li><li><span class="section"><a href="#events">6.2.2. Events</a></span></li></ul></li><li><span class="section"><a href="#operator-config-ui-updated">6.3. Accessing updated information after reconfiguration</a></span><ul><li><span class="section"><a href="#accessing_the_updated_config_tool_credentials_in_the_ui">6.3.1. Accessing the updated config tool credentials in the UI</a></span></li><li><span class="section"><a href="#accessing_the_updated_config_yaml_in_the_ui">6.3.2. Accessing the updated config.yaml in the UI</a></span></li></ul></li><li><span class="section"><a href="#config-ui-custom-ssl-certs">6.4. Custom SSL certificates UI</a></span></li><li><span class="section"><a href="#operator-external-access">6.5. External Access to the Registry</a></span></li></ul></li><li><span class="chapter"><a href="#quay_operator_features">7. Quay Operator features</a></span><ul><li><span class="section"><a href="#operator-console-monitoring-alerting">7.1. Console monitoring and alerting</a></span><ul><li><span class="section"><a href="#dashboard">7.1.1. Dashboard</a></span></li><li><span class="section"><a href="#metrics">7.1.2. Metrics</a></span></li><li><span class="section"><a href="#alerting">7.1.3. Alerting</a></span></li></ul></li><li><span class="section"><a href="#clair-openshift-airgap-update">7.2. Manually updating the vulnerability databases for Clair in an air-gapped OpenShift cluster</a></span><ul><li><span class="section"><a href="#clair-clairctl">7.2.1. Obtaining clairctl</a></span></li><li><span class="section"><a href="#retrieving_the_clair_config">7.2.2. Retrieving the Clair config</a></span></li><li><span class="section"><a href="#clair-export-bundle">7.2.3. Exporting the updaters bundle</a></span></li><li><span class="section"><a href="#clair-openshift-airgap-database">7.2.4. Configuring access to the Clair database in the air-gapped OpenShift cluster</a></span></li><li><span class="section"><a href="#clair-openshift-airgap-import-bundle">7.2.5. Importing the updaters bundle into the air-gapped environment</a></span></li></ul></li><li><span class="section"><a href="#fips-overview">7.3. FIPS readiness and compliance</a></span></li></ul></li><li><span class="chapter"><a href="#advanced_concepts">8. Advanced Concepts</a></span><ul><li><span class="section"><a href="#operator-deploy-infrastructure">8.1. Deploying Quay on infrastructure nodes</a></span><ul><li><span class="section"><a href="#label_and_taint_nodes_for_infrastructure_use">8.1.1. Label and taint nodes for infrastructure use</a></span></li><li><span class="section"><a href="#create_a_project_with_node_selector_and_toleration">8.1.2. Create a Project with node selector and toleration</a></span></li><li><span class="section"><a href="#install_the_quay_operator_in_the_namespace">8.1.3. Install the Quay Operator in the namespace</a></span></li><li><span class="section"><a href="#create_the_registry">8.1.4. Create the registry</a></span></li></ul></li><li><span class="section"><a href="#monitoring-single-namespace">8.2. Enabling monitoring when Operator is installed in a single namespace</a></span><ul><li><span class="section"><a href="#creating_a_cluster_monitoring_config_map">8.2.1. Creating a cluster monitoring config map</a></span></li><li><span class="section"><a href="#creating_a_user_defined_workload_monitoring_config_map">8.2.2. Creating a user-defined workload monitoring config map</a></span></li><li><span class="section"><a href="#enable_monitoring_for_user_defined_projects">8.2.3. Enable monitoring for user-defined projects</a></span></li><li><span class="section"><a href="#create_a_service_object_to_expose_quay_metrics">8.2.4. Create a Service object to expose Quay metrics</a></span></li><li><span class="section"><a href="#create_a_servicemonitor_object">8.2.5. Create a ServiceMonitor object</a></span></li><li><span class="section"><a href="#view_the_metrics_in_openshift">8.2.6. View the metrics in OpenShift</a></span></li></ul></li><li><span class="section"><a href="#operator-resize-storage">8.3. Resizing Managed Storage</a></span><ul><li><span class="section"><a href="#resize_noobaa_pvc">8.3.1. Resize Noobaa PVC</a></span></li><li><span class="section"><a href="#add_another_storage_pool">8.3.2. Add Another Storage Pool</a></span></li></ul></li><li><span class="section"><a href="#operator-customize-images">8.4. Customizing Default Operator Images</a></span><ul><li><span class="section"><a href="#environment_variables">8.4.1. Environment Variables</a></span></li><li><span class="section"><a href="#applying_overrides_to_a_running_operator">8.4.2. Applying Overrides to a Running Operator</a></span></li></ul></li><li><span class="section"><a href="#operator-cloudfront">8.5. AWS S3 CloudFront</a></span><ul><li><span class="section"><a href="#clair-unmanaged">8.5.1. Advanced Clair configuration</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#red-hat-quay-builders-enhancement">9. Red Hat Quay build enhancements</a></span><ul><li><span class="section"><a href="#red-hat-quay-builds-architecture">9.1. Red Hat Quay enhanced build architecture</a></span></li><li><span class="section"><a href="#red-hat-quay-build-limitations">9.2. Red Hat Quay build limitations</a></span></li><li><span class="section"><a href="#builders-virtual-environment">9.3. Creating a Red Hat Quay builders environment with OpenShift Container Platform</a></span><ul><li><span class="section"><a href="#openshift-tls-component">9.3.1. OpenShift Container Platform TLS component</a></span></li><li><span class="section"><a href="#red-hat-quay-quota-builders-establishment">9.3.2. Using OpenShift Container Platform for Red Hat Quay builders</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#georepl-intro">10. Geo-replication</a></span><ul><li><span class="section"><a href="#geo_replication_features">10.1. Geo-replication features</a></span></li><li><span class="section"><a href="#georepl-prereqs">10.2. Geo-replication requirements and constraints</a></span></li><li><span class="section"><a href="#georepl-arch-operator">10.3. Geo-replication using the Red Hat Quay Operator</a></span><ul><li><span class="section"><a href="#georepl-deploy-operator">10.3.1. Setting up geo-replication on Openshift</a></span></li><li><span class="section"><a href="#georepl-mixed-storage">10.3.2. Mixed storage for geo-replication</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#backing-up-and-restoring-intro">11. Backing up and restoring Red Hat Quay managed by the Red Hat Quay Operator</a></span><ul><li><span class="section"><a href="#backing-up-red-hat-quay-operator">11.1. Backing up Red Hat Quay</a></span><ul><li><span class="section"><a href="#red_hat_quay_configuration_backup">11.1.1. Red Hat Quay configuration backup</a></span></li><li><span class="section"><a href="#scale_down_your_red_hat_quay_deployment">11.1.2. Scale down your Red Hat Quay deployment</a></span></li><li><span class="section"><a href="#red_hat_quay_managed_database_backup">11.1.3. Red Hat Quay managed database backup</a></span></li><li><span class="section"><a href="#scale_the_red_hat_quay_deployment_back_up">11.1.4. Scale the Red Hat Quay deployment back up</a></span></li></ul></li><li><span class="section"><a href="#restoring-up-red-hat-quay">11.2. Restoring Red Hat Quay</a></span><ul><li><span class="section"><a href="#restoring_red_hat_quay_and_its_configuration_from_a_backup">11.2.1. Restoring Red Hat Quay and its configuration from a backup</a></span></li><li><span class="section"><a href="#scale_down_your_red_hat_quay_deployment_2">11.2.2. Scale down your Red Hat Quay deployment</a></span></li><li><span class="section"><a href="#restore_your_red_hat_quay_database">11.2.3. Restore your Red Hat Quay database</a></span></li><li><span class="section"><a href="#restore_your_red_hat_quay_object_storage_data">11.2.4. Restore your Red Hat Quay object storage data</a></span></li><li><span class="section"><a href="#scale_up_your_red_hat_quay_deployment">11.2.5. Scale up your Red Hat Quay deployment</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#operator-ipv6-dual-stack">12. Deploying IPv6 on the Red Hat Quay Operator</a></span><ul><li><span class="section"><a href="#proc-manage-enabling-ipv6">12.1. Enabling the IPv6 protocol family</a></span></li><li><span class="section"><a href="#operator-ipv6-limitations-38">12.2. IPv6 limitations</a></span></li></ul></li><li><span class="chapter"><a href="#operator-upgrade">13. Upgrading the Quay Operator Overview</a></span><ul><li><span class="section"><a href="#operator_lifecycle_manager">13.1. Operator Lifecycle Manager</a></span></li><li><span class="section"><a href="#upgrading_the_quay_operator">13.2. Upgrading the Quay Operator</a></span><ul><li><span class="section"><a href="#upgrading_quay">13.2.1. Upgrading Quay</a></span></li><li><span class="section"><a href="#upgrade-33-36">13.2.2. Notes on upgrading directly from 3.3.z or 3.4.z to 3.6</a></span></li><li><span class="section"><a href="#swift_configuration_when_upgrading_from_3_3_z_to_3_6">13.2.3. Swift configuration when upgrading from 3.3.z to 3.6</a></span></li><li><span class="section"><a href="#changing_the_update_channel_for_an_operator">13.2.4. Changing the update channel for an Operator</a></span></li><li><span class="section"><a href="#manually_approving_a_pending_operator_upgrade">13.2.5. Manually approving a pending Operator upgrade</a></span></li></ul></li><li><span class="section"><a href="#upgrading_a_quayregistry">13.3. Upgrading a QuayRegistry</a></span></li><li><span class="section"><a href="#upgrading_a_quayecosystem">13.4. Upgrading a QuayEcosystem</a></span><ul><li><span class="section"><a href="#reverting_quayecosystem_upgrade">13.4.1. Reverting QuayEcosystem Upgrade</a></span></li><li><span class="section"><a href="#supported_quayecosystem_configurations_for_upgrades">13.4.2. Supported QuayEcosystem Configurations for Upgrades</a></span></li></ul></li></ul></li></ul></div><section class="preface" id="idm45659791936448"><div class="titlepage"><div><div><h1 class="title">Preface</h1></div></div></div><p>
 			Red Hat Quay is an enterprise-quality container registry. Use Red Hat Quay to build and store container images, then make them available to deploy across your enterprise.
 		</p><p>
 			The Red Hat Quay Operator provides a simple method to deploy and manage Red Hat Quay on an OpenShift cluster.
@@ -443,15 +443,15 @@ spec:
 						With Red Hat Quay, connection to the database is configured by using the required <code class="literal">DB_URI</code> field.
 					</p><p>
 						The following table describes the <code class="literal">DB_URI</code> configuration field:
-					</p><div class="table" id="idm46719074042560"><p class="title"><strong>Table 3.1. Database URI</strong></p><div class="table-contents"><table class="lt-4-cols lt-7-rows"><colgroup><col style="width: 50%; " class="col_1"/><col style="width: 17%; " class="col_2"/><col style="width: 33%; " class="col_3"/></colgroup><thead><tr><th align="left" valign="top" id="idm46719081684464" scope="col">Field</th><th align="left" valign="top" id="idm46719081683376" scope="col">Type</th><th align="left" valign="top" id="idm46719081682288" scope="col">Description</th></tr></thead><tbody><tr><td align="left" valign="top" headers="idm46719081684464">
+					</p><div class="table" id="idm45659791515744"><p class="title"><strong>Table 3.1. Database URI</strong></p><div class="table-contents"><table class="lt-4-cols lt-7-rows"><colgroup><col style="width: 50%; " class="col_1"/><col style="width: 17%; " class="col_2"/><col style="width: 33%; " class="col_3"/></colgroup><thead><tr><th align="left" valign="top" id="idm45659792048752" scope="col">Field</th><th align="left" valign="top" id="idm45659792047664" scope="col">Type</th><th align="left" valign="top" id="idm45659792046576" scope="col">Description</th></tr></thead><tbody><tr><td align="left" valign="top" headers="idm45659792048752">
 									<p>
 										<span class="strong strong"><strong>DB_URI</strong></span><br/> (Required)
 									</p>
-									</td><td align="left" valign="top" headers="idm46719081683376">
+									</td><td align="left" valign="top" headers="idm45659792047664">
 									<p>
 										String
 									</p>
-									</td><td align="left" valign="top" headers="idm46719081682288">
+									</td><td align="left" valign="top" headers="idm45659792046576">
 									<p>
 										The URI for accessing the database, including any credentials.
 									</p>
@@ -465,39 +465,39 @@ spec:
 						Optional connection arguments are configured by the <code class="literal">DB_CONNECTION_ARGS</code> parameter. Some of the key-value pairs defined under <code class="literal">DB_CONNECTION_ARGS</code> are generic, while others are database specific.
 					</p><p>
 						The following table describes database connection arguments:
-					</p><div class="table" id="idm46719081018512"><p class="title"><strong>Table 3.2. Database connection arguments</strong></p><div class="table-contents"><table class="lt-4-cols lt-7-rows"><colgroup><col style="width: 50%; " class="col_1"/><col style="width: 17%; " class="col_2"/><col style="width: 33%; " class="col_3"/></colgroup><thead><tr><th align="left" valign="top" id="idm46719081581168" scope="col">Field</th><th align="left" valign="top" id="idm46719081580080" scope="col">Type</th><th align="left" valign="top" id="idm46719081578992" scope="col">Description</th></tr></thead><tbody><tr><td align="left" valign="top" headers="idm46719081581168">
+					</p><div class="table" id="idm45659791319072"><p class="title"><strong>Table 3.2. Database connection arguments</strong></p><div class="table-contents"><table class="lt-4-cols lt-7-rows"><colgroup><col style="width: 50%; " class="col_1"/><col style="width: 17%; " class="col_2"/><col style="width: 33%; " class="col_3"/></colgroup><thead><tr><th align="left" valign="top" id="idm45659783991280" scope="col">Field</th><th align="left" valign="top" id="idm45659783990192" scope="col">Type</th><th align="left" valign="top" id="idm45659783989104" scope="col">Description</th></tr></thead><tbody><tr><td align="left" valign="top" headers="idm45659783991280">
 									<p>
 										<span class="strong strong"><strong>DB_CONNECTION_ARGS</strong></span>
 									</p>
-									</td><td align="left" valign="top" headers="idm46719081580080">
+									</td><td align="left" valign="top" headers="idm45659783990192">
 									<p>
 										Object
 									</p>
-									</td><td align="left" valign="top" headers="idm46719081578992">
+									</td><td align="left" valign="top" headers="idm45659783989104">
 									<p>
 										Optional connection arguments for the database, such as timeouts and SSL.
 									</p>
-									</td></tr><tr><td align="left" valign="top" headers="idm46719081581168">
+									</td></tr><tr><td align="left" valign="top" headers="idm45659783991280">
 									<p>
 										<span class="strong strong"><strong>.autorollback</strong></span>
 									</p>
-									</td><td align="left" valign="top" headers="idm46719081580080">
+									</td><td align="left" valign="top" headers="idm45659783990192">
 									<p>
 										Boolean
 									</p>
-									</td><td align="left" valign="top" headers="idm46719081578992">
+									</td><td align="left" valign="top" headers="idm45659783989104">
 									<p>
 										Whether to use thread-local connections.<br/> Should always be <code class="literal">true</code>
 									</p>
-									</td></tr><tr><td align="left" valign="top" headers="idm46719081581168">
+									</td></tr><tr><td align="left" valign="top" headers="idm45659783991280">
 									<p>
 										<span class="strong strong"><strong>.threadlocals</strong></span>
 									</p>
-									</td><td align="left" valign="top" headers="idm46719081580080">
+									</td><td align="left" valign="top" headers="idm45659783990192">
 									<p>
 										Boolean
 									</p>
-									</td><td align="left" valign="top" headers="idm46719081578992">
+									</td><td align="left" valign="top" headers="idm45659783989104">
 									<p>
 										Whether to use auto-rollback connections.<br/> Should always be <code class="literal">true</code>
 									</p>
@@ -507,51 +507,51 @@ spec:
   sslmode: verify-ca
   sslrootcert: /path/to/cacert</pre><p>
 							The <code class="literal">sslmode</code> option determines whether, or with, what priority a secure SSL TCP/IP connection will be negotiated with the server. There are six modes:
-						</p><div class="table" id="idm46719081212784"><p class="title"><strong>Table 3.3. SSL options</strong></p><div class="table-contents"><table class="lt-4-cols lt-7-rows"><colgroup><col style="width: 50%; " class="col_1"/><col style="width: 50%; " class="col_2"/></colgroup><thead><tr><th align="left" valign="top" id="idm46719074060256" scope="col">Mode</th><th align="left" valign="top" id="idm46719074059168" scope="col">Description</th></tr></thead><tbody><tr><td align="left" valign="top" headers="idm46719074060256">
+						</p><div class="table" id="idm45659787655104"><p class="title"><strong>Table 3.3. SSL options</strong></p><div class="table-contents"><table class="lt-4-cols lt-7-rows"><colgroup><col style="width: 50%; " class="col_1"/><col style="width: 50%; " class="col_2"/></colgroup><thead><tr><th align="left" valign="top" id="idm45659788854960" scope="col">Mode</th><th align="left" valign="top" id="idm45659788853984" scope="col">Description</th></tr></thead><tbody><tr><td align="left" valign="top" headers="idm45659788854960">
 										<p>
 											<span class="strong strong"><strong>disable</strong></span>
 										</p>
-										</td><td align="left" valign="top" headers="idm46719074059168">
+										</td><td align="left" valign="top" headers="idm45659788853984">
 										<p>
 											Your configuration only tries non-SSL connections.
 										</p>
-										</td></tr><tr><td align="left" valign="top" headers="idm46719074060256">
+										</td></tr><tr><td align="left" valign="top" headers="idm45659788854960">
 										<p>
 											<span class="strong strong"><strong>allow</strong></span>
 										</p>
-										</td><td align="left" valign="top" headers="idm46719074059168">
+										</td><td align="left" valign="top" headers="idm45659788853984">
 										<p>
 											Your configuration first tries a non-SSL connection. Upon failure, tries an SSL connection.
 										</p>
-										</td></tr><tr><td align="left" valign="top" headers="idm46719074060256">
+										</td></tr><tr><td align="left" valign="top" headers="idm45659788854960">
 										<p>
 											<span class="strong strong"><strong>prefer</strong></span><br/> (Default)
 										</p>
-										</td><td align="left" valign="top" headers="idm46719074059168">
+										</td><td align="left" valign="top" headers="idm45659788853984">
 										<p>
 											Your configuration first tries an SSL connection. Upon failure, tries a non-SSL connection.
 										</p>
-										</td></tr><tr><td align="left" valign="top" headers="idm46719074060256">
+										</td></tr><tr><td align="left" valign="top" headers="idm45659788854960">
 										<p>
 											<span class="strong strong"><strong>require</strong></span>
 										</p>
-										</td><td align="left" valign="top" headers="idm46719074059168">
+										</td><td align="left" valign="top" headers="idm45659788853984">
 										<p>
 											Your configuration only tries an SSL connection. If a root CA file is present, it verifies the certificate in the same way as if verify-ca was specified.
 										</p>
-										</td></tr><tr><td align="left" valign="top" headers="idm46719074060256">
+										</td></tr><tr><td align="left" valign="top" headers="idm45659788854960">
 										<p>
 											<span class="strong strong"><strong>verify-ca</strong></span>
 										</p>
-										</td><td align="left" valign="top" headers="idm46719074059168">
+										</td><td align="left" valign="top" headers="idm45659788853984">
 										<p>
 											Your configuration only tries an SSL connection, and verifies that the server certificate is issued by a trusted certificate authority (CA).
 										</p>
-										</td></tr><tr><td align="left" valign="top" headers="idm46719074060256">
+										</td></tr><tr><td align="left" valign="top" headers="idm45659788854960">
 										<p>
 											<span class="strong strong"><strong>verify-full</strong></span>
 										</p>
-										</td><td align="left" valign="top" headers="idm46719074059168">
+										</td><td align="left" valign="top" headers="idm45659788853984">
 										<p>
 											Only tries an SSL connection, and verifies that the server certificate is issued by a trusted CA and that the requested server host name matches that in the certificate.
 										</p>
@@ -583,63 +583,63 @@ spec:
 						If TLS is <code class="literal">unmanaged</code> then you must supply certs, either with the config tool or directly in the config bundle
 					</li></ul></div><p>
 				The following table describes the valid options:
-			</p><div class="table" id="idm46719081479952"><p class="title"><strong>Table 3.4. Valid configuration options for TLS and routes</strong></p><div class="table-contents"><table class="gt-4-cols lt-7-rows"><colgroup><col style="width: 18%; " class="col_1"/><col style="width: 18%; " class="col_2"/><col style="width: 18%; " class="col_3"/><col style="width: 18%; " class="col_4"/><col style="width: 27%; " class="col_5"/></colgroup><thead><tr><th align="left" valign="top" id="idm46719075064608" scope="col">Option</th><th align="left" valign="top" id="idm46719081206512" scope="col">Route</th><th align="left" valign="top" id="idm46719081205424" scope="col">TLS</th><th align="left" valign="top" id="idm46719081204336" scope="col">Certs provided</th><th align="left" valign="top" id="idm46719081203248" scope="col">Result</th></tr></thead><tbody><tr><td align="left" valign="top" headers="idm46719075064608">
+			</p><div class="table" id="idm45659790576144"><p class="title"><strong>Table 3.4. Valid configuration options for TLS and routes</strong></p><div class="table-contents"><table class="gt-4-cols lt-7-rows"><colgroup><col style="width: 18%; " class="col_1"/><col style="width: 18%; " class="col_2"/><col style="width: 18%; " class="col_3"/><col style="width: 18%; " class="col_4"/><col style="width: 27%; " class="col_5"/></colgroup><thead><tr><th align="left" valign="top" id="idm45659791528720" scope="col">Option</th><th align="left" valign="top" id="idm45659791527632" scope="col">Route</th><th align="left" valign="top" id="idm45659791526544" scope="col">TLS</th><th align="left" valign="top" id="idm45659791525456" scope="col">Certs provided</th><th align="left" valign="top" id="idm45659786377312" scope="col">Result</th></tr></thead><tbody><tr><td align="left" valign="top" headers="idm45659791528720">
 							<p>
 								My own load balancer handles TLS
 							</p>
-							</td><td align="left" valign="top" headers="idm46719081206512">
+							</td><td align="left" valign="top" headers="idm45659791527632">
 							<p>
 								Managed
 							</p>
-							</td><td align="left" valign="top" headers="idm46719081205424">
+							</td><td align="left" valign="top" headers="idm45659791526544">
 							<p>
 								Managed
 							</p>
-							</td><td align="left" valign="top" headers="idm46719081204336">
+							</td><td align="left" valign="top" headers="idm45659791525456">
 							<p>
 								No
 							</p>
-							</td><td align="left" valign="top" headers="idm46719081203248">
+							</td><td align="left" valign="top" headers="idm45659786377312">
 							<p>
 								Edge Route with default wildcard cert
 							</p>
-							</td></tr><tr><td align="left" valign="top" headers="idm46719075064608">
+							</td></tr><tr><td align="left" valign="top" headers="idm45659791528720">
 							<p>
 								Red Hat Quay handles TLS
 							</p>
-							</td><td align="left" valign="top" headers="idm46719081206512">
+							</td><td align="left" valign="top" headers="idm45659791527632">
 							<p>
 								Managed
 							</p>
-							</td><td align="left" valign="top" headers="idm46719081205424">
+							</td><td align="left" valign="top" headers="idm45659791526544">
 							<p>
 								Unmanaged
 							</p>
-							</td><td align="left" valign="top" headers="idm46719081204336">
+							</td><td align="left" valign="top" headers="idm45659791525456">
 							<p>
 								Yes
 							</p>
-							</td><td align="left" valign="top" headers="idm46719081203248">
+							</td><td align="left" valign="top" headers="idm45659786377312">
 							<p>
 								Passthrough route with certs mounted inside the pod
 							</p>
-							</td></tr><tr><td align="left" valign="top" headers="idm46719075064608">
+							</td></tr><tr><td align="left" valign="top" headers="idm45659791528720">
 							<p>
 								Red Hat Quay handles TLS
 							</p>
-							</td><td align="left" valign="top" headers="idm46719081206512">
+							</td><td align="left" valign="top" headers="idm45659791527632">
 							<p>
 								Unmanaged
 							</p>
-							</td><td align="left" valign="top" headers="idm46719081205424">
+							</td><td align="left" valign="top" headers="idm45659791526544">
 							<p>
 								Unmanaged
 							</p>
-							</td><td align="left" valign="top" headers="idm46719081204336">
+							</td><td align="left" valign="top" headers="idm45659791525456">
 							<p>
 								Yes
 							</p>
-							</td><td align="left" valign="top" headers="idm46719081203248">
+							</td><td align="left" valign="top" headers="idm45659786377312">
 							<p>
 								Certificates are set inside the quay pod but route must be created manually
 							</p>
@@ -678,137 +678,137 @@ spec:
 						This section details the configuration fields available for Redis deployments.
 					</p><section class="section" id="build_logs"><div class="titlepage"><div><div><h5 class="title">3.5.1.1.1. Build logs</h5></div></div></div><p>
 							The following build logs configuration fields are available for Redis deployments:
-						</p><div class="table" id="idm46719076750272"><p class="title"><strong>Table 3.5. Build logs configuration</strong></p><div class="table-contents"><table class="lt-4-cols lt-7-rows"><colgroup><col style="width: 50%; " class="col_1"/><col style="width: 17%; " class="col_2"/><col style="width: 33%; " class="col_3"/></colgroup><thead><tr><th align="left" valign="top" id="idm46719075442448" scope="col">Field</th><th align="left" valign="top" id="idm46719075441360" scope="col">Type</th><th align="left" valign="top" id="idm46719075440272" scope="col">Description</th></tr></thead><tbody><tr><td align="left" valign="top" headers="idm46719075442448">
+						</p><div class="table" id="idm45659784548768"><p class="title"><strong>Table 3.5. Build logs configuration</strong></p><div class="table-contents"><table class="lt-4-cols lt-7-rows"><colgroup><col style="width: 50%; " class="col_1"/><col style="width: 17%; " class="col_2"/><col style="width: 33%; " class="col_3"/></colgroup><thead><tr><th align="left" valign="top" id="idm45659791647024" scope="col">Field</th><th align="left" valign="top" id="idm45659791645936" scope="col">Type</th><th align="left" valign="top" id="idm45659791644848" scope="col">Description</th></tr></thead><tbody><tr><td align="left" valign="top" headers="idm45659791647024">
 										<p>
 											<span class="strong strong"><strong>BUILDLOGS_REDIS</strong></span><br/> (Required)
 										</p>
-										</td><td align="left" valign="top" headers="idm46719075441360">
+										</td><td align="left" valign="top" headers="idm45659791645936">
 										<p>
 											Object
 										</p>
-										</td><td align="left" valign="top" headers="idm46719075440272">
+										</td><td align="left" valign="top" headers="idm45659791644848">
 										<p>
 											Redis connection details for build logs caching.
 										</p>
-										</td></tr><tr><td align="left" valign="top" headers="idm46719075442448">
+										</td></tr><tr><td align="left" valign="top" headers="idm45659791647024">
 										<p>
 											<span class="strong strong"><strong>.host</strong></span> <br/> (Required)
 										</p>
-										</td><td align="left" valign="top" headers="idm46719075441360">
+										</td><td align="left" valign="top" headers="idm45659791645936">
 										<p>
 											String
 										</p>
-										</td><td align="left" valign="top" headers="idm46719075440272">
+										</td><td align="left" valign="top" headers="idm45659791644848">
 										<p>
 											The hostname at which Redis is accessible.<br/><span class="strong strong"><strong>Example:</strong></span><br/><code class="literal">quay-server.example.com</code>
 										</p>
-										</td></tr><tr><td align="left" valign="top" headers="idm46719075442448">
+										</td></tr><tr><td align="left" valign="top" headers="idm45659791647024">
 										<p>
 											<span class="strong strong"><strong>.port</strong></span> <br/> (Required)
 										</p>
-										</td><td align="left" valign="top" headers="idm46719075441360">
+										</td><td align="left" valign="top" headers="idm45659791645936">
 										<p>
 											Number
 										</p>
-										</td><td align="left" valign="top" headers="idm46719075440272">
+										</td><td align="left" valign="top" headers="idm45659791644848">
 										<p>
 											The port at which Redis is accessible.<br/><span class="strong strong"><strong>Example:</strong></span><br/><code class="literal">6379</code>
 										</p>
-										</td></tr><tr><td align="left" valign="top" headers="idm46719075442448">
+										</td></tr><tr><td align="left" valign="top" headers="idm45659791647024">
 										<p>
 											<span class="strong strong"><strong>.password</strong></span>
 										</p>
-										</td><td align="left" valign="top" headers="idm46719075441360">
+										</td><td align="left" valign="top" headers="idm45659791645936">
 										<p>
 											String
 										</p>
-										</td><td align="left" valign="top" headers="idm46719075440272">
+										</td><td align="left" valign="top" headers="idm45659791644848">
 										<p>
 											The port at which Redis is accessible.<br/><span class="strong strong"><strong>Example:</strong></span><br/><code class="literal">strongpassword</code>
 										</p>
-										</td></tr><tr><td align="left" valign="top" headers="idm46719075442448">
+										</td></tr><tr><td align="left" valign="top" headers="idm45659791647024">
 										<p>
 											<span class="strong strong"><strong>.port</strong></span> <br/> (Required)
 										</p>
-										</td><td align="left" valign="top" headers="idm46719075441360">
+										</td><td align="left" valign="top" headers="idm45659791645936">
 										<p>
 											Number
 										</p>
-										</td><td align="left" valign="top" headers="idm46719075440272">
+										</td><td align="left" valign="top" headers="idm45659791644848">
 										<p>
 											The port at which Redis is accessible.<br/><span class="strong strong"><strong>Example:</strong></span><br/><code class="literal">6379</code>
 										</p>
-										</td></tr><tr><td align="left" valign="top" headers="idm46719075442448">
+										</td></tr><tr><td align="left" valign="top" headers="idm45659791647024">
 										<p>
 											<span class="strong strong"><strong>ssl</strong></span>
 										</p>
-										</td><td align="left" valign="top" headers="idm46719075441360">
+										</td><td align="left" valign="top" headers="idm45659791645936">
 										<p>
 											Boolean
 										</p>
-										</td><td align="left" valign="top" headers="idm46719075440272">
+										</td><td align="left" valign="top" headers="idm45659791644848">
 										<p>
 											Whether to enable TLS communication between Redis and Quay. Defaults to false.
 										</p>
 										</td></tr></tbody></table></div></div></section><section class="section" id="user-event-fields-redis"><div class="titlepage"><div><div><h5 class="title">3.5.1.1.2. User events</h5></div></div></div><p>
 							The following user event fields are available for Redis deployments:
-						</p><div class="table" id="idm46719074080080"><p class="title"><strong>Table 3.6. User events config</strong></p><div class="table-contents"><table class="lt-4-cols lt-7-rows"><colgroup><col style="width: 50%; " class="col_1"/><col style="width: 17%; " class="col_2"/><col style="width: 33%; " class="col_3"/></colgroup><thead><tr><th align="left" valign="top" id="idm46719074074320" scope="col">Field</th><th align="left" valign="top" id="idm46719074073232" scope="col">Type</th><th align="left" valign="top" id="idm46719075338864" scope="col">Description</th></tr></thead><tbody><tr><td align="left" valign="top" headers="idm46719074074320">
+						</p><div class="table" id="idm45659786857120"><p class="title"><strong>Table 3.6. User events config</strong></p><div class="table-contents"><table class="lt-4-cols lt-7-rows"><colgroup><col style="width: 50%; " class="col_1"/><col style="width: 17%; " class="col_2"/><col style="width: 33%; " class="col_3"/></colgroup><thead><tr><th align="left" valign="top" id="idm45659785634448" scope="col">Field</th><th align="left" valign="top" id="idm45659785633360" scope="col">Type</th><th align="left" valign="top" id="idm45659785632272" scope="col">Description</th></tr></thead><tbody><tr><td align="left" valign="top" headers="idm45659785634448">
 										<p>
 											<span class="strong strong"><strong>USER_EVENTS_REDIS</strong></span><br/> (Required)
 										</p>
-										</td><td align="left" valign="top" headers="idm46719074073232">
+										</td><td align="left" valign="top" headers="idm45659785633360">
 										<p>
 											Object
 										</p>
-										</td><td align="left" valign="top" headers="idm46719075338864">
+										</td><td align="left" valign="top" headers="idm45659785632272">
 										<p>
 											Redis connection details for user event handling.
 										</p>
-										</td></tr><tr><td align="left" valign="top" headers="idm46719074074320">
+										</td></tr><tr><td align="left" valign="top" headers="idm45659785634448">
 										<p>
 											<span class="strong strong"><strong>.host</strong></span> <br/> (Required)
 										</p>
-										</td><td align="left" valign="top" headers="idm46719074073232">
+										</td><td align="left" valign="top" headers="idm45659785633360">
 										<p>
 											String
 										</p>
-										</td><td align="left" valign="top" headers="idm46719075338864">
+										</td><td align="left" valign="top" headers="idm45659785632272">
 										<p>
 											The hostname at which Redis is accessible.<br/><span class="strong strong"><strong>Example:</strong></span><br/><code class="literal">quay-server.example.com</code>
 										</p>
-										</td></tr><tr><td align="left" valign="top" headers="idm46719074074320">
+										</td></tr><tr><td align="left" valign="top" headers="idm45659785634448">
 										<p>
 											<span class="strong strong"><strong>.port</strong></span> <br/> (Required)
 										</p>
-										</td><td align="left" valign="top" headers="idm46719074073232">
+										</td><td align="left" valign="top" headers="idm45659785633360">
 										<p>
 											Number
 										</p>
-										</td><td align="left" valign="top" headers="idm46719075338864">
+										</td><td align="left" valign="top" headers="idm45659785632272">
 										<p>
 											The port at which Redis is accessible.<br/><span class="strong strong"><strong>Example:</strong></span><br/><code class="literal">6379</code>
 										</p>
-										</td></tr><tr><td align="left" valign="top" headers="idm46719074074320">
+										</td></tr><tr><td align="left" valign="top" headers="idm45659785634448">
 										<p>
 											<span class="strong strong"><strong>.password</strong></span>
 										</p>
-										</td><td align="left" valign="top" headers="idm46719074073232">
+										</td><td align="left" valign="top" headers="idm45659785633360">
 										<p>
 											String
 										</p>
-										</td><td align="left" valign="top" headers="idm46719075338864">
+										</td><td align="left" valign="top" headers="idm45659785632272">
 										<p>
 											The port at which Redis is accessible.<br/><span class="strong strong"><strong>Example:</strong></span><br/><code class="literal">strongpassword</code>
 										</p>
-										</td></tr><tr><td align="left" valign="top" headers="idm46719074074320">
+										</td></tr><tr><td align="left" valign="top" headers="idm45659785634448">
 										<p>
 											<span class="strong strong"><strong>ssl</strong></span>
 										</p>
-										</td><td align="left" valign="top" headers="idm46719074073232">
+										</td><td align="left" valign="top" headers="idm45659785633360">
 										<p>
 											Boolean
 										</p>
-										</td><td align="left" valign="top" headers="idm46719075338864">
+										</td><td align="left" valign="top" headers="idm45659785632272">
 										<p>
 											Whether to enable TLS communication between Redis and Quay. Defaults to false.
 										</p>
@@ -1983,32 +1983,36 @@ data:
 				Running builds in Red Hat Quay in an unprivileged context might cause some commands that were working under the previous build strategy to fail. Attempts to change the build strategy could potentially cause performance issues and reliability with the build.
 			</p><p>
 				Running builds directly in a container will not have the same isolation as using virtual machines. Changing the build environment might also caused builds that were previously working to fail.
-			</p></section><section class="section" id="builders-virtual-environment"><div class="titlepage"><div><div><h2 class="title">9.3. Creating a Red Hat Quay builders environment with OpenShift</h2></div></div></div><section class="section" id="openshift_tls_component"><div class="titlepage"><div><div><h3 class="title">9.3.1. OpenShift TLS component</h3></div></div></div><p>
+			</p></section><section class="section" id="builders-virtual-environment"><div class="titlepage"><div><div><h2 class="title">9.3. Creating a Red Hat Quay builders environment with OpenShift Container Platform</h2></div></div></div><p>
+				The procedures in this section explain how to create a Red Hat Quay virtual builders environment with OpenShift Container Platform.
+			</p><section class="section" id="openshift-tls-component"><div class="titlepage"><div><div><h3 class="title">9.3.1. OpenShift Container Platform TLS component</h3></div></div></div><p>
 					The <code class="literal">tls</code> component allows you to control TLS configuration.
 				</p><div class="admonition note"><div class="admonition_header">Note</div><div><p>
-						Red Hat Quay 3.7 does not support builders when the TLS component is managed by the Operator.
+						Red Hat Quay 3.8 does not support builders when the TLS component is managed by the Operator.
 					</p></div></div><p>
-					If you set <code class="literal">tls</code> to <code class="literal">unmanaged</code>, you supply your own <code class="literal">ssl.cert</code> and <code class="literal">ssl.key</code> files. In this instance, if you want your cluster to support builders, you must add both the Quay route and the builder route name to the SAN list in the cert, or alternatively use a wildcard. To add the builder route, use the following format:
+					If you set <code class="literal">tls</code> to <code class="literal">unmanaged</code>, you supply your own <code class="literal">ssl.cert</code> and <code class="literal">ssl.key</code> files. In this instance, if you want your cluster to support builders, you must add both the Quay route and the builder route name to the SAN list in the cert, or use a wildcard.
+				</p><p>
+					To add the builder route, use the following format:
 				</p><pre class="programlisting language-bash">[quayregistry-cr-name]-quay-builder-[ocp-namespace].[ocp-domain-name]:443</pre></section><section class="section" id="red-hat-quay-quota-builders-establishment"><div class="titlepage"><div><div><h3 class="title">9.3.2. Using OpenShift Container Platform for Red Hat Quay builders</h3></div></div></div><p>
-					The following procedure describes how you can implement the builders feature in Red Hat Quay.
-				</p><div class="itemizedlist"><p class="title"><strong>Prerequisites</strong></p><ul class="itemizedlist" type="disc"><li class="listitem">
-							Builders require SSL certificates. For more information, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3/html/deploy_red_hat_quay_for_proof-of-concept_non-production_purposes/advanced_red_hat_quay_deployment#using_ssl_to_protect_connections_to_red_hat_quay">Adding TLS certificates to the Red Hat Quay container</a>.
-						</li><li class="listitem">
-							If you are using AWS S3 storage, you must modify your storage bucket in the AWS console, prior to running builders. See "Modifying your AWS S3 storage bucket" in the following section for the required parameters.
-						</li></ul></div><div class="admonition note"><div class="admonition_header">Procedure</div><div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
-								This procedure assumes you already have a cluster provisioned and a Quay Operator running.
-							</li><li class="listitem">
-								This procedure is for setting up a virtual namespace on OpenShift Container Platform.
-							</li></ul></div></div></div><section class="section" id="red-hat-quay-setting-up-builders"><div class="titlepage"><div><div><h4 class="title">9.3.2.1. Preparing OpenShift Container Platform for virtual builders</h4></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
-								Log in to your Red Hat Quay cluster using a cluster admin account.
+					Builders require SSL/TLS certificates. For more information about SSL/TLS certificates, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3/html/deploy_red_hat_quay_for_proof-of-concept_non-production_purposes/advanced_red_hat_quay_deployment#using_ssl_to_protect_connections_to_red_hat_quay">Adding TLS certificates to the Red Hat Quay container</a>.
+				</p><p>
+					If you are using Amazon Web Service (AWS) S3 storage, you must modify your storage bucket in the AWS console, prior to running builders. See "Modifying your AWS S3 storage bucket" in the following section for the required parameters.
+				</p><section class="section" id="red-hat-quay-setting-up-builders"><div class="titlepage"><div><div><h4 class="title">9.3.2.1. Preparing OpenShift Container Platform for virtual builders</h4></div></div></div><p>
+						Use the following procedure to prepare OpenShift Container Platform for Red Hat Quay virtual builders.
+					</p><div class="admonition note"><div class="admonition_header">Note</div><div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+									This procedure assumes you already have a cluster provisioned and a Quay Operator running.
+								</li><li class="listitem">
+									This procedure is for setting up a virtual namespace on OpenShift Container Platform.
+								</li></ul></div></div></div><div class="orderedlist"><p class="title"><strong>Procedure</strong></p><ol class="orderedlist" type="1"><li class="listitem">
+								Log in to your Red Hat Quay cluster using a cluster administrator account.
 							</li><li class="listitem"><p class="simpara">
-								Create a new project where your virtual builders will be run (e.g., <code class="literal">virtual-builders</code>).
+								Create a new project where your virtual builders will be run, for example, <code class="literal">virtual-builders</code>, by running the following command:
 							</p><pre class="programlisting language-terminal">$ oc new-project virtual-builders</pre></li><li class="listitem"><p class="simpara">
-								Create a <code class="literal">ServiceAccount</code> in this <code class="literal">Project</code> that will be used to run builds.
+								Create a <code class="literal">ServiceAccount</code> in the project that will be used to run builds by entering the following command:
 							</p><pre class="programlisting language-terminal">$ oc create sa -n virtual-builders quay-builder</pre></li><li class="listitem"><p class="simpara">
 								Provide the created service account with editing permissions so that it can run the build:
 							</p><pre class="programlisting language-terminal">$ oc adm policy -n virtual-builders add-role-to-user edit system:serviceaccount:virtual-builders:quay-builder</pre></li><li class="listitem"><p class="simpara">
-								Grant the Quay builder <code class="literal">anyuid scc</code> permissions:
+								Grant the Quay builder <code class="literal">anyuid scc</code> permissions by entering the following command:
 							</p><pre class="programlisting language-terminal">$ oc adm policy -n virtual-builders add-scc-to-user anyuid -z quay-builder</pre><div class="admonition note"><div class="admonition_header">Note</div><div><p>
 									This action requires cluster admin privileges. This is required because builders must run as the Podman user for unprivileged or rootless builds to work.
 								</p></div></div></li><li class="listitem"><p class="simpara">
@@ -2017,21 +2021,26 @@ data:
 										If using OpenShift Container Platform 4.10 or an earlier version, enter the following command:
 									</p><pre class="programlisting language-terminal">oc sa get-token -n virtual-builders quay-builder</pre></li><li class="listitem"><p class="simpara">
 										If using OpenShift Container Platform 4.11 or later, enter the following command:
-									</p><pre class="programlisting language-terminal">$ oc create token quay-builder -n virtual-builders</pre><div class="formalpara"><p class="title"><strong>Sample output</strong></p><p>
+									</p><pre class="programlisting language-terminal">$ oc create token quay-builder -n virtual-builders</pre><div class="formalpara"><p class="title"><strong>Example output</strong></p><p>
 											
 <pre class="programlisting language-terminal">eyJhbGciOiJSUzI1NiIsImtpZCI6IldfQUJkaDVmb3ltTHZ0dGZMYjhIWnYxZTQzN2dJVEJxcDJscldSdEUtYWsifQ...</pre>
 										</p></div></li></ol></div></li><li class="listitem"><p class="simpara">
-								Determine the builder route:
-							</p><pre class="programlisting language-terminal">$ oc get route -n quay-enterprise</pre><div class="formalpara"><p class="title"><strong>Sample output</strong></p><p>
+								Determine the builder route by entering the following command:
+							</p><pre class="programlisting language-terminal">$ oc get route -n quay-enterprise</pre><div class="formalpara"><p class="title"><strong>Example output</strong></p><p>
 									
 <pre class="programlisting language-terminal">NAME                                  HOST/PORT                                                                    PATH   SERVICES                              PORT   TERMINATION     WILDCARD
 ...
 example-registry-quay-builder         example-registry-quay-builder-quay-enterprise.apps.docs.quayteam.org                example-registry-quay-app             grpc   edge/Redirect   None
 ...</pre>
 								</p></div></li><li class="listitem"><p class="simpara">
-								Generate a self-signed SSL certificate with the .crt extension:
-							</p><pre class="screen">$ oc extract cm/kube-root-ca.crt -n openshift-apiserver ca.crt</pre><pre class="screen">$ mv ca.crt extra_ca_cert_build_cluster.crt</pre></li><li class="listitem"><p class="simpara">
-								Locate the secret for you config bundle in the Console, and choose Actions → Edit Secret and add the appropriate builder configuration:
+								Generate a self-signed SSL/TlS certificate with the .crt extension by entering the following command:
+							</p><pre class="programlisting language-terminal">$ oc extract cm/kube-root-ca.crt -n openshift-apiserver</pre><div class="formalpara"><p class="title"><strong>Example output</strong></p><p>
+									
+<pre class="programlisting language-terminal">ca.crt</pre>
+								</p></div></li><li class="listitem"><p class="simpara">
+								Rename the <code class="literal">ca.crt</code> file to <code class="literal">extra_ca_cert_build_cluster.crt</code> by entering the following command:
+							</p><pre class="programlisting language-terminal">$ mv ca.crt extra_ca_cert_build_cluster.crt</pre></li><li class="listitem"><p class="simpara">
+								Locate the secret for you configuration bundle in the <span class="strong strong"><strong>Console</strong></span>, and select <span class="strong strong"><strong>Actions</strong></span> → <span class="strong strong"><strong>Edit Secret</strong></span> and add the appropriate builder configuration:
 							</p><pre class="programlisting language-yaml">FEATURE_USER_INITIALIZE: true
 BROWSER_API_CALLS_XHR_ONLY: false
 SUPER_USERS:
@@ -2070,30 +2079,30 @@ BUILD_MANAGER:
         NODE_SELECTOR_LABEL_VALUE: ""
         SERVICE_ACCOUNT_NAME: &lt;sample_service_account_name&gt;
         SERVICE_ACCOUNT_TOKEN: &lt;sample_account_token&gt; <span id="CO3-12"/><span class="callout">12</span></pre><div class="calloutlist"><dl class="calloutlist"><dt><a href="#CO3-1"><span class="callout">1</span></a> </dt><dd><div class="para">
-										The build route is obtained by running <code class="literal">oc get route -n</code> with the name of your OpenShift Operators namespace. A port must be provided at the end of the route, for example, and it should follow the following format: <code class="literal">[quayregistry-cr-name]-quay-builder-[ocp-namespace].[ocp-domain-name]:443</code>.
+										The build route is obtained by running <code class="literal">oc get route -n</code> with the name of your OpenShift Operator’s namespace. A port must be provided at the end of the route, and it should use the following format: <code class="literal">[quayregistry-cr-name]-quay-builder-[ocp-namespace].[ocp-domain-name]:443</code>.
 									</div></dd><dt><a href="#CO3-2"><span class="callout">2</span></a> </dt><dd><div class="para">
 										If the <code class="literal">JOB_REGISTRATION_TIMEOUT</code> parameter is set too low, you might receive the following error: <code class="literal">failed to register job to build manager: rpc error: code = Unauthenticated desc = Invalid build token: Signature has expired</code>. It is suggested that this parameter be set to at least 240.
 									</div></dd><dt><a href="#CO3-3"><span class="callout">3</span></a> </dt><dd><div class="para">
-										If your Redis host has a password or SSL certificates, you must update accordingly.
+										If your Redis host has a password or SSL/TLS certificates, you must update accordingly.
 									</div></dd><dt><a href="#CO3-4"><span class="callout">4</span></a> </dt><dd><div class="para">
 										Set to match the name of your virtual builders namespace, for example, <code class="literal">virtual-builders</code>.
 									</div></dd><dt><a href="#CO3-5"><span class="callout">5</span></a> </dt><dd><div class="para">
-										For early access, the <code class="literal">BUILDER_CONTAINER_IMAGE</code> is currently <code class="literal">quay.io/projectquay/quay-builder:3.7.0-rc.2</code>. Note that this might change during the early access window. In the event this happens, customers will be alerted.
+										For early access, the <code class="literal">BUILDER_CONTAINER_IMAGE</code> is currently <code class="literal">quay.io/projectquay/quay-builder:3.7.0-rc.2</code>. Note that this might change during the early access window. If this happens, customers are alerted.
 									</div></dd><dt><a href="#CO3-6"><span class="callout">6</span></a> </dt><dd><div class="para">
-										Obtained by running <code class="literal">oc cluster-info</code>.
+										The <code class="literal">K8S_API_SERVER</code> is obtained by running <code class="literal">oc cluster-info</code>.
 									</div></dd><dt><a href="#CO3-7"><span class="callout">7</span></a> </dt><dd><div class="para">
 										You must manually create and add your custom CA cert, for example, <code class="literal">K8S_API_TLS_CA: /conf/stack/extra_ca_certs/build_cluster.crt</code>.
 									</div></dd><dt><a href="#CO3-8"><span class="callout">8</span></a> </dt><dd><div class="para">
-										Defaults to 5120Mi if left unspecified.
+										Defaults to <code class="literal">5120Mi</code> if left unspecified.
 									</div></dd><dt><a href="#CO3-9"><span class="callout">9</span></a> </dt><dd><div class="para">
-										For virtual builds, you must ensure that there are enough resources in your cluster. Defaults to 1000m if left unspecified.
+										For virtual builds, you must ensure that there are enough resources in your cluster. Defaults to <code class="literal">1000m</code> if left unspecified.
 									</div></dd><dt><a href="#CO3-10"><span class="callout">10</span></a> </dt><dd><div class="para">
-										Defaults to 3968Mi if left unspecified.
+										Defaults to <code class="literal">3968Mi</code> if left unspecified.
 									</div></dd><dt><a href="#CO3-11"><span class="callout">11</span></a> </dt><dd><div class="para">
-										Defaults to 500m if left unspecified.
+										Defaults to <code class="literal">500m</code> if left unspecified.
 									</div></dd><dt><a href="#CO3-12"><span class="callout">12</span></a> </dt><dd><div class="para">
 										Obtained when running <code class="literal">oc create sa</code>.
-									</div></dd></dl></div><div class="formalpara"><p class="title"><strong>Sample config</strong></p><p>
+									</div></dd></dl></div><div class="formalpara"><p class="title"><strong>Sample configuration</strong></p><p>
 									
 <pre class="programlisting language-yaml">FEATURE_USER_INITIALIZE: true
 BROWSER_API_CALLS_XHR_ONLY: false
@@ -2133,16 +2142,16 @@ BUILD_MANAGER:
         NODE_SELECTOR_LABEL_VALUE: ""
         SERVICE_ACCOUNT_NAME: quay-builder
         SERVICE_ACCOUNT_TOKEN: "eyJhbGciOiJSUzI1NiIsImtpZCI6IldfQUJkaDVmb3ltTHZ0dGZMYjhIWnYxZTQzN2dJVEJxcDJscldSdEUtYWsifQ"</pre>
-								</p></div></li></ol></div></section><section class="section" id="red-hat-quay-manual-ssl-for-builders"><div class="titlepage"><div><div><h4 class="title">9.3.2.2. Manually adding SSL certificates.</h4></div></div></div><div class="admonition important"><div class="admonition_header">Important</div><div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
-									Due to a known issue with the configuration tool, you must manually add your custom SSL certificates to properly run builders. Use the following procedure to manually add custom SSL certificates. For more information creating SSL certificates, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3/html/deploy_red_hat_quay_for_proof-of-concept_non-production_purposes/advanced_red_hat_quay_deployment#using_ssl_to_protect_connections_to_red_hat_quay">Adding TLS certificates to the Red Hat Quay container</a>.
-								</li></ul></div></div></div><section class="section" id="create_and_sign_certs"><div class="titlepage"><div><div><h5 class="title">9.3.2.2.1. Create and sign certs</h5></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p class="simpara">
+								</p></div></li></ol></div></section><section class="section" id="red-hat-quay-manual-ssl-for-builders"><div class="titlepage"><div><div><h4 class="title">9.3.2.2. Manually adding SSL/TLS certificates</h4></div></div></div><p>
+						Due to a known issue with the configuration tool, you must manually add your custom SSL/TLS certificates to properly run builders. Use the following procedure to manually add custom SSL/TLS certificates.
+					</p><p>
+						For more information creating SSL/TLS certificates, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3/html/deploy_red_hat_quay_for_proof-of-concept_non-production_purposes/advanced_red_hat_quay_deployment#using_ssl_to_protect_connections_to_red_hat_quay">Adding TLS certificates to the Red Hat Quay container</a>.
+					</p><section class="section" id="create-sign-certificates"><div class="titlepage"><div><div><h5 class="title">9.3.2.2.1. Creating and signing certificates</h5></div></div></div><p>
+							Use the following procedure to create and sign an SSL/TLS certificate.
+						</p><div class="itemizedlist"><p class="title"><strong>Procedure</strong></p><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
 									Create a certificate authority and sign a certificate. For more information, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3/html/deploy_red_hat_quay_for_proof-of-concept_non-production_purposes/advanced_red_hat_quay_deployment#create-a-ca-and-sign-a-certificate">Create a Certificate Authority and sign a certificate</a>.
-								</p><div class="admonition note"><div class="admonition_header">Note</div><div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
-												Add an <code class="literal">alt_name</code> for the URL of your Quay registry.
-											</li><li class="listitem">
-												Add an <code class="literal">alt_name</code> for the <code class="literal">BUILDMAN_HOSTNAME</code> that is specified in your config.yaml.
-											</li></ul></div><div class="formalpara"><p class="title"><strong>openssl.cnf</strong></p><p>
-											
+								</p><div class="formalpara"><p class="title"><strong>openssl.cnf</strong></p><p>
+										
 <pre class="programlisting language-terminal">[req]
 req_extensions = v3_req
 distinguished_name = req_distinguished_name
@@ -2152,31 +2161,41 @@ basicConstraints = CA:FALSE
 keyUsage = nonRepudiation, digitalSignature, keyEncipherment
 subjectAltName = @alt_names
 [alt_names]
-DNS.1 = example-registry-quay-quay-enterprise.apps.docs.quayteam.org
-DNS.2 = example-registry-quay-builder-quay-enterprise.apps.docs.quayteam.org</pre>
-										</p></div></div></div><div class="formalpara"><p class="title"><strong>Sample commands</strong></p><p>
+DNS.1 = example-registry-quay-quay-enterprise.apps.docs.quayteam.org <span id="CO4-1"/><span class="callout">1</span>
+DNS.2 = example-registry-quay-builder-quay-enterprise.apps.docs.quayteam.org <span id="CO4-2"/><span class="callout">2</span></pre>
+									</p></div><div class="calloutlist"><dl class="calloutlist"><dt><a href="#CO4-1"><span class="callout">1</span></a> </dt><dd><div class="para">
+											An <code class="literal">alt_name</code> for the URL of your Red Hat Quay registry must be included.
+										</div></dd><dt><a href="#CO4-2"><span class="callout">2</span></a> </dt><dd><div class="para">
+											An <code class="literal">alt_name</code> for the <code class="literal">BUILDMAN_HOSTNAME</code>
+										</div></dd></dl></div><div class="formalpara"><p class="title"><strong>Sample commands</strong></p><p>
 										
 <pre class="programlisting language-terminal">$ openssl genrsa -out rootCA.key 2048
 $ openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem
 $ openssl genrsa -out ssl.key 2048
 $ openssl req -new -key ssl.key -out ssl.csr
 $ openssl x509 -req -in ssl.csr -CA rootCA.pem -CAkey rootCA.key -CAcreateserial -out ssl.cert -days 356 -extensions v3_req -extfile openssl.cnf</pre>
-									</p></div></li></ol></div></section><section class="section" id="set_tls_to_unmanaged_2"><div class="titlepage"><div><div><h5 class="title">9.3.2.2.2. Set TLS to unmanaged</h5></div></div></div><p>
-							In your Quay Registry yaml, set <code class="literal">kind: tls</code> to <code class="literal">managed: false</code>:
-						</p><pre class="programlisting language-yaml">  - kind: tls
-    managed: false</pre><p>
-							In the events, you should see that the change is blocked until you set up the appropriate config:
-						</p><pre class="programlisting language-yaml">    - lastTransitionTime: '2022-03-28T12:56:49Z'
+									</p></div></li></ul></div></section><section class="section" id="setting-tls-unmanaged"><div class="titlepage"><div><div><h5 class="title">9.3.2.2.2. Setting TLS to unmanaged</h5></div></div></div><p>
+							Use the following procedure to set <code class="literal">king:tls</code> to unmanaged.
+						</p><div class="orderedlist"><p class="title"><strong>Procedure</strong></p><ol class="orderedlist" type="1"><li class="listitem"><p class="simpara">
+									In your Red Hat Quay Registry YAML, set <code class="literal">kind: tls</code> to <code class="literal">managed: false</code>:
+								</p><pre class="programlisting language-yaml">  - kind: tls
+    managed: false</pre></li><li class="listitem"><p class="simpara">
+									On the <span class="strong strong"><strong>Events</strong></span> page, the change is blocked until you set up the appropriate <code class="literal">config.yaml</code> file. For example:
+								</p><pre class="programlisting language-yaml">    - lastTransitionTime: '2022-03-28T12:56:49Z'
       lastUpdateTime: '2022-03-28T12:56:49Z'
       message: &gt;-
         required component `tls` marked as unmanaged, but `configBundleSecret`
         is missing necessary fields
       reason: ConfigInvalid
-      status: 'True'</pre></section><section class="section" id="create_temporary_secrets"><div class="titlepage"><div><div><h5 class="title">9.3.2.2.3. Create temporary secrets</h5></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p class="simpara">
-									Create a secret in your default namespace for the CA cert:
+      status: 'True'</pre></li></ol></div></section><section class="section" id="creating-temporary-secrets"><div class="titlepage"><div><div><h5 class="title">9.3.2.2.3. Creating temporary secrets</h5></div></div></div><p>
+							Use the following procedure to create temporary secrets for the CA certificate.
+						</p><div class="orderedlist"><p class="title"><strong>Procedure</strong></p><ol class="orderedlist" type="1"><li class="listitem"><p class="simpara">
+									Create a secret in your default namespace for the CA certificate:
 								</p><pre class="screen">$ oc create secret generic -n quay-enterprise temp-crt --from-file extra_ca_cert_build_cluster.crt</pre></li><li class="listitem"><p class="simpara">
-									Create a secret in your default namespace for the ssl.key and ssl.cert files:
-								</p><pre class="screen">$ oc create secret generic -n quay-enterprise quay-config-ssl --from-file ssl.cert --from-file ssl.key</pre></li></ol></div></section><section class="section" id="copy_secret_data_to_config_yaml"><div class="titlepage"><div><div><h5 class="title">9.3.2.2.4. Copy secret data to config.yaml</h5></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+									Create a secret in your default namespace for the <code class="literal">ssl.key</code> and <code class="literal">ssl.cert</code> files:
+								</p><pre class="screen">$ oc create secret generic -n quay-enterprise quay-config-ssl --from-file ssl.cert --from-file ssl.key</pre></li></ol></div></section><section class="section" id="copying-secret-data-to-config"><div class="titlepage"><div><div><h5 class="title">9.3.2.2.4. Copying secret data to the configuration YAML</h5></div></div></div><p>
+							Use the following procedure to copy secret data to your <code class="literal">config.yaml</code> file.
+						</p><div class="orderedlist"><p class="title"><strong>Procedure</strong></p><ol class="orderedlist" type="1"><li class="listitem">
 									Locate the new secrets in the console UI at <span class="strong strong"><strong>Workloads</strong></span> → <span class="strong strong"><strong>Secrets</strong></span>.
 								</li><li class="listitem"><p class="simpara">
 									For each secret, locate the YAML view:
@@ -2207,9 +2226,9 @@ data:
   ssl.key: &gt;-
     LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFcFFJQkFBS0NBUUVBc...
 type: Opaque</pre></li><li class="listitem"><p class="simpara">
-									Locate the secret for your Quay Registry configuration bundle in the UI, or via the command line by running a command such as:
+									Locate the secret for your Red Hat Quay registry configuration bundle in the UI, or through the command line by running a command like the following:
 								</p><pre class="programlisting language-terminal">$ oc get quayregistries.quay.redhat.com -o jsonpath="{.items[0].spec.configBundleSecret}{'\n'}"  -n quay-enterprise</pre></li><li class="listitem"><p class="simpara">
-									In the OpenShift console, select the YAML tab for your config bundle secret, and add the data from the two secrets you created:
+									In the OpenShift Container Platform console, select the YAML tab for your configuration bundle secret, and add the data from the two secrets you created:
 								</p><pre class="programlisting language-yaml">kind: Secret
 apiVersion: v1
 metadata:
@@ -2228,9 +2247,11 @@ data:
     LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUVaakNDQTA2Z0F3SUJBZ0lVT...
   ssl.key: &gt;-
     LS0tLS1CRUdJTiBSU0EgUFJJVkFURSBLRVktLS0tLQpNSUlFcFFJQkFBS0NBUUVBc...
-type: Opaque</pre></li><li class="listitem"><p class="simpara">
-									Click <span class="strong strong"><strong>Save</strong></span>. You should see the pods being re-started:
-								</p><pre class="programlisting language-terminal">$ oc get pods -n quay-enterprise</pre><div class="formalpara"><p class="title"><strong>Sample output</strong></p><p>
+type: Opaque</pre></li><li class="listitem">
+									Click <span class="strong strong"><strong>Save</strong></span>.
+								</li><li class="listitem"><p class="simpara">
+									Enter the following command to see if your pods are restarting:
+								</p><pre class="programlisting language-terminal">$ oc get pods -n quay-enterprise</pre><div class="formalpara"><p class="title"><strong>Example output</strong></p><p>
 										
 <pre class="programlisting language-terminal">NAME                                                   READY   STATUS              RESTARTS   AGE
 ...
@@ -2245,8 +2266,8 @@ example-registry-quay-mirror-764d7b68d9-jmlkk          1/1     Terminating      
 example-registry-quay-mirror-764d7b68d9-jqzwg          1/1     Terminating         0          5d21h
 example-registry-quay-redis-7cc5f6c977-956g8           1/1     Running             0          5d21h</pre>
 									</p></div></li><li class="listitem"><p class="simpara">
-									After your Quay registry has reconfigured, check that your Quay app pods are running:
-								</p><pre class="programlisting language-terminal">$ oc get pods -n quay-enterprise</pre><div class="formalpara"><p class="title"><strong>Sample output</strong></p><p>
+									After your Red Hat Quay registry has reconfigured, enter the following command to check if the Red Hat Quay app pods are running:
+								</p><pre class="programlisting language-terminal">$ oc get pods -n quay-enterprise</pre><div class="formalpara"><p class="title"><strong>Example output</strong></p><p>
 										
 <pre class="programlisting language-terminal">example-registry-quay-app-6786987b99-sz6kb             1/1     Running            0          7m45s
 example-registry-quay-app-6786987b99-vgg2v             1/1     Running            0          9m1s
@@ -2257,15 +2278,17 @@ example-registry-quay-mirror-758fc68ff7-5wxlp          1/1     Running          
 example-registry-quay-mirror-758fc68ff7-lbl82          1/1     Running            0          8m29s
 example-registry-quay-redis-7cc5f6c977-956g8           1/1     Running            0          5d21h</pre>
 									</p></div></li><li class="listitem"><p class="simpara">
-									In your browser, access the registry endpoint and validate that the certificate has been updated appropriately:
+									In your browser, access the registry endpoint and validate that the certificate has been updated appropriately. For example:
 								</p><pre class="programlisting language-terminal">Common Name (CN)	example-registry-quay-quay-enterprise.apps.docs.quayteam.org
 Organisation (O)	DOCS
-Organisational Unit (OU)	QUAY</pre></li></ol></div></section></section><section class="section" id="red-hat-quay-builders-ui"><div class="titlepage"><div><div><h4 class="title">9.3.2.3. Using the UI to create a build trigger</h4></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
-								Log in to your Quay repository.
+Organisational Unit (OU)	QUAY</pre></li></ol></div></section></section><section class="section" id="red-hat-quay-builders-ui"><div class="titlepage"><div><div><h4 class="title">9.3.2.3. Using the UI to create a build trigger</h4></div></div></div><p>
+						Use the following procedure to use the UI to create a build trigger.
+					</p><div class="orderedlist"><p class="title"><strong>Procedure</strong></p><ol class="orderedlist" type="1"><li class="listitem">
+								Log in to your Red Hat Quay repository.
 							</li><li class="listitem">
 								Click <span class="strong strong"><strong>Create New Repository</strong></span> and create a new registry, for example, <code class="literal">testrepo</code>.
 							</li><li class="listitem"><p class="simpara">
-								On the <span class="strong strong"><strong>Repositories</strong></span> page, click <span class="strong strong"><strong>Builds</strong></span> tab on the left hand pane. Alternatively, use the corresponding URL directly, for example:
+								On the <span class="strong strong"><strong>Repositories</strong></span> page, click the <span class="strong strong"><strong>Builds</strong></span> tab on the navigation pane. Alternatively, use the corresponding URL directly:
 							</p><pre class="screen">https://example-registry-quay-quay-enterprise.apps.docs.quayteam.org/repository/quayadmin/testrepo?tab=builds</pre><div class="admonition important"><div class="admonition_header">Important</div><div><p>
 									In some cases, the builder might have issues resolving hostnames. This issue might be related to the <code class="literal">dnsPolicy</code> being set to <code class="literal">default</code> on the job object. Currently, there is no workaround for this issue. It will be resolved in a future version of Red Hat Quay.
 								</p></div></div></li><li class="listitem">
@@ -2287,19 +2310,25 @@ Organisational Unit (OU)	QUAY</pre></li></ol></div></section></section><section 
 							</li><li class="listitem">
 								Enter a commit SHA from the Git repository and click <span class="strong strong"><strong>Start Build</strong></span>.
 							</li><li class="listitem"><p class="simpara">
-								You can check the status of your build by clicking the commit in the <span class="strong strong"><strong>Build History</strong></span> page, or by running <code class="literal">oc get pods -n virtual-builders</code>.
-							</p><pre class="screen"> $ oc get pods -n virtual-builders
-NAME                                               READY   STATUS    RESTARTS   AGE
-f192fe4a-c802-4275-bcce-d2031e635126-9l2b5-25lg2   1/1     Running   0          7s</pre><pre class="screen">$ oc get pods -n virtual-builders
-NAME                                               READY   STATUS        RESTARTS   AGE
-f192fe4a-c802-4275-bcce-d2031e635126-9l2b5-25lg2   1/1     Terminating   0          9s</pre><pre class="screen">$ oc get pods -n virtual-builders
-No resources found in virtual-builders namespace.</pre></li><li class="listitem"><p class="simpara">
-								When the build is finished, you can check the status of the tag under <span class="strong strong"><strong>Tags</strong></span> on the left hand pane.
+								You can check the status of your build by clicking the commit in the <span class="strong strong"><strong>Build History</strong></span> page, or by running <code class="literal">oc get pods -n virtual-builders</code>. For example:
+							</p><pre class="screen">$ oc get pods -n virtual-builders</pre><div class="formalpara"><p class="title"><strong>Example output</strong></p><p>
+									
+<pre class="screen">NAME                                               READY   STATUS    RESTARTS   AGE
+f192fe4a-c802-4275-bcce-d2031e635126-9l2b5-25lg2   1/1     Running   0          7s</pre>
+								</p></div><pre class="programlisting language-terminal">$ oc get pods -n virtual-builders</pre><div class="formalpara"><p class="title"><strong>Example output</strong></p><p>
+									
+<pre class="screen">NAME                                               READY   STATUS        RESTARTS   AGE
+f192fe4a-c802-4275-bcce-d2031e635126-9l2b5-25lg2   1/1     Terminating   0          9s</pre>
+								</p></div><pre class="screen">$ oc get pods -n virtual-builders</pre><div class="formalpara"><p class="title"><strong>Example output</strong></p><p>
+									
+<pre class="screen">No resources found in virtual-builders namespace.</pre>
+								</p></div></li><li class="listitem"><p class="simpara">
+								When the build is finished, you can check the status of the tag under <span class="strong strong"><strong>Tags</strong></span> on the navigation pane.
 							</p><div class="admonition note"><div class="admonition_header">Note</div><div><p>
 									With early access, full build logs and timestamps of builds are currently unavailable.
 								</p></div></div></li></ol></div></section><section class="section" id="red-hat-quay-s3-bucket-modify"><div class="titlepage"><div><div><h4 class="title">9.3.2.4. Modifying your AWS S3 storage bucket</h4></div></div></div><p>
-						If you are using AWS S3 storage, you must modify your storage bucket in the AWS console, prior to running builders.
-					</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem">
+						If you are using AWS S3 storage, you must change your storage bucket in the AWS console, prior to running builders.
+					</p><div class="orderedlist"><p class="title"><strong>Procedure</strong></p><ol class="orderedlist" type="1"><li class="listitem">
 								Log in to your AWS console at <a class="link" href="https://s3.console.aws.amazon.com">s3.console.aws.com</a>.
 							</li><li class="listitem">
 								In the search bar, search for <code class="literal">S3</code> and then click <span class="strong strong"><strong>S3</strong></span>.
@@ -2418,11 +2447,11 @@ podman run -d --name redis -p 6379:6379 redis</pre></li></ol></div></li><li clas
 						The <code class="literal">config.yaml</code> file is shared between clusters, and will contain the details for the common PostgreSQL, Redis and storage backends:
 					</p><div class="formalpara"><p class="title"><strong>config.yaml</strong></p><p>
 							
-<pre class="programlisting language-yaml">SERVER_HOSTNAME: &lt;georep.quayteam.org or any other name&gt; <span id="CO4-1"/><span class="callout">1</span>
+<pre class="programlisting language-yaml">SERVER_HOSTNAME: &lt;georep.quayteam.org or any other name&gt; <span id="CO5-1"/><span class="callout">1</span>
 DB_CONNECTION_ARGS:
   autorollback: true
   threadlocals: true
-DB_URI: postgresql://postgres:password@10.19.0.1:5432/quay <span id="CO4-2"/><span class="callout">2</span>
+DB_URI: postgresql://postgres:password@10.19.0.1:5432/quay <span id="CO5-2"/><span class="callout">2</span>
 BUILDLOGS_REDIS:
   host: 10.19.0.2
   port: 6379
@@ -2449,9 +2478,9 @@ DISTRIBUTED_STORAGE_PREFERENCE:
   - usstorage
   - eustorage
 FEATURE_STORAGE_REPLICATION: true</pre>
-						</p></div><div class="calloutlist"><dl class="calloutlist"><dt><a href="#CO4-1"><span class="callout">1</span></a> </dt><dd><div class="para">
+						</p></div><div class="calloutlist"><dl class="calloutlist"><dt><a href="#CO5-1"><span class="callout">1</span></a> </dt><dd><div class="para">
 								A proper <code class="literal">SERVER_HOSTNAME</code> must be used for the route and must match the hostname of the global load balancer.
-							</div></dd><dt><a href="#CO4-2"><span class="callout">2</span></a> </dt><dd><div class="para">
+							</div></dd><dt><a href="#CO5-2"><span class="callout">2</span></a> </dt><dd><div class="para">
 								To retrieve the configuration file for a Clair instance deployed using the OpenShift Operator, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3/html/deploy_red_hat_quay_on_openshift_with_the_quay_operator/quay_operator_features#clair-openshift-config">Retrieving the Clair config</a>.
 							</div></dd></dl></div><p>
 						Create the <code class="literal">configBundleSecret</code>:
@@ -2602,10 +2631,10 @@ spec:
   components:
     …
     - kind: horizontalpodautoscaler
-      managed: false <span id="CO5-1"/><span class="callout">1</span>
+      managed: false <span id="CO6-1"/><span class="callout">1</span>
     - kind: quay
       managed: true
-      overrides: <span id="CO5-2"/><span class="callout">2</span>
+      overrides: <span id="CO6-2"/><span class="callout">2</span>
         replicas: 0
     - kind: clair
       managed: true
@@ -2615,9 +2644,9 @@ spec:
       managed: true
       overrides:
         replicas: 0
-    …</pre><div class="calloutlist"><dl class="calloutlist"><dt><a href="#CO5-1"><span class="callout">1</span></a> </dt><dd><div class="para">
+    …</pre><div class="calloutlist"><dl class="calloutlist"><dt><a href="#CO6-1"><span class="callout">1</span></a> </dt><dd><div class="para">
 									Disable auto scaling of Quay, Clair and Mirroring workers
-								</div></dd><dt><a href="#CO5-2"><span class="callout">2</span></a> </dt><dd><div class="para">
+								</div></dd><dt><a href="#CO6-2"><span class="callout">2</span></a> </dt><dd><div class="para">
 									Set the replica count to 0 for components accessing the database and objectstorage
 								</div></dd></dl></div></li><li class="listitem"><p class="simpara">
 							<span class="strong strong"><strong>For Operator version 3.6 and earlier</strong></span>: Scale down the Red Hat Quay deployment by scaling down the Red Hat Quay Operator first and then the managed Red Hat Quay resources:
@@ -2675,16 +2704,16 @@ spec:
   components:
     …
     - kind: horizontalpodautoscaler
-      managed: true <span id="CO6-1"/><span class="callout">1</span>
-    - kind: quay <span id="CO6-2"/><span class="callout">2</span>
+      managed: true <span id="CO7-1"/><span class="callout">1</span>
+    - kind: quay <span id="CO7-2"/><span class="callout">2</span>
       managed: true
     - kind: clair
       managed: true
     - kind: mirror
       managed: true
-    …</pre><div class="calloutlist"><dl class="calloutlist"><dt><a href="#CO6-1"><span class="callout">1</span></a> </dt><dd><div class="para">
+    …</pre><div class="calloutlist"><dl class="calloutlist"><dt><a href="#CO7-1"><span class="callout">1</span></a> </dt><dd><div class="para">
 									Re-enables auto scaling of Quay, Clair and Mirroring workers again (if desired)
-								</div></dd><dt><a href="#CO6-2"><span class="callout">2</span></a> </dt><dd><div class="para">
+								</div></dd><dt><a href="#CO7-2"><span class="callout">2</span></a> </dt><dd><div class="para">
 									Replica overrides are removed again to scale the Quay components back up
 								</div></dd></dl></div></li><li class="listitem"><p class="simpara">
 							<span class="strong strong"><strong>For Operator version 3.6 and earlier:</strong></span> Scale up the Red Hat Quay deployment by scaling up the Red Hat Quay Operator again:
@@ -2748,10 +2777,10 @@ spec:
   components:
     …
     - kind: horizontalpodautoscaler
-      managed: false <span id="CO7-1"/><span class="callout">1</span>
+      managed: false <span id="CO8-1"/><span class="callout">1</span>
     - kind: quay
       managed: true
-      overrides: <span id="CO7-2"/><span class="callout">2</span>
+      overrides: <span id="CO8-2"/><span class="callout">2</span>
         replicas: 0
     - kind: clair
       managed: true
@@ -2761,9 +2790,9 @@ spec:
       managed: true
       overrides:
         replicas: 0
-    …</pre><div class="calloutlist"><dl class="calloutlist"><dt><a href="#CO7-1"><span class="callout">1</span></a> </dt><dd><div class="para">
+    …</pre><div class="calloutlist"><dl class="calloutlist"><dt><a href="#CO8-1"><span class="callout">1</span></a> </dt><dd><div class="para">
 									Disable auto scaling of Quay, Clair and Mirroring workers
-								</div></dd><dt><a href="#CO7-2"><span class="callout">2</span></a> </dt><dd><div class="para">
+								</div></dd><dt><a href="#CO8-2"><span class="callout">2</span></a> </dt><dd><div class="para">
 									Set the replica count to 0 for components accessing the database and objectstorage
 								</div></dd></dl></div></li><li class="listitem"><p class="simpara">
 							<span class="strong strong"><strong>For Operator version 3.6 and earlier:</strong></span> Scale down the Red Hat Quay deployment by scaling down the Red Hat Quay Operator first and then the managed Red Hat Quay resources:
@@ -2824,16 +2853,16 @@ spec:
   components:
     …
     - kind: horizontalpodautoscaler
-      managed: true <span id="CO8-1"/><span class="callout">1</span>
-    - kind: quay <span id="CO8-2"/><span class="callout">2</span>
+      managed: true <span id="CO9-1"/><span class="callout">1</span>
+    - kind: quay <span id="CO9-2"/><span class="callout">2</span>
       managed: true
     - kind: clair
       managed: true
     - kind: mirror
       managed: true
-    …</pre><div class="calloutlist"><dl class="calloutlist"><dt><a href="#CO8-1"><span class="callout">1</span></a> </dt><dd><div class="para">
+    …</pre><div class="calloutlist"><dl class="calloutlist"><dt><a href="#CO9-1"><span class="callout">1</span></a> </dt><dd><div class="para">
 									Re-enables auto scaling of Red Hat Quay, Clair and mirroring workers again (if desired)
-								</div></dd><dt><a href="#CO8-2"><span class="callout">2</span></a> </dt><dd><div class="para">
+								</div></dd><dt><a href="#CO9-2"><span class="callout">2</span></a> </dt><dd><div class="para">
 									Replica overrides are removed again to scale the Red Hat Quay components back up
 								</div></dd></dl></div></li><li class="listitem"><p class="simpara">
 							<span class="strong strong"><strong>For Operator version 3.6 and earlier:</strong></span> Scale up the Red Hat Quay deployment by scaling up the Red Hat Quay Operator again:
@@ -3050,7 +3079,7 @@ spec:
 					Nothing special needed.
 				</p><h2 id="additional_resources">Additional resources</h2><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
 							For more details on the Red Hat Quay Operator, see the upstream <a class="link" href="https://github.com/quay/quay-operator/">quay-operator</a> project.
-						</li></ul></div></section></section></section><div><div xml:lang="en-US" class="legalnotice" id="idm46719079132832"><h1 class="legalnotice">Legal Notice</h1><div class="para">
+						</li></ul></div></section></section></section><div><div xml:lang="en-US" class="legalnotice" id="idm45659787929424"><h1 class="legalnotice">Legal Notice</h1><div class="para">
 		Copyright <span class="trademark"/>© 2023 Red Hat, Inc.
 	</div><div class="para">
 		The text of and illustrations in this document are licensed by Red Hat under a Creative Commons Attribution–Share Alike 3.0 Unported license ("CC-BY-SA"). An explanation of CC-BY-SA is available at <a class="uri" href="http://creativecommons.org/licenses/by-sa/3.0/">http://creativecommons.org/licenses/by-sa/3.0/</a>. In accordance with CC-BY-SA, if you distribute this document or an adaptation of it, you must provide the URL for the original version.
