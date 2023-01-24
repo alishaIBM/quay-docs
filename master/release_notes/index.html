@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" class="chrometwo"><head><title>Red Hat Quay Release Notes</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css"/><meta name="generator" content="publican v4.3.4"/><meta name="description" content="Red Hat Quay Release Notes"/><link rel="next" href="#idm45858831339472" title="Preface"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><script type="text/javascript" src="Common_Content/scripts/jquery-1.7.1.min.js"> </script><script type="text/javascript" src="Common_Content/scripts/utils.js"> </script><script type="text/javascript" src="Common_Content/scripts/highlight.js/highlight.pack.js"> </script></head><body><div id="chrometwo"><div id="main"><div xml:lang="en-US" class="book" id="idm45858830775104"><div class="titlepage"><div><div class="producttitle"><span class="productname">Red Hat Quay</span> <span class="productnumber">3.8</span></div><div><h1 class="title">Red Hat Quay Release Notes</h1></div><div><h2 class="subtitle">Red Hat Quay</h2></div><div><div xml:lang="en-US" class="authorgroup"><span class="orgname">Red Hat OpenShift Documentation Team</span></div></div><div><a href="#idm45858811062976">Legal Notice</a></div><div><div class="abstract"><p class="title"><strong>Abstract</strong></p><div class="para">
+<html xmlns="http://www.w3.org/1999/xhtml" class="chrometwo"><head><title>Red Hat Quay Release Notes</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css"/><meta name="generator" content="publican v4.3.4"/><meta name="description" content="Red Hat Quay Release Notes"/><link rel="next" href="#idm44986867129504" title="Preface"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><script type="text/javascript" src="Common_Content/scripts/jquery-1.7.1.min.js"> </script><script type="text/javascript" src="Common_Content/scripts/utils.js"> </script><script type="text/javascript" src="Common_Content/scripts/highlight.js/highlight.pack.js"> </script></head><body><div id="chrometwo"><div id="main"><div xml:lang="en-US" class="book" id="idm44986867155920"><div class="titlepage"><div><div class="producttitle"><span class="productname">Red Hat Quay</span> <span class="productnumber">3.8</span></div><div><h1 class="title">Red Hat Quay Release Notes</h1></div><div><h2 class="subtitle">Red Hat Quay</h2></div><div><div xml:lang="en-US" class="authorgroup"><span class="orgname">Red Hat OpenShift Documentation Team</span></div></div><div><a href="#idm44986844867088">Legal Notice</a></div><div><div class="abstract"><p class="title"><strong>Abstract</strong></p><div class="para">
 				Red Hat Quay Release Notes
-			</div></div></div></div><hr/></div><div class="toc"><ul class="toc"><li><span class="preface"><a href="#idm45858831339472">Preface</a></span></li></ul></div><section class="preface" id="idm45858831339472"><div class="titlepage"><div><div><h1 class="title">Preface</h1></div></div></div><p>
+			</div></div></div></div><hr/></div><div class="toc"><ul class="toc"><li><span class="preface"><a href="#idm44986867129504">Preface</a></span></li></ul></div><section class="preface" id="idm44986867129504"><div class="titlepage"><div><div><h1 class="title">Preface</h1></div></div></div><p>
 			Red Hat Quay container registry platform provides secure storage, distribution, and governance of containers and cloud-native artifacts on any infrastructure. It is available as a standalone component or as an Operator on OpenShift Container Platform. Red Hat Quay includes the following features and benefits:
 		</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
 					Granular security management
@@ -24,46 +24,64 @@
 			Documentation for Red Hat Quay is versioned with each release. The latest Red Hat Quay documentation is available from the <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay">Red Hat Quay Documentation</a> page. Currently, version 3 is the latest major version.
 		</p><div class="admonition note"><div class="admonition_header">Note</div><div><p>
 				Prior to version 2.9.2, Red Hat Quay was called Quay Enterprise. Documentation for 2.9.2 and prior versions are archived on the <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/2.9">Product Documentation for Red Hat Quay 2.9</a> page.
-			</p></div></div></section><section class="section" id="rn-3-800"><div class="titlepage"><div><div><h2 class="title">1. RHBA-2022:6976 - Red Hat Quay v3.8.0 release</h2></div></div></div><p>
+			</p></div></div></section><section class="section" id="rn-3-801"><div class="titlepage"><div><div><h2 class="title">1. RHBA-2023:0044 - Red Hat Quay 3.8.1 bug fix update</h2></div></div></div><p>
+			Issued 2023-1-24
+		</p><p>
+			Red Hat Quay release 3.8.1 is now available with Clair 4.6.0. The bug fixes that are included in the update are listed in the <a class="link" href="https://access.redhat.com/errata/RHBA-2023:0044">RHBA-2023:0044</a> advisory.
+		</p><section class="section" id="bug-fixes-381"><div class="titlepage"><div><div><h3 class="title">1.1. Bug fixes</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+						<a class="link" href="https://issues.redhat.com/browse/PROJQUAY-2164">PROJQUAY-2146</a>. Combined URLs in security scan report (pointing to errata URL).
+					</li><li class="listitem">
+						<a class="link" href="https://issues.redhat.com/browse/PROJQUAY-46674667">PROJQUAY-</a>. Web UI - viewing account results in error.
+					</li><li class="listitem">
+						<a class="link" href="https://issues.redhat.com/browse/PROJQUAY-4800">PROJQUAY-4800</a>. Add PUT method to CORS method list.
+					</li><li class="listitem">
+						<a class="link" href="https://issues.redhat.com/browse/PROJQUAY-4827">PROJQUAY-4857</a>. Add tracking and cookie content when domain contains Quay.io.
+					</li><li class="listitem">
+						<a class="link" href="https://issues.redhat.com/browse/PROJQUAY-4527">PROJQUAY-4527</a>. New UI toggle cannot switch back from new UI to current UI on Apple Safari.
+					</li><li class="listitem">
+						<a class="link" href="https://issues.redhat.com/browse/PROJQUAY-4663">PROJQUAY-4663</a>. Pagination for delete repository modal not showing correct values.
+					</li><li class="listitem">
+						<a class="link" href="https://issues.redhat.com/browse/PROJQUAY-4765">PROJQUAY-4765</a>. Quay 3.8.0 superuser does not have permission to add new team member to normal user’s team when enabled superuser full access.
+					</li></ul></div></section></section><section class="section" id="rn-3-800"><div class="titlepage"><div><div><h2 class="title">2. RHBA-2022:6976 - Red Hat Quay 3.8.0 release</h2></div></div></div><p>
 			Issued 2022-12-6
 		</p><p>
 			Red Hat Quay release 3.8.0 is now available with Clair 4.5.1. The bug fixes that are included in the update are listed in the <a class="link" href="https://access.redhat.com/errata/RHBA-2022:6976">RHBA-2022:6976</a> advisory.
-		</p><section class="section" id="new-features-and-enhancements-38"><div class="titlepage"><div><div><h3 class="title">1.1. Red Hat Quay, Clair, and Quay Builder new features and enhancements</h3></div></div></div><p>
+		</p><section class="section" id="new-features-and-enhancements-38"><div class="titlepage"><div><div><h3 class="title">2.1. Red Hat Quay, Clair, and Quay Builder new features and enhancements</h3></div></div></div><p>
 				The following updates have been made to Red Hat Quay, Clair, and Quay Builders:
 			</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
 						Previously, Red Hat Quay only supported the IPv4 protocol family. IPv6 support is now available in Red Hat Quay 3.8 standalone deployments. Additionally, dual-stack (IPv4/IPv6) support is available.
-					</p><div class="table" id="idm45858831030160"><p class="title"><strong>Table 1. Network protocol support</strong></p><div class="table-contents"><table class="lt-4-cols lt-7-rows"><colgroup><col style="width: 50%; " class="col_1"/><col style="width: 25%; " class="col_2"/><col style="width: 25%; " class="col_3"/></colgroup><thead><tr><th align="left" valign="top" id="idm45858830585392" scope="col">Protocol family</th><th align="left" valign="top" id="idm45858830622176" scope="col">Red Hat Quay 3.7</th><th align="left" valign="top" id="idm45858830734544" scope="col">Red Hat Quay 3.8</th></tr></thead><tbody><tr><td align="left" valign="top" headers="idm45858830585392">
+					</p><div class="table" id="idm44986866855024"><p class="title"><strong>Table 1. Network protocol support</strong></p><div class="table-contents"><table class="lt-4-cols lt-7-rows"><colgroup><col style="width: 50%; " class="col_1"/><col style="width: 25%; " class="col_2"/><col style="width: 25%; " class="col_3"/></colgroup><thead><tr><th align="left" valign="top" id="idm44986866707792" scope="col">Protocol family</th><th align="left" valign="top" id="idm44986866644272" scope="col">Red Hat Quay 3.7</th><th align="left" valign="top" id="idm44986866457408" scope="col">Red Hat Quay 3.8</th></tr></thead><tbody><tr><td align="left" valign="top" headers="idm44986866707792">
 									<p>
 										IPv4
 									</p>
-									</td><td align="left" valign="top" headers="idm45858830622176">
+									</td><td align="left" valign="top" headers="idm44986866644272">
 									<p>
 										✓
 									</p>
-									</td><td align="left" valign="top" headers="idm45858830734544">
+									</td><td align="left" valign="top" headers="idm44986866457408">
 									<p>
 										✓
 									</p>
-									</td></tr><tr><td align="left" valign="top" headers="idm45858830585392">
+									</td></tr><tr><td align="left" valign="top" headers="idm44986866707792">
 									<p>
 										IPv6
 									</p>
-									</td><td align="left" valign="top" headers="idm45858830622176"> </td><td align="left" valign="top" headers="idm45858830734544">
+									</td><td align="left" valign="top" headers="idm44986866644272"> </td><td align="left" valign="top" headers="idm44986866457408">
 									<p>
 										✓
 									</p>
-									</td></tr><tr><td align="left" valign="top" headers="idm45858830585392">
+									</td></tr><tr><td align="left" valign="top" headers="idm44986866707792">
 									<p>
 										Dual-stack (IPv4/IPv6)
 									</p>
-									</td><td align="left" valign="top" headers="idm45858830622176"> </td><td align="left" valign="top" headers="idm45858830734544">
+									</td><td align="left" valign="top" headers="idm44986866644272"> </td><td align="left" valign="top" headers="idm44986866457408">
 									<p>
 										✓
 									</p>
 									</td></tr></tbody></table></div></div><p class="simpara">
 						For more information, see <a class="link" href="https://issues.redhat.com/browse/PROJQUAY-272">PROJQUAY-272</a>.
 					</p><p class="simpara">
-						For a list of known limitations, see <a class="link" href="#ipv6-limitations-38" title="1.3.2. IPv6 and dual-stack limitations and known issues:">IPv6 and dual-stack limitations</a>.
+						For a list of known limitations, see <a class="link" href="#ipv6-limitations-38" title="2.3.2. IPv6 and dual-stack limitations and known issues:">IPv6 and dual-stack limitations</a>.
 					</p></li><li class="listitem"><p class="simpara">
 						Previously, Red Hat Quay did not require self-signed certificates to use Subject Alternative Names (SANs). Red Hat Quay users could temporarily enable Common Name matching with <code class="literal">GODEBUG=x509ignoreCN=0</code> to bypass the required certificate.
 					</p><p class="simpara">
@@ -106,7 +124,7 @@ ALLOWED_OCI_ARTIFACT_TYPES:
 ...</pre>
 								</p></div><div class="admonition note"><div class="admonition_header">Note</div><div><p>
 									When adding OCI media types that are not configured by default, users will also need to manually add support for cosign and Helm if desired. The ztsd compression scheme is supported by default, so users will not need to add that OCI media type to their config.yaml to enable support.
-								</p></div></div></li></ul></div></li></ul></div><section class="section" id="new_red_hat_quay_configuration_fields"><div class="titlepage"><div><div><h4 class="title">1.1.1. New Red Hat Quay configuration fields</h4></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+								</p></div></div></li></ul></div></li></ul></div><section class="section" id="new_red_hat_quay_configuration_fields"><div class="titlepage"><div><div><h4 class="title">2.1.1. New Red Hat Quay configuration fields</h4></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
 							The following configuration field has been added to test Red Hat Quay’s new user interface:
 						</p><div class="itemizedlist"><ul class="itemizedlist" type="circle"><li class="listitem"><p class="simpara">
 									<span class="strong strong"><strong>FEATURE_UI_V2</strong></span>: With this configuration field, users can test the beta UI environment.
@@ -162,39 +180,39 @@ ALLOWED_OCI_ARTIFACT_TYPES:
 									<span class="strong strong"><strong>RESTRICTED_USERS_WHITELIST</strong></span>: When set with <code class="literal">FEATURE_RESTRICTED_USERS: true</code>, administrators can exclude users from the <code class="literal">FEATURE_RESTRICTED_USERS</code> setting.
 								</p><p class="simpara">
 									For more information, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html-single/configure_red_hat_quay/index#enabling-restricted-users-whitelist">RESTRICTED_USERS_WHITELIST</a>.
-								</p></li></ul></div></li></ul></div></section></section><section class="section" id="quay-operator-updates"><div class="titlepage"><div><div><h3 class="title">1.2. Red Hat Quay Operator</h3></div></div></div><p>
+								</p></li></ul></div></li></ul></div></section></section><section class="section" id="quay-operator-updates"><div class="titlepage"><div><div><h3 class="title">2.2. Red Hat Quay Operator</h3></div></div></div><p>
 				The following updates have been made to the Red Hat Quay Operator:
 			</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
 						Previously, the Red Hat Quay Operator only supported the IPv4 protocol family. IPv6 support is now available in Red Hat Quay 3.8 Operator deployments.
-					</p><div class="table" id="idm45858831105200"><p class="title"><strong>Table 2. Network protocol support</strong></p><div class="table-contents"><table class="lt-4-cols lt-7-rows"><colgroup><col style="width: 33%; " class="col_1"/><col style="width: 33%; " class="col_2"/><col style="width: 33%; " class="col_3"/></colgroup><thead><tr><th align="left" valign="top" id="idm45858831006912" scope="col">Protocol family</th><th align="left" valign="top" id="idm45858830961456" scope="col">Red Hat Quay 3.7 Operator</th><th align="left" valign="top" id="idm45858830875152" scope="col">Red Hat Quay 3.8 Operator</th></tr></thead><tbody><tr><td align="left" valign="top" headers="idm45858831006912">
+					</p><div class="table" id="idm44986863495808"><p class="title"><strong>Table 2. Network protocol support</strong></p><div class="table-contents"><table class="lt-4-cols lt-7-rows"><colgroup><col style="width: 33%; " class="col_1"/><col style="width: 33%; " class="col_2"/><col style="width: 33%; " class="col_3"/></colgroup><thead><tr><th align="left" valign="top" id="idm44986863593744" scope="col">Protocol family</th><th align="left" valign="top" id="idm44986863606736" scope="col">Red Hat Quay 3.7 Operator</th><th align="left" valign="top" id="idm44986863613936" scope="col">Red Hat Quay 3.8 Operator</th></tr></thead><tbody><tr><td align="left" valign="top" headers="idm44986863593744">
 									<p>
 										IPv4
 									</p>
-									</td><td align="left" valign="top" headers="idm45858830961456">
+									</td><td align="left" valign="top" headers="idm44986863606736">
 									<p>
 										✓
 									</p>
-									</td><td align="left" valign="top" headers="idm45858830875152">
+									</td><td align="left" valign="top" headers="idm44986863613936">
 									<p>
 										✓
 									</p>
-									</td></tr><tr><td align="left" valign="top" headers="idm45858831006912">
+									</td></tr><tr><td align="left" valign="top" headers="idm44986863593744">
 									<p>
 										IPv6
 									</p>
-									</td><td align="left" valign="top" headers="idm45858830961456"> </td><td align="left" valign="top" headers="idm45858830875152">
+									</td><td align="left" valign="top" headers="idm44986863606736"> </td><td align="left" valign="top" headers="idm44986863613936">
 									<p>
 										✓
 									</p>
-									</td></tr><tr><td align="left" valign="top" headers="idm45858831006912">
+									</td></tr><tr><td align="left" valign="top" headers="idm44986863593744">
 									<p>
 										Dual-stack (IPv4/IPv6)
 									</p>
-									</td><td align="left" valign="top" headers="idm45858830961456"> </td><td align="left" valign="top" headers="idm45858830875152"> </td></tr></tbody></table></div></div><p class="simpara">
+									</td><td align="left" valign="top" headers="idm44986863606736"> </td><td align="left" valign="top" headers="idm44986863613936"> </td></tr></tbody></table></div></div><p class="simpara">
 						For more information, see <a class="link" href="https://issues.redhat.com/browse/PROJQUAY-272">PROJQUAY-272</a>.
 					</p><p class="simpara">
-						For a list of known limitations, see <a class="link" href="#ipv6-limitations-38" title="1.3.2. IPv6 and dual-stack limitations and known issues:">IPv6 and dual-stack limitations</a>.
-					</p></li></ul></div></section><section class="section" id="known-issues-and-limitations-38"><div class="titlepage"><div><div><h3 class="title">1.3. Red Hat Quay 3.8 known issues and limitations</h3></div></div></div><section class="section" id="known-issues-38"><div class="titlepage"><div><div><h4 class="title">1.3.1. Known issues:</h4></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+						For a list of known limitations, see <a class="link" href="#ipv6-limitations-38" title="2.3.2. IPv6 and dual-stack limitations and known issues:">IPv6 and dual-stack limitations</a>.
+					</p></li></ul></div></section><section class="section" id="known-issues-and-limitations-38"><div class="titlepage"><div><div><h3 class="title">2.3. Red Hat Quay 3.8 known issues and limitations</h3></div></div></div><section class="section" id="known-issues-38"><div class="titlepage"><div><div><h4 class="title">2.3.1. Known issues:</h4></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
 							The <code class="literal">metadata_json</code> column in the <code class="literal">logentry3</code> table on MySQL deployments has a limited size of <code class="literal">TEXT</code>. Currently, the default size of the column set to be <code class="literal">TEXT</code> is 65535 bytes. 65535 bytes is not big enough for some mirror logs when debugging is turned <code class="literal">off</code>. When a statement containing <code class="literal">TEXT</code> larger than 65535 bytes is sent to MySQL, the data sent is truncated to fit into the 65535 boundary. Consequently, this creates issues when the <code class="literal">metadata_json</code> object is decoded, and the decode fails because the string is not terminated properly. As a result, Red Hat Quay returns a 500 error.
 						</p><p class="simpara">
 							There is currently no workaround for this issue, and it will be addressed in a future version of Red Hat Quay. For more information, see <a class="link" href="https://issues.redhat.com/browse/PROJQUAY-4305">PROJQUAY-4305</a>.
@@ -267,7 +285,7 @@ ALLOWED_OCI_ARTIFACT_TYPES:
         s3_bucket: ***
         s3_secret_key: ***
         storage_path: /cloudfronts3/quayregistry
-        s3_region: us-east-2</pre></li></ul></div></section><section class="section" id="ipv6-limitations-38"><div class="titlepage"><div><div><h4 class="title">1.3.2. IPv6 and dual-stack limitations and known issues:</h4></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
+        s3_region: us-east-2</pre></li></ul></div></section><section class="section" id="ipv6-limitations-38"><div class="titlepage"><div><div><h4 class="title">2.3.2. IPv6 and dual-stack limitations and known issues:</h4></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
 							Currently, attempting to configure your Red Hat Quay deployment with the common Azure Blob Storage configuration will not work on IPv6 single stack environments. Because the endpoint of Azure Blob Storage does not support IPv6, there is no workaround in place for this issue.
 						</p><p class="simpara">
 							For more information, see <a class="link" href="https://issues.redhat.com/browse/PROJQUAY-4433">PROJQUAY-4433</a>.
@@ -285,335 +303,335 @@ ALLOWED_OCI_ARTIFACT_TYPES:
 							Currently, Gitlab does not support IPv6.
 						</li><li class="listitem">
 							There is a known issue when <code class="literal">FEATURE_LISTEN_IP_VERSION</code> is set to <code class="literal">IPv6</code>, and you have selected <span class="strong strong"><strong>Red Hat Quay handles TLS</strong></span> in the configuration editor and uploaded self-signed certificates. If these conditions have been met, and you update any one configuration in the configuration editor (for example, adding a new superuser), when reconfiguring Red Hat Quay again, the mirror pod crashes and returns the following error: <code class="literal">Init:CrashLoopBackOff</code>. If <span class="strong strong"><strong>Red Hat Quay handles TLS</strong></span> is selected in your deployment, you must set <code class="literal">FEATURE_LISTEN_IP_VERSION</code> to <code class="literal">IPv4</code>. This will be fixed in a future version of Red Hat Quay.
-						</li></ul></div></section></section><section class="section" id="bug-fixes-38"><div class="titlepage"><div><div><h3 class="title">1.4. Red Hat Quay bug fixes</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+						</li></ul></div></section></section><section class="section" id="bug-fixes-38"><div class="titlepage"><div><div><h3 class="title">2.4. Red Hat Quay bug fixes</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
 						<a class="link" href="https://issues.redhat.com/browse/PROJQUAY-4431">PROJQUAY-4431</a>. Proxy cache failed to validate Azure Container Registry (ACR).
-					</li></ul></div></section><section class="section" id="quay-feature-tracker"><div class="titlepage"><div><div><h3 class="title">1.5. Red Hat Quay feature tracker</h3></div></div></div><p>
+					</li></ul></div></section><section class="section" id="quay-feature-tracker"><div class="titlepage"><div><div><h3 class="title">2.5. Red Hat Quay feature tracker</h3></div></div></div><p>
 				New features have been added to Red Hat Quay, some of which are currently in Technology Preview. Technology Preview features are experimental features and are not intended for production use.
 			</p><p>
 				Some features available in previous releases have been deprecated or removed. Deprecated functionality is still included in Red Hat Quay, but is planned for removal in a future release and is not recommended for new deployments. For the most recent list of deprecated and removed functionality in Red Hat Quay, refer to Table 1.1. Additional details for more fine-grained functionality that has been deprecated and removed are listed after the table.
-			</p><div class="table" id="idm45858829997840"><p class="title"><strong>Table 3. Technology Preview tracker</strong></p><div class="table-contents"><table class="gt-4-cols lt-7-rows"><colgroup><col style="width: 58%; " class="col_1"/><col style="width: 14%; " class="col_2"/><col style="width: 14%; " class="col_3"/><col style="width: 14%; " class="col_4"/></colgroup><thead><tr><th align="left" valign="top" id="idm45858829932880" scope="col">Feature</th><th align="left" valign="top" id="idm45858829922480" scope="col">Quay 3.8</th><th align="left" valign="top" id="idm45858833815328" scope="col">Quay 3.7</th><th align="left" valign="top" id="idm45858835713712" scope="col">Quay 3.6</th></tr></thead><tbody><tr><td align="left" valign="top" headers="idm45858829932880">
+			</p><div class="table" id="idm44986862490448"><p class="title"><strong>Table 3. Technology Preview tracker</strong></p><div class="table-contents"><table class="gt-4-cols lt-7-rows"><colgroup><col style="width: 58%; " class="col_1"/><col style="width: 14%; " class="col_2"/><col style="width: 14%; " class="col_3"/><col style="width: 14%; " class="col_4"/></colgroup><thead><tr><th align="left" valign="top" id="idm44986862530720" scope="col">Feature</th><th align="left" valign="top" id="idm44986863463312" scope="col">Quay 3.8</th><th align="left" valign="top" id="idm44986857358352" scope="col">Quay 3.7</th><th align="left" valign="top" id="idm44986863726656" scope="col">Quay 3.6</th></tr></thead><tbody><tr><td align="left" valign="top" headers="idm44986862530720">
 							<p>
 								<a class="link" href="#docker-v1-support">Docker v1 support</a>
 							</p>
-							</td><td align="left" valign="top" headers="idm45858829922480">
+							</td><td align="left" valign="top" headers="idm44986863463312">
 							<p>
 								Deprecated
 							</p>
-							</td><td align="left" valign="top" headers="idm45858833815328">
+							</td><td align="left" valign="top" headers="idm44986857358352">
 							<p>
 								General Availability
 							</p>
-							</td><td align="left" valign="top" headers="idm45858835713712">
+							</td><td align="left" valign="top" headers="idm44986863726656">
 							<p>
 								General Availability
 							</p>
-							</td></tr><tr><td align="left" valign="top" headers="idm45858829932880">
+							</td></tr><tr><td align="left" valign="top" headers="idm44986862530720">
 							<p>
 								<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html-single/configure_red_hat_quay/index#reference-miscellaneous-v2-ui">FEATURE_UI_V2</a>
 							</p>
-							</td><td align="left" valign="top" headers="idm45858829922480">
+							</td><td align="left" valign="top" headers="idm44986863463312">
 							<p>
 								Technology Preview
 							</p>
-							</td><td align="left" valign="top" headers="idm45858833815328">
+							</td><td align="left" valign="top" headers="idm44986857358352">
 							<p>
 								-
 							</p>
-							</td><td align="left" valign="top" headers="idm45858835713712">
+							</td><td align="left" valign="top" headers="idm44986863726656">
 							<p>
 								-
 							</p>
-							</td></tr><tr><td align="left" valign="top" headers="idm45858829932880">
+							</td></tr><tr><td align="left" valign="top" headers="idm44986862530720">
 							<p>
 								<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html-single/manage_red_hat_quay/index#proc_manage-ipv6-dual-stack">FEATURE_LISTEN_IP_VERSION</a>
 							</p>
-							</td><td align="left" valign="top" headers="idm45858829922480">
+							</td><td align="left" valign="top" headers="idm44986863463312">
 							<p>
 								General Availability
 							</p>
-							</td><td align="left" valign="top" headers="idm45858833815328">
+							</td><td align="left" valign="top" headers="idm44986857358352">
 							<p>
 								-
 							</p>
-							</td><td align="left" valign="top" headers="idm45858835713712">
+							</td><td align="left" valign="top" headers="idm44986863726656">
 							<p>
 								-
 							</p>
-							</td></tr><tr><td align="left" valign="top" headers="idm45858829932880">
+							</td></tr><tr><td align="left" valign="top" headers="idm44986862530720">
 							<p>
 								<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html-single/manage_red_hat_quay/index#ldap-super-users-enabling">LDAP_SUPERUSER_FILTER</a>
 							</p>
-							</td><td align="left" valign="top" headers="idm45858829922480">
+							</td><td align="left" valign="top" headers="idm44986863463312">
 							<p>
 								General Availability
 							</p>
-							</td><td align="left" valign="top" headers="idm45858833815328">
+							</td><td align="left" valign="top" headers="idm44986857358352">
 							<p>
 								-
 							</p>
-							</td><td align="left" valign="top" headers="idm45858835713712">
+							</td><td align="left" valign="top" headers="idm44986863726656">
 							<p>
 								-
 							</p>
-							</td></tr><tr><td align="left" valign="top" headers="idm45858829932880">
+							</td></tr><tr><td align="left" valign="top" headers="idm44986862530720">
 							<p>
 								<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html-single/manage_red_hat_quay/index#ldap-restricted-users-enabling">LDAP_RESTRICTED_USER_FILTER</a>
 							</p>
-							</td><td align="left" valign="top" headers="idm45858829922480">
+							</td><td align="left" valign="top" headers="idm44986863463312">
 							<p>
 								General Availability
 							</p>
-							</td><td align="left" valign="top" headers="idm45858833815328">
+							</td><td align="left" valign="top" headers="idm44986857358352">
 							<p>
 								-
 							</p>
-							</td><td align="left" valign="top" headers="idm45858835713712">
+							</td><td align="left" valign="top" headers="idm44986863726656">
 							<p>
 								-
 							</p>
-							</td></tr><tr><td align="left" valign="top" headers="idm45858829932880">
+							</td></tr><tr><td align="left" valign="top" headers="idm44986862530720">
 							<p>
 								<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html-single/configure_red_hat_quay/index#configuring-superusers-full-access">FEATURE_SUPERUSERS_FULL_ACCESS</a>
 							</p>
-							</td><td align="left" valign="top" headers="idm45858829922480">
+							</td><td align="left" valign="top" headers="idm44986863463312">
 							<p>
 								General Availability
 							</p>
-							</td><td align="left" valign="top" headers="idm45858833815328">
+							</td><td align="left" valign="top" headers="idm44986857358352">
 							<p>
 								-
 							</p>
-							</td><td align="left" valign="top" headers="idm45858835713712">
+							</td><td align="left" valign="top" headers="idm44986863726656">
 							<p>
 								-
 							</p>
-							</td></tr><tr><td align="left" valign="top" headers="idm45858829932880">
+							</td></tr><tr><td align="left" valign="top" headers="idm44986862530720">
 							<p>
 								<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html-single/configure_red_hat_quay/index#configuring-global-readonly-super-users">GLOBAL_READONLY_SUPER_USERS</a>
 							</p>
-							</td><td align="left" valign="top" headers="idm45858829922480">
+							</td><td align="left" valign="top" headers="idm44986863463312">
 							<p>
 								General Availability
 							</p>
-							</td><td align="left" valign="top" headers="idm45858833815328">
+							</td><td align="left" valign="top" headers="idm44986857358352">
 							<p>
 								-
 							</p>
-							</td><td align="left" valign="top" headers="idm45858835713712">
+							</td><td align="left" valign="top" headers="idm44986863726656">
 							<p>
 								-
 							</p>
-							</td></tr><tr><td align="left" valign="top" headers="idm45858829932880">
+							</td></tr><tr><td align="left" valign="top" headers="idm44986862530720">
 							<p>
 								<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html-single/configure_red_hat_quay/index#configuring-feature-restricted-users">FEATURE_RESTRICTED_USERS</a>
 							</p>
-							</td><td align="left" valign="top" headers="idm45858829922480">
+							</td><td align="left" valign="top" headers="idm44986863463312">
 							<p>
 								General Availability
 							</p>
-							</td><td align="left" valign="top" headers="idm45858833815328">
+							</td><td align="left" valign="top" headers="idm44986857358352">
 							<p>
 								-
 							</p>
-							</td><td align="left" valign="top" headers="idm45858835713712">
+							</td><td align="left" valign="top" headers="idm44986863726656">
 							<p>
 								-
 							</p>
-							</td></tr><tr><td align="left" valign="top" headers="idm45858829932880">
+							</td></tr><tr><td align="left" valign="top" headers="idm44986862530720">
 							<p>
 								<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.8/html-single/configure_red_hat_quay/index#configuring-restricted-users-whitelist">RESTRICTED_USERS_WHITELIST</a>
 							</p>
-							</td><td align="left" valign="top" headers="idm45858829922480">
+							</td><td align="left" valign="top" headers="idm44986863463312">
 							<p>
 								General Availability
 							</p>
-							</td><td align="left" valign="top" headers="idm45858833815328">
+							</td><td align="left" valign="top" headers="idm44986857358352">
 							<p>
 								-
 							</p>
-							</td><td align="left" valign="top" headers="idm45858835713712">
+							</td><td align="left" valign="top" headers="idm44986863726656">
 							<p>
 								-
 							</p>
-							</td></tr><tr><td align="left" valign="top" headers="idm45858829932880">
+							</td></tr><tr><td align="left" valign="top" headers="idm44986862530720">
 							<p>
 								<a class="link" href="https://access.redhat.com//documentation/en-us/red_hat_quay/3.7/html-single/use_red_hat_quay#red-hat-quay-quota-management-and-enforcement">Quota management and enforcement</a>
 							</p>
-							</td><td align="left" valign="top" headers="idm45858829922480">
+							</td><td align="left" valign="top" headers="idm44986863463312">
 							<p>
 								General Availability
 							</p>
-							</td><td align="left" valign="top" headers="idm45858833815328">
+							</td><td align="left" valign="top" headers="idm44986857358352">
 							<p>
 								General Availability
 							</p>
-							</td><td align="left" valign="top" headers="idm45858835713712">
+							</td><td align="left" valign="top" headers="idm44986863726656">
 							<p>
 								-
 							</p>
-							</td></tr><tr><td align="left" valign="top" headers="idm45858829932880">
+							</td></tr><tr><td align="left" valign="top" headers="idm44986862530720">
 							<p>
 								<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.7/html-single/use_red_hat_quay#red-hat-quay-builders-enhancement">Red Hat Quay build enhancements</a>
 							</p>
-							</td><td align="left" valign="top" headers="idm45858829922480">
+							</td><td align="left" valign="top" headers="idm44986863463312">
 							<p>
 								General Availability
 							</p>
-							</td><td align="left" valign="top" headers="idm45858833815328">
+							</td><td align="left" valign="top" headers="idm44986857358352">
 							<p>
 								General Availability
 							</p>
-							</td><td align="left" valign="top" headers="idm45858835713712">
+							</td><td align="left" valign="top" headers="idm44986863726656">
 							<p>
 								-
 							</p>
-							</td></tr><tr><td align="left" valign="top" headers="idm45858829932880">
+							</td></tr><tr><td align="left" valign="top" headers="idm44986862530720">
 							<p>
 								<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.7/html-single/use_red_hat_quay#quay-as-cache-proxy">Red Hat Quay as proxy cache for upstream registries</a>
 							</p>
-							</td><td align="left" valign="top" headers="idm45858829922480">
+							</td><td align="left" valign="top" headers="idm44986863463312">
 							<p>
 								General Availability
 							</p>
-							</td><td align="left" valign="top" headers="idm45858833815328">
+							</td><td align="left" valign="top" headers="idm44986857358352">
 							<p>
 								Technology Preview
 							</p>
-							</td><td align="left" valign="top" headers="idm45858835713712">
+							</td><td align="left" valign="top" headers="idm44986863726656">
 							<p>
 								-
 							</p>
-							</td></tr><tr><td align="left" valign="top" headers="idm45858829932880">
+							</td></tr><tr><td align="left" valign="top" headers="idm44986862530720">
 							<p>
 								<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.7/html-single/deploy_red_hat_quay_on_openshift_with_the_quay_operator/index">Geo-replication - Red Hat Quay Operator</a>
 							</p>
-							</td><td align="left" valign="top" headers="idm45858829922480">
+							</td><td align="left" valign="top" headers="idm44986863463312">
 							<p>
 								General Availability
 							</p>
-							</td><td align="left" valign="top" headers="idm45858833815328">
+							</td><td align="left" valign="top" headers="idm44986857358352">
 							<p>
 								General Availability
 							</p>
-							</td><td align="left" valign="top" headers="idm45858835713712">
+							</td><td align="left" valign="top" headers="idm44986863726656">
 							<p>
 								-
 							</p>
-							</td></tr><tr><td align="left" valign="top" headers="idm45858829932880">
+							</td></tr><tr><td align="left" valign="top" headers="idm44986862530720">
 							<p>
 								<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.7/html-single/manage_red_hat_quay#unmanaged_clair_configuration">Advanced Clair configuration</a>
 							</p>
-							</td><td align="left" valign="top" headers="idm45858829922480">
+							</td><td align="left" valign="top" headers="idm44986863463312">
 							<p>
 								General Availability
 							</p>
-							</td><td align="left" valign="top" headers="idm45858833815328">
+							</td><td align="left" valign="top" headers="idm44986857358352">
 							<p>
 								General Availability
 							</p>
-							</td><td align="left" valign="top" headers="idm45858835713712">
+							</td><td align="left" valign="top" headers="idm44986863726656">
 							<p>
 								-
 							</p>
-							</td></tr><tr><td align="left" valign="top" headers="idm45858829932880">
+							</td></tr><tr><td align="left" valign="top" headers="idm44986862530720">
 							<p>
 								Support for Microsoft Azure Government (MAG)
 							</p>
-							</td><td align="left" valign="top" headers="idm45858829922480">
+							</td><td align="left" valign="top" headers="idm44986863463312">
 							<p>
 								General Availability
 							</p>
-							</td><td align="left" valign="top" headers="idm45858833815328">
+							</td><td align="left" valign="top" headers="idm44986857358352">
 							<p>
 								General Availability
 							</p>
-							</td><td align="left" valign="top" headers="idm45858835713712">
+							</td><td align="left" valign="top" headers="idm44986863726656">
 							<p>
 								-
 							</p>
-							</td></tr><tr><td align="left" valign="top" headers="idm45858829932880">
+							</td></tr><tr><td align="left" valign="top" headers="idm44986862530720">
 							<p>
 								<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.7/html-single/configure_red_hat_quay/index#config-fields-helm-oci">FEATURE_HELM_OCI_SUPPORT</a>
 							</p>
-							</td><td align="left" valign="top" headers="idm45858829922480">
+							</td><td align="left" valign="top" headers="idm44986863463312">
 							<p>
 								Deprecated
 							</p>
-							</td><td align="left" valign="top" headers="idm45858833815328">
+							</td><td align="left" valign="top" headers="idm44986857358352">
 							<p>
 								Deprecated
 							</p>
-							</td><td align="left" valign="top" headers="idm45858835713712">
+							</td><td align="left" valign="top" headers="idm44986863726656">
 							<p>
 								Deprecated
 							</p>
-							</td></tr><tr><td align="left" valign="top" headers="idm45858829932880">
+							</td></tr><tr><td align="left" valign="top" headers="idm44986862530720">
 							<p>
 								<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.7/html-single/configure_red_hat_quay/index#config-ui-database">MySQL and MariaDB database support</a>
 							</p>
-							</td><td align="left" valign="top" headers="idm45858829922480">
+							</td><td align="left" valign="top" headers="idm44986863463312">
 							<p>
 								Deprecated
 							</p>
-							</td><td align="left" valign="top" headers="idm45858833815328">
+							</td><td align="left" valign="top" headers="idm44986857358352">
 							<p>
 								Deprecated
 							</p>
-							</td><td align="left" valign="top" headers="idm45858835713712">
+							</td><td align="left" valign="top" headers="idm44986863726656">
 							<p>
 								Deprecated
 							</p>
-							</td></tr><tr><td align="left" valign="top" headers="idm45858829932880">
+							</td></tr><tr><td align="left" valign="top" headers="idm44986862530720">
 							<p>
 								<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.7/html-single/use_red_hat_quay/index#oci-intro">Open Container Initiative (OCI) Media types</a>
 							</p>
-							</td><td align="left" valign="top" headers="idm45858829922480">
+							</td><td align="left" valign="top" headers="idm44986863463312">
 							<p>
 								General Availability
 							</p>
-							</td><td align="left" valign="top" headers="idm45858833815328">
+							</td><td align="left" valign="top" headers="idm44986857358352">
 							<p>
 								General Availability
 							</p>
-							</td><td align="left" valign="top" headers="idm45858835713712">
+							</td><td align="left" valign="top" headers="idm44986863726656">
 							<p>
 								General Availability
 							</p>
-							</td></tr><tr><td align="left" valign="top" headers="idm45858829932880">
+							</td></tr><tr><td align="left" valign="top" headers="idm44986862530720">
 							<p>
 								<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.7/html-single/manage_red_hat_quay#clair_crda_configuration">Java scanning with Clair</a>
 							</p>
-							</td><td align="left" valign="top" headers="idm45858829922480">
+							</td><td align="left" valign="top" headers="idm44986863463312">
 							<p>
 								Technology Preview
 							</p>
-							</td><td align="left" valign="top" headers="idm45858833815328">
+							</td><td align="left" valign="top" headers="idm44986857358352">
 							<p>
 								Technology Preview
 							</p>
-							</td><td align="left" valign="top" headers="idm45858835713712">
+							</td><td align="left" valign="top" headers="idm44986863726656">
 							<p>
 								Technology Preview
 							</p>
-							</td></tr><tr><td align="left" valign="top" headers="idm45858829932880">
+							</td></tr><tr><td align="left" valign="top" headers="idm44986862530720">
 							<p>
 								Image APIs
 							</p>
-							</td><td align="left" valign="top" headers="idm45858829922480">
+							</td><td align="left" valign="top" headers="idm44986863463312">
 							<p>
 								Deprecated
 							</p>
-							</td><td align="left" valign="top" headers="idm45858833815328">
+							</td><td align="left" valign="top" headers="idm44986857358352">
 							<p>
 								Deprecated
 							</p>
-							</td><td align="left" valign="top" headers="idm45858835713712">
+							</td><td align="left" valign="top" headers="idm44986863726656">
 							<p>
 								General Availability
 							</p>
-							</td></tr></tbody></table></div></div><section class="section" id="deprecated-features"><div class="titlepage"><div><div><h4 class="title">1.5.1. Deprecated features</h4></div></div></div><div class="itemizedlist" id="docker-v1-support"><ul class="itemizedlist" type="disc"><li class="listitem">
+							</td></tr></tbody></table></div></div><section class="section" id="deprecated-features"><div class="titlepage"><div><div><h4 class="title">2.5.1. Deprecated features</h4></div></div></div><div class="itemizedlist" id="docker-v1-support"><ul class="itemizedlist" type="disc"><li class="listitem">
 							Support for Docker v1 is now deprecated and will be removed in a future release of Red Hat Quay. Users must now opt-in to enable Docker v1 support. Users should migrate any stored images in Docker v1 format to the OCI image format to avoid potential loss of data.
-						</li></ul></div></section></section></section><div><div xml:lang="en-US" class="legalnotice" id="idm45858811062976"><h1 class="legalnotice">Legal Notice</h1><div class="para">
+						</li></ul></div></section></section></section><div><div xml:lang="en-US" class="legalnotice" id="idm44986844867088"><h1 class="legalnotice">Legal Notice</h1><div class="para">
 		Copyright <span class="trademark"/>© 2023 Red Hat, Inc.
 	</div><div class="para">
 		The text of and illustrations in this document are licensed by Red Hat under a Creative Commons Attribution–Share Alike 3.0 Unported license ("CC-BY-SA"). An explanation of CC-BY-SA is available at <a class="uri" href="http://creativecommons.org/licenses/by-sa/3.0/">http://creativecommons.org/licenses/by-sa/3.0/</a>. In accordance with CC-BY-SA, if you distribute this document or an adaptation of it, you must provide the URL for the original version.
