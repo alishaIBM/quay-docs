@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" class="chrometwo"><head><title>Deploy Red Hat Quay for proof-of-concept (non-production) purposes</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css"/><meta name="generator" content="publican v4.3.4"/><meta name="description" content="Get started with Red Hat Quay"/><link rel="next" href="#idm45548507131792" title="Preface"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><script type="text/javascript" src="Common_Content/scripts/jquery-1.7.1.min.js"> </script><script type="text/javascript" src="Common_Content/scripts/utils.js"> </script><script type="text/javascript" src="Common_Content/scripts/highlight.js/highlight.pack.js"> </script></head><body><div id="chrometwo"><div id="main"><div xml:lang="en-US" class="book" id="idm45548506694704"><div class="titlepage"><div><div class="producttitle"><span class="productname">Red Hat Quay</span> <span class="productnumber">3.8</span></div><div><h1 class="title">Deploy Red Hat Quay for proof-of-concept (non-production) purposes</h1></div><div><h2 class="subtitle">Deploy Red Hat Quay</h2></div><div><div xml:lang="en-US" class="authorgroup"><span class="orgname">Red Hat OpenShift Documentation Team</span></div></div><div><a href="#idm45548490845456">Legal Notice</a></div><div><div class="abstract"><p class="title"><strong>Abstract</strong></p><div class="para">
+<html xmlns="http://www.w3.org/1999/xhtml" class="chrometwo"><head><title>Deploy Red Hat Quay for proof-of-concept (non-production) purposes</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css"/><meta name="generator" content="publican v4.3.4"/><meta name="description" content="Get started with Red Hat Quay"/><link rel="next" href="#idm45395723134352" title="Preface"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><script type="text/javascript" src="Common_Content/scripts/jquery-1.7.1.min.js"> </script><script type="text/javascript" src="Common_Content/scripts/utils.js"> </script><script type="text/javascript" src="Common_Content/scripts/highlight.js/highlight.pack.js"> </script></head><body><div id="chrometwo"><div id="main"><div xml:lang="en-US" class="book" id="idm45395723546112"><div class="titlepage"><div><div class="producttitle"><span class="productname">Red Hat Quay</span> <span class="productnumber">3.8</span></div><div><h1 class="title">Deploy Red Hat Quay for proof-of-concept (non-production) purposes</h1></div><div><h2 class="subtitle">Deploy Red Hat Quay</h2></div><div><div xml:lang="en-US" class="authorgroup"><span class="orgname">Red Hat OpenShift Documentation Team</span></div></div><div><a href="#idm45395728396432">Legal Notice</a></div><div><div class="abstract"><p class="title"><strong>Abstract</strong></p><div class="para">
 				Get started with Red Hat Quay
-			</div></div></div></div><hr/></div><div class="toc"><ul class="toc"><li><span class="preface"><a href="#idm45548507131792">Preface</a></span></li><li><span class="chapter"><a href="#poc-overview">1. Overview</a></span><ul><li><span class="section"><a href="#poc-architecture">1.1. Architecture</a></span><ul><li><span class="section"><a href="#poc-internal-components">1.1.1. Internal components</a></span></li><li><span class="section"><a href="#poc-external-components">1.1.2. External components</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#poc-getting-started">2. Getting started with Red Hat Quay</a></span><ul><li><span class="section"><a href="#poc-prerequisites">2.1. Prerequisites</a></span><ul><li><span class="section"><a href="#poc-using-podman">2.1.1. Using Podman</a></span></li></ul></li><li><span class="section"><a href="#poc-configuring-rhel-server">2.2. Preparing Red Hat Enterprise Linux for a Red Hat Quay proof of concept deployment</a></span><ul><li><span class="section"><a href="#poc-install-register-rhel-server">2.2.1. Install and register the RHEL server</a></span></li><li><span class="section"><a href="#poc-installing-podman">2.2.2. Installing Podman</a></span></li><li><span class="section"><a href="#poc-registry-authentication">2.2.3. Registry authentication</a></span></li><li><span class="section"><a href="#poc-firewall-configuration">2.2.4. Firewall configuration</a></span></li><li><span class="section"><a href="#poc-ip-naming">2.2.5. IP addressing and naming services</a></span></li></ul></li><li><span class="section"><a href="#poc-configuring-database">2.3. Configuring the database</a></span><ul><li><span class="section"><a href="#poc-setting-up-postgres">2.3.1. Setting up Postgres</a></span></li></ul></li><li><span class="section"><a href="#poc-configuring-redis">2.4. Configuring Redis</a></span><ul><li><span class="section"><a href="#poc-setting-up-redis">2.4.1. Setting up Redis</a></span></li></ul></li><li><span class="section"><a href="#poc-configuring-quay">2.5. Configuring Red Hat Quay</a></span><ul><li><span class="section"><a href="#poc-quay-setup">2.5.1. Red Hat Quay setup</a></span></li><li><span class="section"><a href="#poc-validating">2.5.2. Validate and download configuration</a></span></li></ul></li><li><span class="section"><a href="#poc-deploying-quay">2.6. Deploying Red Hat Quay</a></span><ul><li><span class="section"><a href="#prerequisites">2.6.1. Prerequisites</a></span></li><li><span class="section"><a href="#preparing-configuration-folder">2.6.2. Preparing the configuration folder</a></span></li><li><span class="section"><a href="#preparing-local-storage">2.6.3. Prepare local storage for image data</a></span></li><li><span class="section"><a href="#deploy-quay-registry">2.6.4. Deploy the Red Hat Quay registry</a></span></li></ul></li><li><span class="section"><a href="#using_red_hat_quay">2.7. Using Red Hat Quay</a></span><ul><li><span class="section"><a href="#push_and_pull_images">2.7.1. Push and pull images</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#advanced_red_hat_quay_deployment">3. Advanced Red Hat Quay deployment</a></span><ul><li><span class="section"><a href="#using_ssl_to_protect_connections_to_red_hat_quay">3.1. Using SSL to protect connections to Red Hat Quay</a></span><ul><li><span class="section"><a href="#introduction_to_using_ssl">3.1.1. Introduction to using SSL</a></span></li><li><span class="section"><a href="#create-a-ca-and-sign-a-certificate">3.1.2. Create a Certificate Authority and sign a certificate</a></span></li><li><span class="section"><a href="#configuring_ssl_using_the_ui">3.1.3. Configuring SSL using the UI</a></span></li><li><span class="section"><a href="#configuring_ssl_using_the_command_line">3.1.4. Configuring SSL using the command line</a></span></li><li><span class="section"><a href="#testing_ssl_configuration_using_the_command_line">3.1.5. Testing SSL configuration using the command line</a></span></li><li><span class="section"><a href="#testing_ssl_configuration_using_the_browser">3.1.6. Testing SSL configuration using the browser</a></span></li><li><span class="section"><a href="#configuring_podman_to_trust_the_certificate_authority">3.1.7. Configuring podman to trust the Certificate Authority</a></span></li><li><span class="section"><a href="#configuring_the_system_to_trust_the_certificate_authority">3.1.8. Configuring the system to trust the certificate authority</a></span></li></ul></li><li><span class="section"><a href="#red_hat_quay_superuser">3.2. Red Hat Quay superuser</a></span><ul><li><span class="section"><a href="#adding_a_superuser_to_quay_using_the_ui">3.2.1. Adding a superuser to Quay using the UI</a></span></li><li><span class="section"><a href="#editing_the_config_yaml_file_to_add_a_superuser">3.2.2. Editing the config.yaml file to add a superuser</a></span></li><li><span class="section"><a href="#accessing_the_superuser_admin_panel">3.2.3. Accessing the superuser admin panel</a></span></li></ul></li><li><span class="section"><a href="#repository_mirroring">3.3. Repository Mirroring</a></span><ul><li><span class="section"><a href="#mirroring-intro">3.3.1. Repository mirroring</a></span></li><li><span class="section"><a href="#mirroring_configuration_ui">3.3.2. Mirroring configuration UI</a></span></li><li><span class="section"><a href="#mirroring-worker">3.3.3. Mirroring worker</a></span></li><li><span class="section"><a href="#mirroring-creating-repo">3.3.4. Creating a mirrored repository</a></span></li><li><span class="section"><a href="#mirroring-tag-patterns">3.3.5. Mirroring tag patterns</a></span></li></ul></li><li><span class="section"><a href="#clair-standalone-intro">3.4. Deploying Clair V4</a></span><ul><li><span class="section"><a href="#clair-standalone-database">3.4.1. Deploying a separate database for Clair</a></span></li><li><span class="section"><a href="#clair-standalone-quay-config">3.4.2. Quay configuration for Clair</a></span></li><li><span class="section"><a href="#clair-standalone-config">3.4.3. Clair configuration</a></span></li><li><span class="section"><a href="#clair-standalone-running">3.4.4. Running Clair</a></span></li><li><span class="section"><a href="#clair-standalone-using">3.4.5. Using Clair security scanning</a></span></li><li><span class="section"><a href="#clair-cve">3.4.6. CVE ratings from the National Vulnerability Database</a></span></li></ul></li><li><span class="section"><a href="#restarting_containers">3.5. Restarting containers</a></span><ul><li><span class="section"><a href="#using_systemd_unit_files_with_podman">3.5.1. Using systemd unit files with Podman</a></span></li><li><span class="section"><a href="#starting_stopping_and_checking_the_status_of_services">3.5.2. Starting, stopping and checking the status of services</a></span></li><li><span class="section"><a href="#testing_restart_after_reboot">3.5.3. Testing restart after reboot</a></span></li><li><span class="section"><a href="#configuring_quay_s_dependency_on_clair">3.5.4. Configuring Quay’s dependency on Clair</a></span></li></ul></li><li><span class="section"><a href="#fips-overview">3.6. Federal Information Processing Standard (FIPS) readiness and compliance</a></span></li></ul></li><li><span class="chapter"><a href="#next_steps">4. Next steps</a></span></li></ul></div><section class="preface" id="idm45548507131792"><div class="titlepage"><div><div><h1 class="title">Preface</h1></div></div></div><p>
+			</div></div></div></div><hr/></div><div class="toc"><ul class="toc"><li><span class="preface"><a href="#idm45395723134352">Preface</a></span></li><li><span class="chapter"><a href="#poc-overview">1. Overview</a></span><ul><li><span class="section"><a href="#poc-architecture">1.1. Architecture</a></span><ul><li><span class="section"><a href="#poc-internal-components">1.1.1. Internal components</a></span></li><li><span class="section"><a href="#poc-external-components">1.1.2. External components</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#poc-getting-started">2. Getting started with Red Hat Quay</a></span><ul><li><span class="section"><a href="#poc-prerequisites">2.1. Prerequisites</a></span><ul><li><span class="section"><a href="#poc-using-podman">2.1.1. Using Podman</a></span></li></ul></li><li><span class="section"><a href="#poc-configuring-rhel-server">2.2. Preparing Red Hat Enterprise Linux for a Red Hat Quay proof of concept deployment</a></span><ul><li><span class="section"><a href="#poc-install-register-rhel-server">2.2.1. Install and register the RHEL server</a></span></li><li><span class="section"><a href="#poc-installing-podman">2.2.2. Installing Podman</a></span></li><li><span class="section"><a href="#poc-registry-authentication">2.2.3. Registry authentication</a></span></li><li><span class="section"><a href="#poc-firewall-configuration">2.2.4. Firewall configuration</a></span></li><li><span class="section"><a href="#poc-ip-naming">2.2.5. IP addressing and naming services</a></span></li></ul></li><li><span class="section"><a href="#poc-configuring-database">2.3. Configuring the database</a></span><ul><li><span class="section"><a href="#poc-setting-up-postgres">2.3.1. Setting up Postgres</a></span></li></ul></li><li><span class="section"><a href="#poc-configuring-redis">2.4. Configuring Redis</a></span><ul><li><span class="section"><a href="#poc-setting-up-redis">2.4.1. Setting up Redis</a></span></li></ul></li><li><span class="section"><a href="#poc-configuring-quay">2.5. Configuring Red Hat Quay</a></span><ul><li><span class="section"><a href="#poc-quay-setup">2.5.1. Red Hat Quay setup</a></span></li><li><span class="section"><a href="#poc-validating">2.5.2. Validate and download configuration</a></span></li></ul></li><li><span class="section"><a href="#poc-deploying-quay">2.6. Deploying Red Hat Quay</a></span><ul><li><span class="section"><a href="#prerequisites">2.6.1. Prerequisites</a></span></li><li><span class="section"><a href="#preparing-configuration-folder">2.6.2. Preparing the configuration folder</a></span></li><li><span class="section"><a href="#preparing-local-storage">2.6.3. Prepare local storage for image data</a></span></li><li><span class="section"><a href="#deploy-quay-registry">2.6.4. Deploy the Red Hat Quay registry</a></span></li></ul></li><li><span class="section"><a href="#using_red_hat_quay">2.7. Using Red Hat Quay</a></span><ul><li><span class="section"><a href="#push_and_pull_images">2.7.1. Push and pull images</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#advanced_red_hat_quay_deployment">3. Advanced Red Hat Quay deployment</a></span><ul><li><span class="section"><a href="#using_ssl_to_protect_connections_to_red_hat_quay">3.1. Using SSL to protect connections to Red Hat Quay</a></span><ul><li><span class="section"><a href="#introduction_to_using_ssl">3.1.1. Introduction to using SSL</a></span></li><li><span class="section"><a href="#create-a-ca-and-sign-a-certificate">3.1.2. Create a Certificate Authority and sign a certificate</a></span></li><li><span class="section"><a href="#configuring_ssl_using_the_ui">3.1.3. Configuring SSL using the UI</a></span></li><li><span class="section"><a href="#configuring_ssl_using_the_command_line">3.1.4. Configuring SSL using the command line</a></span></li><li><span class="section"><a href="#testing_ssl_configuration_using_the_command_line">3.1.5. Testing SSL configuration using the command line</a></span></li><li><span class="section"><a href="#testing_ssl_configuration_using_the_browser">3.1.6. Testing SSL configuration using the browser</a></span></li><li><span class="section"><a href="#configuring_podman_to_trust_the_certificate_authority">3.1.7. Configuring podman to trust the Certificate Authority</a></span></li><li><span class="section"><a href="#configuring_the_system_to_trust_the_certificate_authority">3.1.8. Configuring the system to trust the certificate authority</a></span></li></ul></li><li><span class="section"><a href="#red_hat_quay_superuser">3.2. Red Hat Quay superuser</a></span><ul><li><span class="section"><a href="#adding_a_superuser_to_quay_using_the_ui">3.2.1. Adding a superuser to Quay using the UI</a></span></li><li><span class="section"><a href="#editing_the_config_yaml_file_to_add_a_superuser">3.2.2. Editing the config.yaml file to add a superuser</a></span></li><li><span class="section"><a href="#accessing_the_superuser_admin_panel">3.2.3. Accessing the superuser admin panel</a></span></li></ul></li><li><span class="section"><a href="#repository_mirroring">3.3. Repository Mirroring</a></span><ul><li><span class="section"><a href="#mirroring-intro">3.3.1. Repository mirroring</a></span></li><li><span class="section"><a href="#mirroring_configuration_ui">3.3.2. Mirroring configuration UI</a></span></li><li><span class="section"><a href="#mirroring-worker">3.3.3. Mirroring worker</a></span></li><li><span class="section"><a href="#mirroring-creating-repo">3.3.4. Creating a mirrored repository</a></span></li><li><span class="section"><a href="#mirroring-tag-patterns">3.3.5. Mirroring tag patterns</a></span></li></ul></li><li><span class="section"><a href="#clair-vulnerability-scanner">3.4. Clair for Red Hat Quay</a></span><ul><li><span class="section"><a href="#clair-standalone-configure">3.4.1. Setting up Clair on standalone Red Hat Quay deployments</a></span></li><li><span class="section"><a href="#clair-testing">3.4.2. Testing Clair</a></span></li><li><span class="section"><a href="#clair-cve">3.4.3. CVE ratings from the National Vulnerability Database</a></span></li></ul></li><li><span class="section"><a href="#restarting_containers">3.5. Restarting containers</a></span><ul><li><span class="section"><a href="#using_systemd_unit_files_with_podman">3.5.1. Using systemd unit files with Podman</a></span></li><li><span class="section"><a href="#starting_stopping_and_checking_the_status_of_services">3.5.2. Starting, stopping and checking the status of services</a></span></li><li><span class="section"><a href="#testing_restart_after_reboot">3.5.3. Testing restart after reboot</a></span></li><li><span class="section"><a href="#configuring_quay_s_dependency_on_clair">3.5.4. Configuring Quay’s dependency on Clair</a></span></li></ul></li><li><span class="section"><a href="#fips-overview">3.6. Federal Information Processing Standard (FIPS) readiness and compliance</a></span></li></ul></li><li><span class="chapter"><a href="#next_steps">4. Next steps</a></span></li></ul></div><section class="preface" id="idm45395723134352"><div class="titlepage"><div><div><h1 class="title">Preface</h1></div></div></div><p>
 			Red Hat Quay is an enterprise-quality registry for building, securing and serving container images. This procedure describes how to deploy Red Hat Quay for proof-of-concept (non-production) purposes.
 		</p></section><section class="chapter" id="poc-overview"><div class="titlepage"><div><div><h1 class="title">Chapter 1. Overview</h1></div></div></div><p>
 			Red Hat Quay includes the following features:
@@ -145,63 +145,63 @@ $ firewall-cmd --reload</pre></li></ul></div></section><section class="section" 
 					This document uses port mapping and assumes a static IP address for your host system. Throughout the deployment, <code class="literal">quay-sever.example.com</code> is used with the <code class="literal">192.168.1.112</code> IP address. This information is established in the <code class="literal">/etc/hosts</code> file, for example:
 				</p><pre class="programlisting language-terminal">$ cat /etc/hosts</pre><p>
 					Example output:
-				</p><pre class="programlisting language-terminal">192.168.1.112   quay-server.example.com</pre><div class="table" id="idm45548488982256"><p class="title"><strong>Table 2.1. Sample proof of concept port mapping</strong></p><div class="table-contents"><table class="lt-4-cols lt-7-rows"><colgroup><col style="width: 50%; " class="col_1"/><col style="width: 25%; " class="col_2"/><col style="width: 25%; " class="col_3"/></colgroup><thead><tr><th align="left" valign="top" id="idm45548492666672" scope="col">Component</th><th align="left" valign="top" id="idm45548493309552" scope="col">Port mapping</th><th align="left" valign="top" id="idm45548493308688" scope="col">Address</th></tr></thead><tbody><tr><td align="left" valign="top" headers="idm45548492666672">
+				</p><pre class="programlisting language-terminal">192.168.1.112   quay-server.example.com</pre><div class="table" id="idm45395728498000"><p class="title"><strong>Table 2.1. Sample proof of concept port mapping</strong></p><div class="table-contents"><table class="lt-4-cols lt-7-rows"><colgroup><col style="width: 50%; " class="col_1"/><col style="width: 25%; " class="col_2"/><col style="width: 25%; " class="col_3"/></colgroup><thead><tr><th align="left" valign="top" id="idm45395729651920" scope="col">Component</th><th align="left" valign="top" id="idm45395729651056" scope="col">Port mapping</th><th align="left" valign="top" id="idm45395729650192" scope="col">Address</th></tr></thead><tbody><tr><td align="left" valign="top" headers="idm45395729651920">
 								<p>
 									Quay
 								</p>
-								</td><td align="left" valign="top" headers="idm45548493309552">
+								</td><td align="left" valign="top" headers="idm45395729651056">
 								<p>
 									<code class="literal">-p 80:8080</code> <code class="literal">-p 443:8443</code>
 								</p>
-								</td><td align="left" valign="top" headers="idm45548493308688">
+								</td><td align="left" valign="top" headers="idm45395729650192">
 								<p>
 									http://quay-server.example.com
 								</p>
-								</td></tr><tr><td align="left" valign="top" headers="idm45548492666672">
+								</td></tr><tr><td align="left" valign="top" headers="idm45395729651920">
 								<p>
 									Postgres for Quay
 								</p>
-								</td><td align="left" valign="top" headers="idm45548493309552">
+								</td><td align="left" valign="top" headers="idm45395729651056">
 								<p>
 									<code class="literal">-p 5432:5432</code>
 								</p>
-								</td><td align="left" valign="top" headers="idm45548493308688">
+								</td><td align="left" valign="top" headers="idm45395729650192">
 								<p>
 									quay-server.example.com:5432
 								</p>
-								</td></tr><tr><td align="left" valign="top" headers="idm45548492666672">
+								</td></tr><tr><td align="left" valign="top" headers="idm45395729651920">
 								<p>
 									Redis
 								</p>
-								</td><td align="left" valign="top" headers="idm45548493309552">
+								</td><td align="left" valign="top" headers="idm45395729651056">
 								<p>
 									<code class="literal">-p 6379:6379</code>
 								</p>
-								</td><td align="left" valign="top" headers="idm45548493308688">
+								</td><td align="left" valign="top" headers="idm45395729650192">
 								<p>
 									quay-server.example.com:6379
 								</p>
-								</td></tr><tr><td align="left" valign="top" headers="idm45548492666672">
+								</td></tr><tr><td align="left" valign="top" headers="idm45395729651920">
 								<p>
 									Postgres for Clair V4
 								</p>
-								</td><td align="left" valign="top" headers="idm45548493309552">
+								</td><td align="left" valign="top" headers="idm45395729651056">
 								<p>
 									<code class="literal">-p 5433:5432</code>
 								</p>
-								</td><td align="left" valign="top" headers="idm45548493308688">
+								</td><td align="left" valign="top" headers="idm45395729650192">
 								<p>
 									quay-server.example.com:5433
 								</p>
-								</td></tr><tr><td align="left" valign="top" headers="idm45548492666672">
+								</td></tr><tr><td align="left" valign="top" headers="idm45395729651920">
 								<p>
 									Clair V4
 								</p>
-								</td><td align="left" valign="top" headers="idm45548493309552">
+								</td><td align="left" valign="top" headers="idm45395729651056">
 								<p>
 									<code class="literal">-p 8081:8080</code>
 								</p>
-								</td><td align="left" valign="top" headers="idm45548493308688">
+								</td><td align="left" valign="top" headers="idm45395729650192">
 								<p>
 									http://quay-server.example.com:8081
 								</p>
@@ -762,67 +762,59 @@ registry.redhat.io/quay/quay-rhel8:v3.8.2</pre></li><li class="listitem"><p clas
 									<p>
 										v3.2, v3.2-4beta, v3.3
 									</p>
-									</td></tr></tbody></table></div></section></section></section><section class="section" id="clair-standalone-intro"><div class="titlepage"><div><div><h2 class="title">3.4. Deploying Clair V4</h2></div></div></div><p>
-				Clair is an application for parsing image contents and reporting vulnerabilities affecting the contents. This is performed via static analysis and not at runtime. Clair’s analysis is broken into three distinct parts:
-			</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
-						<span class="strong strong"><strong>Indexing:</strong></span> Indexing starts with submitting a Manifest to Clair. On receipt, Clair will fetch layers, scan their contents, and return an intermediate representation called an IndexReport. Manifests are Clair’s representation of a container image. Clair leverages the fact that OCI Manifests and Layers are content-addressed to reduce duplicated work. Once a Manifest is indexed, the IndexReport is persisted for later retrieval.
-					</li><li class="listitem">
-						<span class="strong strong"><strong>Matching:</strong></span> Matching takes an IndexReport and correlates vulnerabilities affecting the manifest that the report represents. Clair is continually ingesting new security data and a request to the matcher will always provide you with the most up to date vulnerability analysis of an IndexReport.
-					</li><li class="listitem">
-						<span class="strong strong"><strong>Notifications:</strong></span> Clair implements a notification service. When new vulnerabilities are discovered, the notifier service will determine if these vulnerabilities affect any indexed Manifests. The notifier will then take action according to its configuration.
-					</li></ul></div><section class="section" id="clair-standalone-database"><div class="titlepage"><div><div><h3 class="title">3.4.1. Deploying a separate database for Clair</h3></div></div></div><p>
-					Clair requires a Postgres database. You can share a common database between Quay and Clair if Quay is also using Postgres, but in this example a separate, Clair-specific database is deployed.
-				</p><p>
-					In this proof-of-concept scenario, you will use a directory on the local file system to persist database data.
-				</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p class="simpara">
-							In the installation folder, denoted here by the variable $QUAY, create a directory for the Clair database data and set the permissions appropriately:
-						</p><pre class="literallayout">$ mkdir -p $QUAY/postgres-clairv4
-$ setfacl -m u:26:-wx $QUAY/postgres-clairv4</pre></li><li class="listitem"><p class="simpara">
-							Use podman to run the Postgres container, specifying the username, password, database name and port, together with the volume definition for database data. As the standard Postgres port, <code class="literal">5432</code>, is already in use by the Quay deployment, expose a different port, in this instance <code class="literal">5433</code>:
-						</p><pre class="literallayout">$ sudo podman run -d --rm --name postgresql-clairv4 \
+									</td></tr></tbody></table></div></section></section></section><section class="section" id="clair-vulnerability-scanner"><div class="titlepage"><div><div><h2 class="title">3.4. Clair for Red Hat Quay</h2></div></div></div><p>
+				Clair v4 (Clair) is an open source application that leverages static code analyses for parsing image content and reporting vulnerabilities affecting the content. Clair is packaged with Red Hat Quay and can be used in both standalone and Operator deployments. It can be run in highly scalable configurations, where components can be scaled separately as appropriate for enterprise environments.
+			</p><div class="admonition note"><div class="admonition_header">Note</div><div><p>
+					With the release of Red Hat Quay 3.4, Clair v4 (image registry.redhat.io/quay/clair-rhel8 fully replaced Clair v2 (image quay.io/redhat/clair-jwt). See below for how to run Clair v2 in read-only mode while Clair v4 is updating.
+				</p></div></div><section class="section" id="clair-standalone-configure"><div class="titlepage"><div><div><h3 class="title">3.4.1. Setting up Clair on standalone Red Hat Quay deployments</h3></div></div></div><p>
+					For standalone Red Hat Quay deployments, you can set up Clair manually.
+				</p><div class="orderedlist"><p class="title"><strong>Procedure</strong></p><ol class="orderedlist" type="1"><li class="listitem"><p class="simpara">
+							In your Red Hat Quay installation directory, create a new directory for the Clair database data:
+						</p><pre class="programlisting language-terminal">$ mkdir /home/&lt;user-name&gt;/quay-poc/postgres-clairv4</pre></li><li class="listitem"><p class="simpara">
+							Set the appropriate permissions for the <code class="literal">postgres-clairv4</code> file by entering the following command:
+						</p><pre class="programlisting language-terminal">$ setfacl -m u:26:-wx /home/&lt;user-name&gt;/quay-poc/postgres-clairv4</pre></li><li class="listitem"><p class="simpara">
+							Deploy a Clair Postgres database by entering the following command:
+						</p><pre class="programlisting language-terminal">$ sudo podman run -d --name postgresql-clairv4 \
   -e POSTGRESQL_USER=clairuser \
   -e POSTGRESQL_PASSWORD=clairpass \
   -e POSTGRESQL_DATABASE=clair \
   -e POSTGRESQL_ADMIN_PASSWORD=adminpass \
-  -p 5433:5432 \
-  -v $QUAY/postgres-clairv4:/var/lib/pgsql/data:Z \
+  -p 5433:5433 \
+  -v /home/&lt;user-name&gt;/quay-poc/postgres-clairv4:/var/lib/pgsql/data:Z \
   registry.redhat.io/rhel8/postgresql-10:1</pre></li><li class="listitem"><p class="simpara">
-							Ensure that the Postgres <code class="literal">uuid-ossp</code> module is installed, as it is required by Clair:
-						</p><pre class="literallayout">$ sudo podman exec -it postgresql-clairv4 /bin/bash -c 'echo "CREATE EXTENSION IF NOT EXISTS \"uuid-ossp\"" | psql -d clair -U postgres'</pre></li></ol></div></section><section class="section" id="clair-standalone-quay-config"><div class="titlepage"><div><div><h3 class="title">3.4.2. Quay configuration for Clair</h3></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p class="simpara">
-							Stop the <code class="literal">Quay</code> container if it is running, and restart it in configuration mode, loading the existing configuration as a volume:
-						</p><pre class="screen">$ sudo podman run --rm -it --name quay_config \
+							Install the Postgres <code class="literal">uuid-ossp</code> module for your Clair deployment:
+						</p><pre class="programlisting language-terminal">$ podman exec -it postgresql-clairv4 /bin/bash -c 'echo "CREATE EXTENSION IF NOT EXISTS \"uuid-ossp\"" | psql -d clair -U postgres'</pre><div class="formalpara"><p class="title"><strong>Example output</strong></p><p>
+								
+<pre class="programlisting language-terminal">CREATE EXTENSION</pre>
+							</p></div><div class="admonition note"><div class="admonition_header">Note</div><div><p>
+								Clair requires the <code class="literal">uuid-ossp</code> extension to be added to its Postgres database. For users with proper privileges, creating the extension will automatically be added by Clair. If users do not have the proper privileges, the extension must be added before start Clair.
+							</p><p>
+								If the extension is not present, the following error will be displayed when Clair attempts to start: <code class="literal">ERROR: Please load the "uuid-ossp" extension. (SQLSTATE 42501)</code>.
+							</p></div></div></li><li class="listitem"><p class="simpara">
+							Stop the <code class="literal">Quay</code> container if it is running and restart it in configuration mode, loading the existing configuration as a volume:
+						</p><pre class="programlisting language-terminal">$ sudo podman run --rm -it --name quay_config \
   -p 80:8080 -p 443:8443 \
   -v $QUAY/config:/conf/stack:Z \
-  registry.redhat.io/quay/quay-rhel8:v3.8.2 config secret</pre></li><li class="listitem"><p class="simpara">
-							Log in to the configuration tool and enable scanning in the Security Scanner section of the UI. Set the HTTP endpoint for Clair using a port that is not already in use on the <code class="literal">quay-server</code> system, for example <code class="literal">8081</code>. Create a Clair pre-shared key (PSK) using the <code class="literal">Generate PSK</code> button, for example:
-						</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
-									<span class="strong strong"><strong>Security Scanner Endpoint:</strong></span> <code class="literal">http://quay-server.example.com:8081</code>
-								</li><li class="listitem"><p class="simpara">
-									<span class="strong strong"><strong>Security Scanner PSK:</strong></span> <code class="literal">MTU5YzA4Y2ZkNzJoMQ==</code>
-								</p><p class="simpara">
-									The UI for setting the scanner data is shown in the following image:
-								</p><div class="formalpara"><p class="title"><strong>Security Scanner UI</strong></p><p>
-										<span class="inlinemediaobject"><img src="images/poc-quay-scanner-config.png" alt="Security Scanner"/></span>
-									</p></div></li></ul></div></li><li class="listitem"><p class="simpara">
-							Validate and download the <code class="literal">configuration</code> file and then stop the <code class="literal">Quay</code> container that is running the configuration editor. Extract the configuration bundle as before into the <code class="literal">$QUAY/config</code> directory.
-						</p><pre class="literallayout">$ cp ~/Downloads/quay-config.tar.gz $QUAY/config
-$ cd $QUAY/config
-$ tar xvf quay-config.tar.gz</pre></li></ol></div><p>
-					The Red Hat Quay configuration file is now updated to contain the following fields for the security scanner:
-				</p><pre class="programlisting language-yaml">...
-FEATURE_SECURITY_NOTIFICATIONS: true
-FEATURE_SECURITY_SCANNER: true
-...
-SECURITY_SCANNER_INDEXING_INTERVAL: 30
-SECURITY_SCANNER_V4_ENDPOINT: http://quay-server.example.com:8081
-SECURITY_SCANNER_V4_PSK: MTU5YzA4Y2ZkNzJoMQ==
-SERVER_HOSTNAME: quay-server.example.com
-...</pre></section><section class="section" id="clair-standalone-config"><div class="titlepage"><div><div><h3 class="title">3.4.3. Clair configuration</h3></div></div></div><p>
-					Detailed information on Clair configuration is available at <a class="link" href="https://github.com/quay/clair/blob/main/Documentation/reference/config.md">https://github.com/quay/clair/blob/main/Documentation/reference/config.md</a>.
-				</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem"><p class="simpara">
-							Create a config.yaml file in your <code class="literal">/etc/</code> directory, for example, <code class="literal">/etc/clairv4/config/config.yaml</code>. Use the following example, which provides a minimal configuration for use in a proof of concept deployment:
+  registry.redhat.io/quay/quay-rhel8:v3.8.2 config secret</pre></li><li class="listitem">
+							Log in to the configuration tool and click <span class="strong strong"><strong>Enable Security Scanning</strong></span> in the <span class="strong strong"><strong>Security Scanner</strong></span> section of the UI.
+						</li><li class="listitem">
+							Set the HTTP endpoint for Clair using a port that is not already in use on the <code class="literal">quay-server</code> system, for example, <code class="literal">8081</code>.
+						</li><li class="listitem"><p class="simpara">
+							Create a pre-shared key (PSK) using the <span class="strong strong"><strong>Generate PSK</strong></span> button.
+						</p><div class="formalpara"><p class="title"><strong>Security Scanner UI</strong></p><p>
+								<span class="inlinemediaobject"><img src="images/poc-quay-scanner-config.png" alt="Security Scanner"/></span>
+							</p></div></li><li class="listitem">
+							Validate and download the <code class="literal">config.yaml</code> file for Red Hat Quay, and then stop the <code class="literal">Quay</code> container that is running the configuration editor.
+						</li><li class="listitem"><p class="simpara">
+							Extract the new configuration bundle into your Red Hat Quay installation directory, for example:
+						</p><pre class="programlisting language-terminal">$ tar xvf quay-config.tar.gz -d /home/&lt;user-name&gt;/quay-poc/</pre></li><li class="listitem"><p class="simpara">
+							Create a folder for your Clair configuration file, for example:
+						</p><pre class="programlisting language-terminal">$ mkdir /etc/opt/clairv4/config/</pre></li><li class="listitem"><p class="simpara">
+							Change into the Clair configuration folder:
+						</p><pre class="programlisting language-terminal">$ cd /etc/opt/clairv4/config/</pre></li><li class="listitem"><p class="simpara">
+							Create a Clair configuration file, for example:
 						</p><pre class="programlisting language-yaml">http_listen_addr: :8081
-introspection_addr: :8089
+introspection_addr: :8088
 log_level: debug
 indexer:
   connstring: host=quay-server.example.com port=5433 dbname=clair user=clairuser password=clairpass sslmode=disable
@@ -836,14 +828,14 @@ matcher:
   migrations: true
   indexer_addr: clair-indexer
 notifier:
-  connstring: host=quay-server.example.com port=5433 dbname=clair user=clairuser password=clairpass sslmode=disable
-  delivery_interval: 1m
-  poll_interval: 5m
-  migrations: true
+  connstring: host=quay-server.example.com port=5433 dbname=clair user=clairuser password=clairpass sslmode=disable
+  delivery_interval: 1m
+  poll_interval: 5m
+  migrations: true
 auth:
-  psk:
-    key: "MTU5YzA4Y2ZkNzJoMQ=="
-    iss: ["quay"]
+  psk:
+    key: "MTU5YzA4Y2ZkNzJoMQ=="
+    iss: ["quay"]
 # tracing and metrics
 trace:
   name: "jaeger"
@@ -852,38 +844,40 @@ trace:
     agent_endpoint: "localhost:6831"
     service_name: "clair"
 metrics:
-  name: "prometheus"</pre></li><li class="listitem">
-							<code class="literal">http_listen_addr</code> is set to the port of the Clair HTTP endpoint that you specified in the Quay configuration tool, in this case <code class="literal">:8081</code>.
+  name: "prometheus"</pre><p class="simpara">
+							For more information about Clair’s configuration format, see <a class="link" href="https://quay.github.io/clair/reference/config.html">Clair configuration reference</a>.
+						</p></li><li class="listitem"><p class="simpara">
+							Start Clair by using the container image, mounting in the configuration from the file you created:
+						</p><pre class="screen">$ sudo podman run -d --name clairv4 \
+-p 8081:8081 -p 8088:8088 \
+-e CLAIR_CONF=/clair/config.yaml \
+-e CLAIR_MODE=combo \
+-v /etc/opt/clairv4/config:/clair:Z \
+registry.redhat.io/quay/clair-rhel8:v3.8.2</pre><div class="admonition note"><div class="admonition_header">Note</div><div><p>
+								Running multiple Clair containers is also possible, but for deployment scenarios beyond a single container the use of a container orchestrator like Kubernetes or OpenShift Container Platform is strongly recommended.
+							</p></div></div></li></ol></div></section><section class="section" id="clair-testing"><div class="titlepage"><div><div><h3 class="title">3.4.2. Testing Clair</h3></div></div></div><p>
+					Use the following procedure to test Clair on either a standalone Red Hat Quay deployment, or on an OpenShift Container Platform Operator-based deployment.
+				</p><div class="itemizedlist"><p class="title"><strong>Prerequisites</strong></p><ul class="itemizedlist" type="disc"><li class="listitem">
+							You have deployed the Clair container image.
+						</li></ul></div><div class="orderedlist"><p class="title"><strong>Procedure</strong></p><ol class="orderedlist" type="1"><li class="listitem"><p class="simpara">
+							Pull a sample image by entering the following command:
+						</p><pre class="programlisting language-terminal">$ podman pull ubuntu:20.04</pre></li><li class="listitem"><p class="simpara">
+							Tag the image to your registry by entering the following command:
+						</p><pre class="programlisting language-terminal">$ sudo podman tag docker.io/library/ubuntu:20.04 &lt;quay-server.example.com&gt;/&lt;user-name&gt;/ubuntu:20.04</pre></li><li class="listitem"><p class="simpara">
+							Push the image to your Red Hat Quay registry by entering the following command:
+						</p><pre class="programlisting language-terminal">$ sudo podman push --tls-verify=false quay-server.example.com/quayadmin/ubuntu:20.04</pre></li><li class="listitem">
+							Log in to your Red Hat Quay deployment through the UI.
 						</li><li class="listitem">
-							The Clair pre-shared key (PSK) that you generated in the Quay configuration tool is used for authentication, with the issuer, specified in the <code class="literal">iss</code> field, set to <code class="literal">quay</code>.
-						</li></ul></div></section><section class="section" id="clair-standalone-running"><div class="titlepage"><div><div><h3 class="title">3.4.4. Running Clair</h3></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p class="simpara">
-							Use the <code class="literal">podman run</code> command to run the Clair container, exposing the HTTP endpoint port that you specified in the configuration tool, in this case <code class="literal">8081</code>:
-						</p><pre class="literallayout">$ sudo podman run -d --rm --name clairv4 \
-  -p 8081:8081 -p 8089:8089 \
-  -e CLAIR_CONF=/clair/config.yaml -e CLAIR_MODE=combo \
-  -v /etc/clairv4/config:/clair:Z \
-  registry.redhat.io/quay/clair-rhel8:v3.8.2</pre></li><li class="listitem"><p class="simpara">
-							Next, restart the <code class="literal">Quay</code> container using the updated configuration file containing the scanner settings:
-						</p><pre class="screen">$ sudo podman run -d --rm -p 80:8080 -p 443:8443  \
-   --name=quay \
-   -v $QUAY/config:/conf/stack:Z \
-   -v $QUAY/storage:/datastorage:Z \
-   registry.redhat.io/quay/quay-rhel8:v3.8.2</pre></li></ol></div></section><section class="section" id="clair-standalone-using"><div class="titlepage"><div><div><h3 class="title">3.4.5. Using Clair security scanning</h3></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p class="simpara">
-							From the command line, log in to the registry:
-						</p><pre class="literallayout">$ sudo podman login --tls-verify=false quay-server.example.com
-Username: quayadmin
-Password:
-Login Succeeded!</pre></li><li class="listitem"><p class="simpara">
-							Pull, tag and push a sample image to the registry:
-						</p><pre class="literallayout">$ sudo podman pull ubuntu:20.04
-$ sudo podman tag docker.io/library/ubuntu:20.04 quay-server.example.com/quayadmin/ubuntu:20.04
-$ sudo podman push --tls-verify=false quay-server.example.com/quayadmin/ubuntu:20.04</pre></li></ol></div><p>
-					The results from the security scanning can be seen in the Quay UI, as shown in the following images:
-				</p><div class="formalpara"><p class="title"><strong>Report summary</strong></p><p>
-						<span class="inlinemediaobject"><img src="images/poc-clair-1.png" alt="Scanning summary"/></span>
-					</p></div><div class="formalpara"><p class="title"><strong>Report details</strong></p><p>
-						<span class="inlinemediaobject"><img src="images/poc-clair-2.png" alt="Scanning details"/></span>
-					</p></div></section><section class="section" id="clair-cve"><div class="titlepage"><div><div><h3 class="title">3.4.6. CVE ratings from the National Vulnerability Database</h3></div></div></div><p>
+							Click the repository name, for example, <span class="strong strong"><strong>quayadmin/ubuntu</strong></span>.
+						</li><li class="listitem"><p class="simpara">
+							In the navigation pane, click <span class="strong strong"><strong>Tags</strong></span>.
+						</p><div class="formalpara"><p class="title"><strong>Report summary</strong></p><p>
+								<span class="inlinemediaobject"><img src="images/clair-reposcan.png" alt="Security scan information appears for scanned repository images"/></span>
+							</p></div></li><li class="listitem"><p class="simpara">
+							Click the image report, for example, <span class="strong strong"><strong>45 medium</strong></span>, to show a more detailed report:
+						</p><div class="formalpara"><p class="title"><strong>Report details</strong></p><p>
+								<span class="inlinemediaobject"><img src="images/clair-vulnerabilities.png" alt="See all vulnerabilities or only those that are fixable"/></span>
+							</p></div></li></ol></div></section><section class="section" id="clair-cve"><div class="titlepage"><div><div><h3 class="title">3.4.3. CVE ratings from the National Vulnerability Database</h3></div></div></div><p>
 					As of Clair v4.2, Common Vulnerability Scoring System (CVSS) enrichment data is now viewable in the Red Hat Quay UI. Additionally, Clair v4.2 adds CVSS scores from the National Vulnerability Database for detected vulnerabilities.
 				</p><p>
 					With this change, if the vulnerability has a CVSS score that is within 2 levels of the distribution score, the Red Hat Quay UI present’s the distribution’s score by default. For example:
@@ -893,7 +887,9 @@ $ sudo podman push --tls-verify=false quay-server.example.com/quayadmin/ubuntu:2
 					This differs from the previous interface, which would only display the following information:
 				</p><p>
 					<span class="inlinemediaobject"><img src="images/clair-4-0-cve-report.png" alt="Clair v4 data display"/></span>
-				</p></section></section><section class="section" id="restarting_containers"><div class="titlepage"><div><div><h2 class="title">3.5. Restarting containers</h2></div></div></div><p>
+				</p><div class="itemizedlist"><p class="title"><strong>Additional resources</strong></p><ul class="itemizedlist" type="disc"><li class="listitem">
+							<a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3/html-single/vulnerability_reporting_with_clair_on_red_hat_quay/index#vulnerability-reporting-clair-quay-overview">Vulnerability reporting with Clair on Red Hat Quay</a>
+						</li></ul></div></section></section><section class="section" id="restarting_containers"><div class="titlepage"><div><div><h2 class="title">3.5. Restarting containers</h2></div></div></div><p>
 				Because the <code class="literal">--restart</code> option is not fully supported by podman, you can configure <code class="literal">podman</code> as a systemd service, as described in <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/building_running_and_managing_containers/index#porting-containers-to-systemd-using-podman_building-running-and-managing-containers">Porting containers to systemd using Podman</a>
 			</p><section class="section" id="using_systemd_unit_files_with_podman"><div class="titlepage"><div><div><h3 class="title">3.5.1. Using systemd unit files with Podman</h3></div></div></div><p>
 					By default, Podman generates a unit file for existing containers or pods. You can generate more portable systemd unit files using the <code class="literal">podman generate systemd --new</code> command. The <code class="literal">--new</code> flag instructs Podman to generate unit files that create, start and remove containers.
@@ -1021,7 +1017,7 @@ e75ff8651dbd  registry.redhat.io/quay/clair-rhel8:v3.4.0                  34 sec
 					Configure LDAP authentication
 				</li><li class="listitem">
 					Use georeplication of storage
-				</li></ul></div></section><div><div xml:lang="en-US" class="legalnotice" id="idm45548490845456"><h1 class="legalnotice">Legal Notice</h1><div class="para">
+				</li></ul></div></section><div><div xml:lang="en-US" class="legalnotice" id="idm45395728396432"><h1 class="legalnotice">Legal Notice</h1><div class="para">
 		Copyright <span class="trademark"/>© 2023 Red Hat, Inc.
 	</div><div class="para">
 		The text of and illustrations in this document are licensed by Red Hat under a Creative Commons Attribution–Share Alike 3.0 Unported license ("CC-BY-SA"). An explanation of CC-BY-SA is available at <a class="uri" href="http://creativecommons.org/licenses/by-sa/3.0/">http://creativecommons.org/licenses/by-sa/3.0/</a>. In accordance with CC-BY-SA, if you distribute this document or an adaptation of it, you must provide the URL for the original version.
