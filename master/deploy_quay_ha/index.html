@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" class="chrometwo"><head><title>Deploy Red Hat Quay - High Availability</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css"/><meta name="generator" content="publican v4.3.4"/><meta name="description" content="Deploy Red Hat Quay in a HA environment"/><link rel="next" href="#idm46456520530032" title="Preface"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><script type="text/javascript" src="Common_Content/scripts/jquery-1.7.1.min.js"> </script><script type="text/javascript" src="Common_Content/scripts/utils.js"> </script><script type="text/javascript" src="Common_Content/scripts/highlight.js/highlight.pack.js"> </script></head><body><div id="chrometwo"><div id="main"><div xml:lang="en-US" class="book" id="idm46456519965536"><div class="titlepage"><div><div class="producttitle"><span class="productname">Red Hat Quay</span> <span class="productnumber">3.9</span></div><div><h1 class="title">Deploy Red Hat Quay - High Availability</h1></div><div><h2 class="subtitle">Deploy Red Hat Quay HA</h2></div><div><div xml:lang="en-US" class="authorgroup"><span class="orgname">Red Hat OpenShift Documentation Team</span></div></div><div><a href="#idm46456505562096">Legal Notice</a></div><div><div class="abstract"><p class="title"><strong>Abstract</strong></p><div class="para">
+<html xmlns="http://www.w3.org/1999/xhtml" class="chrometwo"><head><title>Deploy Red Hat Quay - High Availability</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css"/><meta name="generator" content="publican v4.3.4"/><meta name="description" content="Deploy Red Hat Quay in a HA environment"/><link rel="next" href="#idm45817830061872" title="Preface"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><script type="text/javascript" src="Common_Content/scripts/jquery-1.7.1.min.js"> </script><script type="text/javascript" src="Common_Content/scripts/utils.js"> </script><script type="text/javascript" src="Common_Content/scripts/highlight.js/highlight.pack.js"> </script></head><body><div id="chrometwo"><div id="main"><div xml:lang="en-US" class="book" id="idm45817830761312"><div class="titlepage"><div><div class="producttitle"><span class="productname">Red Hat Quay</span> <span class="productnumber">3.9</span></div><div><h1 class="title">Deploy Red Hat Quay - High Availability</h1></div><div><h2 class="subtitle">Deploy Red Hat Quay HA</h2></div><div><div xml:lang="en-US" class="authorgroup"><span class="orgname">Red Hat OpenShift Documentation Team</span></div></div><div><a href="#idm45817815847936">Legal Notice</a></div><div><div class="abstract"><p class="title"><strong>Abstract</strong></p><div class="para">
 				Deploy Red Hat Quay in a HA environment
-			</div></div></div></div><hr/></div><div class="toc"><ul class="toc"><li><span class="preface"><a href="#idm46456520530032">Preface</a></span></li><li><span class="chapter"><a href="#poc-overview">1. Overview</a></span><ul><li><span class="section"><a href="#poc-architecture">1.1. Architecture</a></span><ul><li><span class="section"><a href="#poc-internal-components">1.1.1. Internal components</a></span></li><li><span class="section"><a href="#poc-external-components">1.1.2. External components</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#preparing_for_red_hat_quay_high_availability">2. Preparing for Red Hat Quay (high availability)</a></span><ul><li><span class="section"><a href="#prerequisites">2.1. Prerequisites</a></span></li><li><span class="section"><a href="#using-podman">2.2. Using podman</a></span></li><li><span class="section"><a href="#set_up_load_balancer_and_database">2.3. Set up Load Balancer and Database</a></span></li><li><span class="section"><a href="#set_up_ceph">2.4. Set Up Ceph</a></span><ul><li><span class="section"><a href="#install_each_ceph_node">2.4.1. Install each Ceph node</a></span></li><li><span class="section"><a href="#configure_the_ceph_ansible_node_ceph05">2.4.2. Configure the Ceph Ansible node (ceph05)</a></span></li><li><span class="section"><a href="#install_the_ceph_object_gateway">2.4.3. Install the Ceph Object Gateway</a></span></li></ul></li><li><span class="section"><a href="#set_up_redis">2.5. Set up Redis</a></span></li></ul></li><li><span class="chapter"><a href="#configuring_red_hat_quay">3. Configuring Red Hat Quay</a></span></li><li><span class="chapter"><a href="#deploying_red_hat_quay">4. Deploying Red Hat Quay</a></span><ul><li><span class="section"><a href="#add_clair_image_scanning_to_red_hat_quay">4.1. Add Clair image scanning to Red Hat Quay</a></span></li><li><span class="section"><a href="#add-repo-mirroring">4.2. Add repository mirroring Red Hat Quay</a></span></li></ul></li><li><span class="chapter"><a href="#starting_to_use_red_hat_quay">5. Starting to use Red Hat Quay</a></span></li></ul></div><section class="preface" id="idm46456520530032"><div class="titlepage"><div><div><h1 class="title">Preface</h1></div></div></div><p>
+			</div></div></div></div><hr/></div><div class="toc"><ul class="toc"><li><span class="preface"><a href="#idm45817830061872">Preface</a></span></li><li><span class="chapter"><a href="#poc-overview">1. Overview</a></span><ul><li><span class="section"><a href="#poc-architecture">1.1. Architecture</a></span><ul><li><span class="section"><a href="#poc-internal-components">1.1.1. Internal components</a></span></li><li><span class="section"><a href="#poc-external-components">1.1.2. External components</a></span></li></ul></li></ul></li><li><span class="chapter"><a href="#preparing_for_red_hat_quay_high_availability">2. Preparing for Red Hat Quay (high availability)</a></span><ul><li><span class="section"><a href="#prerequisites">2.1. Prerequisites</a></span></li><li><span class="section"><a href="#using-podman">2.2. Using podman</a></span></li><li><span class="section"><a href="#setting-up-load-balancer-database">2.3. Setting up the HAProxy load balancer and the PostgreSQL database</a></span></li><li><span class="section"><a href="#set_up_ceph">2.4. Set Up Ceph</a></span><ul><li><span class="section"><a href="#install_each_ceph_node">2.4.1. Install each Ceph node</a></span></li><li><span class="section"><a href="#configure_the_ceph_ansible_node_ceph05">2.4.2. Configure the Ceph Ansible node (ceph05)</a></span></li><li><span class="section"><a href="#install_the_ceph_object_gateway">2.4.3. Install the Ceph Object Gateway</a></span></li></ul></li><li><span class="section"><a href="#set_up_redis">2.5. Set up Redis</a></span></li></ul></li><li><span class="chapter"><a href="#configuring_red_hat_quay">3. Configuring Red Hat Quay</a></span></li><li><span class="chapter"><a href="#deploying_red_hat_quay">4. Deploying Red Hat Quay</a></span><ul><li><span class="section"><a href="#add_clair_image_scanning_to_red_hat_quay">4.1. Add Clair image scanning to Red Hat Quay</a></span></li><li><span class="section"><a href="#add-repo-mirroring">4.2. Add repository mirroring Red Hat Quay</a></span></li></ul></li><li><span class="chapter"><a href="#starting_to_use_red_hat_quay">5. Starting to use Red Hat Quay</a></span></li></ul></div><section class="preface" id="idm45817830061872"><div class="titlepage"><div><div><h1 class="title">Preface</h1></div></div></div><p>
 			Red Hat Quay is an enterprise-quality container registry. Use Quay to build and store containers, then deploy them to the servers across your enterprise.
 		</p><p>
 			This procedure describes how to deploy a high availability, enterprise-quality Red Hat Quay setup.
@@ -114,28 +114,26 @@
 				This document uses podman for creating and deploying containers. If you do not have podman available on your system, you should be able to use the equivalent docker commands. For more information on podman and related technologies, see <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html-single/building_running_and_managing_containers/index">Building, running, and managing Linux containers on Red Hat Enterprise Linux 8</a>.
 			</p><div class="admonition note"><div class="admonition_header">Note</div><div><p>
 					Podman is strongly recommended for highly available, production quality deployments of Red Hat Quay 3.7. Docker has not been tested with Red Hat Quay 3.7, and will be deprecated in a future release.
-				</p></div></div></section><section class="section" id="set_up_load_balancer_and_database"><div class="titlepage"><div><div><h2 class="title">2.3. Set up Load Balancer and Database</h2></div></div></div><p>
-				On the first two systems (q01 and q02), install the haproxy load balancer and postgresql database. Haproxy will be configured as the access point and load balancer for the following services running on other systems:
-			</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
-						Red Hat Quay (ports 80 and 443 on B systems)
-					</li><li class="listitem">
-						Redis (port 6379 on B systems)
-					</li><li class="listitem">
-						RADOS (port 7480 on C systems)
-					</li></ul></div><p>
-				Because the services on the two systems run as containers, you will use <code class="literal">podman</code>, if it is installed. Alternatively, you could use the equivalent <code class="literal">docker</code> commands.
-			</p><div class="admonition note"><div class="admonition_header">Note</div><div><p>
-					For more information on using <code class="literal">podman</code> and restarting containers, see the section "Using podman" earlier in this document.
-				</p></div></div><p>
-				Here is how to set up the A systems:
-			</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p class="simpara">
-						<span class="strong strong"><strong>Open ports for haproxy service</strong></span>: Open all haproxy ports in SELinux and selected haproxy ports in the firewall:
-					</p><pre class="screen"># setsebool -P haproxy_connect_any=on
+				</p></div></div></section><section class="section" id="setting-up-load-balancer-database"><div class="titlepage"><div><div><h2 class="title">2.3. Setting up the HAProxy load balancer and the PostgreSQL database</h2></div></div></div><p>
+				Use the following procedure to set up the HAProxy load balancer and the PostgreSQL database.
+			</p><div class="itemizedlist"><p class="title"><strong>Prerequisites</strong></p><ul class="itemizedlist" type="disc"><li class="listitem">
+						You have installed the Podman or Docker CLI.
+					</li></ul></div><div class="orderedlist"><p class="title"><strong>Procedure</strong></p><ol class="orderedlist" type="1"><li class="listitem"><p class="simpara">
+						On the first two systems, <code class="literal">q01</code> and <code class="literal">q02</code>, install the HAProxy load balancer and the PostgreSQL database. This configures HAProxy as the access point and load balancer for the following services running on other systems:
+					</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+								Red Hat Quay (ports 80 and 443 on B systems)
+							</li><li class="listitem">
+								Redis (port 6379 on B systems)
+							</li><li class="listitem">
+								RADOS (port 7480 on C systems)
+							</li></ul></div></li></ol></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p class="simpara">
+						Open all HAProxy ports in SELinux and selected HAProxy ports in the firewall:
+					</p><pre class="programlisting language-terminal"># setsebool -P haproxy_connect_any=on
 # firewall-cmd --permanent --zone=public --add-port=6379/tcp --add-port=7480/tcp
 success
 # firewall-cmd --reload
-success</pre></li><li class="listitem"><p class="simpara">
-						<span class="strong strong"><strong>Set up haproxy service</strong></span>: Configure the <code class="literal">/etc/haproxy/haproxy.cfg</code> to point to the systems and ports providing the Red Hat Quay, Redis, and Ceph RADOS services. Here are examples of defaults and added frontend and backend settings:
+success</pre></li></ol></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p class="simpara">
+						Configure the <code class="literal">/etc/haproxy/haproxy.cfg</code> to point to the systems and ports providing the Red Hat Quay, Redis and Ceph RADOS services. The following are examples of defaults and added frontend and backend settings:
 					</p><pre class="screen">#---------------------------------------------------------------------
 # common defaults that all the 'listen' and 'backend' sections will
 # use if not designated in their block
@@ -186,61 +184,64 @@ backend be_rdgw
     server ceph02 ceph02:7480 check
     server ceph03 ceph03:7480 check
 backend be_redis
-server quay01 quay01:6380 check inter 1s
-server quay02 quay02:6380 check inter 1s
-server quay03 quay03:6380 check inter 1s</pre><p class="simpara">
-						Once the new haproxy.cfg file is in place, restart the haproxy service.
-					</p><pre class="screen"># systemctl restart haproxy</pre></li><li class="listitem"><p class="simpara">
-						<span class="strong strong"><strong>Install / Deploy a Database</strong></span>: Install, enable and start the <a class="link" href="https://access.redhat.com/containers/?tab=overview#/registry.access.redhat.com/rhel8/postgresql-10)">PostgreSQL</a> database container. The following commands will:
-					</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
-								Start the PostgreSQL database with the user, password and database all set. Data from the container will be stored on the host system in the <code class="literal">/var/lib/pgsql/data</code> directory.
-							</li><li class="listitem">
-								List available extensions.
-							</li><li class="listitem">
-								Create the pg_trgm extension.
-							</li><li class="listitem"><p class="simpara">
-								Confirm the extension is installed
-							</p><pre class="screen">$ mkdir -p /var/lib/pgsql/data
-$ chmod 777 /var/lib/pgsql/data
-$ sudo podman run -d --name postgresql_database \
+server quay01 quay01:6379 check inter 1s
+server quay02 quay02:6379 check inter 1s
+server quay03 quay03:6379 check inter 1s</pre><p class="simpara">
+						After the new <code class="literal">haproxy.cfg</code> file is in place, restart the HAProxy service by entering the following command:
+					</p><pre class="programlisting language-terminal"># systemctl restart haproxy</pre></li><li class="listitem"><p class="simpara">
+						Create a folder for the PostgreSQL database by entering the following command:
+					</p><pre class="programlisting language-terminal">$ mkdir -p /var/lib/pgsql/data</pre></li><li class="listitem"><p class="simpara">
+						Set the following permissions for the <code class="literal">/var/lib/pgsql/data</code> folder:
+					</p><pre class="programlisting language-terminal">$ chmod 777 /var/lib/pgsql/data</pre></li><li class="listitem"><p class="simpara">
+						Enter the following command to start the PostgreSQL database:
+					</p><pre class="programlisting language-terminal">$ sudo podman run -d --name postgresql_database \
     -v /var/lib/pgsql/data:/var/lib/pgsql/data:Z  \
     -e POSTGRESQL_USER=quayuser -e POSTGRESQL_PASSWORD=quaypass \
     -e POSTGRESQL_DATABASE=quaydb -p 5432:5432 \
-    registry.redhat.io/rhel8/postgresql-13:1-109
-
-$ sudo podman exec -it postgresql_database /bin/bash -c 'echo "SELECT * FROM pg_available_extensions" | /opt/rh/rh-postgresql96/root/usr/bin/psql'
-   name    | default_version | installed_version |           comment
+    registry.redhat.io/rhel8/postgresql-13:1-109</pre><div class="admonition note"><div class="admonition_header">Note</div><div><p>
+							Data from the container will be stored on the host system in the <code class="literal">/var/lib/pgsql/data</code> directory.
+						</p></div></div></li><li class="listitem"><p class="simpara">
+						List the available extensions by entering the following command:
+					</p><pre class="programlisting language-terminal">$ sudo podman exec -it postgresql_database /bin/bash -c 'echo "SELECT * FROM pg_available_extensions" | /opt/rh/rh-postgresql96/root/usr/bin/psql'</pre><div class="formalpara"><p class="title"><strong>Example output</strong></p><p>
+							
+<pre class="programlisting language-terminal">   name    | default_version | installed_version |           comment
 -----------+-----------------+-------------------+----------------------------------------
  adminpack | 1.0             |                   | administrative functions for PostgreSQL
-...
-
-$ sudo podman exec -it postgresql_database /bin/bash -c 'echo "CREATE EXTENSION IF NOT EXISTS pg_trgm;" | /opt/rh/rh-postgresql96/root/usr/bin/psql -d quaydb'
-
-$ sudo podman exec -it postgresql_database /bin/bash -c 'echo "SELECT * FROM pg_extension" | /opt/rh/rh-postgresql96/root/usr/bin/psql'
- extname | extowner | extnamespace | extrelocatable | extversion | extconfig | extcondition
+...</pre>
+						</p></div></li><li class="listitem"><p class="simpara">
+						Create the <code class="literal">pg_trgm</code> extension by entering the following command:
+					</p><pre class="programlisting language-terminal">$ sudo podman exec -it postgresql_database /bin/bash -c 'echo "CREATE EXTENSION IF NOT EXISTS pg_trgm;" | /opt/rh/rh-postgresql96/root/usr/bin/psql -d quaydb'</pre></li><li class="listitem"><p class="simpara">
+						Confirm that the <code class="literal">pg_trgm</code> has been created by entering the following command:
+					</p><pre class="programlisting language-terminal">$ sudo podman exec -it postgresql_database /bin/bash -c 'echo "SELECT * FROM pg_extension" | /opt/rh/rh-postgresql96/root/usr/bin/psql'</pre><div class="formalpara"><p class="title"><strong>Example output</strong></p><p>
+							
+<pre class="programlisting language-terminal"> extname | extowner | extnamespace | extrelocatable | extversion | extconfig | extcondition
 ---------+----------+--------------+----------------+------------+-----------+--------------
  plpgsql |       10 |           11 | f              | 1.0        |           |
  pg_trgm |       10 |         2200 | t              | 1.3        |           |
-(2 rows)
-
-$ sudo podman exec -it postgresql_database /bin/bash -c 'echo "ALTER USER quayuser WITH SUPERUSER;" | /opt/rh/rh-postgresql96/root/usr/bin/psql'
-ALTER ROLE</pre></li></ul></div></li><li class="listitem"><p class="simpara">
-						<span class="strong strong"><strong>Open the firewall</strong></span>: If you have a firewalld service active on your system, run the following commands to make the PostgreSQL port available through the firewall:
-					</p><pre class="screen"># firewall-cmd --permanent --zone=trusted --add-port=5432/tcp
-success
-# firewall-cmd --reload
-success</pre></li><li class="listitem"><p class="simpara">
-						<span class="strong strong"><strong>Test PostgreSQL Connectivity</strong></span>: Use the <code class="literal">psql</code> command to test connectivity to the PostgreSQL database. Try this on a remote system as well, to make sure you can access the service remotely:
-					</p><pre class="screen"># yum install postgresql -y
-
-# psql -h localhost quaydb quayuser
-Password for user test:
+(2 rows)</pre>
+						</p></div></li><li class="listitem"><p class="simpara">
+						Alter the privileges of the Postgres user <code class="literal">quayuser</code> and grant them the <code class="literal">superuser</code> role to give the user unrestricted access to the database:
+					</p><pre class="programlisting language-terminal">$ sudo podman exec -it postgresql_database /bin/bash -c 'echo "ALTER USER quayuser WITH SUPERUSER;" | /opt/rh/rh-postgresql96/root/usr/bin/psql'</pre><div class="formalpara"><p class="title"><strong>Example output</strong></p><p>
+							
+<pre class="programlisting language-terminal">ALTER ROLE</pre>
+						</p></div></li><li class="listitem"><p class="simpara">
+						If you have a firewalld service active on your system, run the following commands to make the PostgreSQL port available through the firewall:
+					</p><pre class="programlisting language-terminal"># firewall-cmd --permanent --zone=trusted --add-port=5432/tcp</pre><pre class="programlisting language-terminal"># firewall-cmd --reload</pre></li><li class="listitem"><p class="simpara">
+						Optional. If you do not have the <code class="literal">postgres</code> CLI package installed, install it by entering the following command:
+					</p><pre class="programlisting language-terminal"># yum install postgresql -y</pre></li><li class="listitem"><p class="simpara">
+						Use the <code class="literal">psql</code> command to test connectivity to the PostgreSQL database.
+					</p><div class="admonition note"><div class="admonition_header">Note</div><div><p>
+							To verify that you can access the service remotely, run the following command on a remote system.
+						</p></div></div><pre class="screen"># psql -h localhost quaydb quayuser</pre><div class="formalpara"><p class="title"><strong>Example output</strong></p><p>
+							
+<pre class="programlisting language-terminal">Password for user test:
 psql (9.2.23, server 9.6.5)
 WARNING: psql version 9.2, server version 9.6.
          Some psql features might not work.
 Type "help" for help.
 
-test=&gt; \q</pre></li></ol></div></section><section class="section" id="set_up_ceph"><div class="titlepage"><div><div><h2 class="title">2.4. Set Up Ceph</h2></div></div></div><p>
+test=&gt; \q</pre>
+						</p></div></li></ol></div></section><section class="section" id="set_up_ceph"><div class="titlepage"><div><div><h2 class="title">2.4. Set Up Ceph</h2></div></div></div><p>
 				For this Red Hat Quay configuration, we create a three-node Ceph cluster, with several other supporting nodes, as follows:
 			</p><div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
 						ceph01, ceph02, and ceph03 - Ceph Monitor, Ceph Manager and Ceph OSD nodes
@@ -559,7 +560,7 @@ config.yaml ssl.cert ssl.key</pre></li><li class="listitem"><p class="simpara">
 					Select Tutorial from the Quay home page to try the 15-minute tutorial. In the tutorial, you learn to log into Quay, start a container, create images, push repositories, view repositories, and change repository permissions with Quay.
 				</li><li class="listitem">
 					Refer to the <a class="link" href="https://access.redhat.com/documentation/en-us/red_hat_quay/3.9/html-single/use_red_hat_quay/">Use Red Hat Quay</a> for information on working with Red Hat Quay repositories.
-				</li></ul></div><h2 id="additional_resources">Additional resources</h2></section><div><div xml:lang="en-US" class="legalnotice" id="idm46456505562096"><h1 class="legalnotice">Legal Notice</h1><div class="para">
+				</li></ul></div><h2 id="additional_resources">Additional resources</h2></section><div><div xml:lang="en-US" class="legalnotice" id="idm45817815847936"><h1 class="legalnotice">Legal Notice</h1><div class="para">
 		Copyright <span class="trademark"/>© 2023 Red Hat, Inc.
 	</div><div class="para">
 		The text of and illustrations in this document are licensed by Red Hat under a Creative Commons Attribution–Share Alike 3.0 Unported license ("CC-BY-SA"). An explanation of CC-BY-SA is available at <a class="uri" href="http://creativecommons.org/licenses/by-sa/3.0/">http://creativecommons.org/licenses/by-sa/3.0/</a>. In accordance with CC-BY-SA, if you distribute this document or an adaptation of it, you must provide the URL for the original version.
