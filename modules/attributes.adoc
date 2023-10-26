@@ -28,7 +28,7 @@ ifeval::["{productname}" == "Red Hat Quay"]
 :downstream:
 :productname: Red Hat Quay
 :productversion: 3
-:producty: 3.9
+:producty: 3
 :productmin: 3.9.3
 :productminv: v3.9.3
 :productrepo: registry.redhat.io/quay
